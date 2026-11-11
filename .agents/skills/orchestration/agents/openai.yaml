@@ -1,0 +1,6 @@
+interface:
+  display_name: "Agentic Workflows Agent Orchestration"
+  short_description: "Coordinate verified implementation and review"
+  default_prompt: "Use $orchestration to make this task the mandatory-autopilot Goal Mode control plane, triage current project issues, decide managed gates and spawned-session requests without operator approval prompts, and run verified Full Access implementation plus exact-head review asynchronously in separate Codex sessions. Never perform code review in the control plane."
+policy:
+  allow_implicit_invocation: true

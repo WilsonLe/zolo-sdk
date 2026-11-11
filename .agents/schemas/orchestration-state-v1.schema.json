@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agentic-workflows:schema:agent-orchestration/state-v1",
+  "title": "Agent Orchestration coordination register v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "orchestrator_id",
+    "goal",
+    "inventory",
+    "tasks",
+    "updated_at"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "orchestrator_id": {"type": "string", "minLength": 1},
+    "goal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "last_checked_at"],
+      "properties": {
+        "state": {
+          "enum": ["clarifying", "active", "completed", "blocked"]
+        },
+        "last_checked_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      }
+    },
+    "inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["complete", "limitation", "rotation_offset"],
+      "properties": {
+        "complete": {"type": "boolean"},
+        "limitation": {"type": "string", "maxLength": 240},
+        "rotation_offset": {"type": "integer", "minimum": 0}
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/task"}
+    },
+    "updated_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "thread_id",
+        "host_id",
+        "project_id",
+        "title",
+        "status",
+        "issue_number",
+        "pr_number",
+        "cursor",
+        "archive_state",
+        "last_observed_at",
+        "last_action_at",
+        "terminal_verified",
+        "final_read",
+        "reconciled",
+        "needed_for_dependency",
+        "closeout_result",
+        "blocker_category"
+      ],
+      "properties": {
+        "thread_id": {"type": "string", "minLength": 1},
+        "host_id": {"type": ["string", "null"]},
+        "project_id": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "maxLength": 160},
+        "status": {
+          "enum": [
+            "active",
+            "waiting",
+            "needs_attention",
+            "blocked",
+            "completed",
+            "archived_known",
+            "excluded"
+          ]
+        },
+        "issue_number": {"type": ["integer", "null"], "minimum": 1},
+        "pr_number": {"type": ["integer", "null"], "minimum": 1},
+        "cursor": {"type": ["string", "null"]},
+        "archive_state": {
+          "enum": ["unarchived", "archive_intent", "archived"]
+        },
+        "last_observed_at": {"type": "string", "format": "date-time"},
+        "last_action_at": {"type": ["string", "null"], "format": "date-time"},
+        "terminal_verified": {"type": "boolean"},
+        "final_read": {"type": "boolean"},
+        "reconciled": {"type": "boolean"},
+        "needed_for_dependency": {"type": "boolean"},
+        "closeout_result": {
+          "enum": [
+            null,
+            "pending",
+            "reconciled",
+            "ineligible",
+            "archived",
+            "recovered"
+          ]
+        },
+        "blocker_category": {
+          "enum": [
+            null,
+            "user_input",
+            "dependency",
+            "tooling",
+            "unknown"
+          ]
+        }
+      }
+    }
+  }
+}

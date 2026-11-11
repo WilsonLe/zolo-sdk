@@ -1,0 +1,6 @@
+interface:
+  display_name: "Standard Development Workflow"
+  short_description: "Ship scoped changes and coordinate safe cleanup"
+  default_prompt: "Use $standard-development-workflow. For direct operational cleanup, read cleanup coordination, resolve exact targets and active consumers before mutation, and verify authorized operations; no-diff cleanup needs no issue or PR. For repository changes, deliver through Grill Me, planning, design specification, isolated implementation, focused verification, a linked draft PR, and a bounded adversarial review/fix cycle with final-state review in the same request. After authorized implementation, run the mandatory completion check before replying; do not wait for another request to open a PR. Honor explicit local-only limits and report blocked delivery as incomplete. Check the actual final reply against the handoff contract and include the PR executive summary with structure, review status, verification commands/results, and limits."
+policy:
+  allow_implicit_invocation: true

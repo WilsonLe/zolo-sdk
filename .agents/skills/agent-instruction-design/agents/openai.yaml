@@ -1,0 +1,6 @@
+interface:
+  display_name: "Agent Instruction Design"
+  short_description: "Write focused agent guidance"
+  default_prompt: "Use $agent-instruction-design to make these agent instructions easy to select, follow, and verify."
+policy:
+  allow_implicit_invocation: true

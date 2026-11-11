@@ -1,0 +1,33 @@
+{
+  "source": "Independent Python standard-library hmac/sha256 over explicit 74-byte preimage; no SDK or target execution",
+  "primaryHex": "051b1b58dd50ea14b60da17b790cd02754d970c9bab864ebb3c0f3016fe51d3f57",
+  "companionHex": "0560346e7c911a5f6ba154129174cafe75b294ac3bbd5549632f48cec6266f8410",
+  "secretHex": "7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b",
+  "vectors": [
+    {
+      "timestamp": "0",
+      "preimageHex": "00000000000000000560346e7c911a5f6ba154129174cafe75b294ac3bbd5549632f48cec6266f8410051b1b58dd50ea14b60da17b790cd02754d970c9bab864ebb3c0f3016fe51d3f57",
+      "hmacSha256Hex": "9603a62da283253da2b4ae19c50ee13509da33c69e87e731221872b66b70a60c"
+    },
+    {
+      "timestamp": "1",
+      "preimageHex": "01000000000000000560346e7c911a5f6ba154129174cafe75b294ac3bbd5549632f48cec6266f8410051b1b58dd50ea14b60da17b790cd02754d970c9bab864ebb3c0f3016fe51d3f57",
+      "hmacSha256Hex": "01b9d41328fcce1ebf217da6a40f90931a2e7f4a364de1973588d2ab4855de11"
+    },
+    {
+      "timestamp": "72623859790382856",
+      "preimageHex": "08070605040302010560346e7c911a5f6ba154129174cafe75b294ac3bbd5549632f48cec6266f8410051b1b58dd50ea14b60da17b790cd02754d970c9bab864ebb3c0f3016fe51d3f57",
+      "hmacSha256Hex": "095d4704bd897f7541a1f2e82cfcaca43c05fdc13736be507327405ccf6170ad"
+    },
+    {
+      "timestamp": "9223372036854775809",
+      "preimageHex": "01000000000000800560346e7c911a5f6ba154129174cafe75b294ac3bbd5549632f48cec6266f8410051b1b58dd50ea14b60da17b790cd02754d970c9bab864ebb3c0f3016fe51d3f57",
+      "hmacSha256Hex": "b45ce8ca09c996db07d230a0e03548be56771bca10e27cbe085353cfc8ebd191"
+    },
+    {
+      "timestamp": "18446744073709551615",
+      "preimageHex": "ffffffffffffffff0560346e7c911a5f6ba154129174cafe75b294ac3bbd5549632f48cec6266f8410051b1b58dd50ea14b60da17b790cd02754d970c9bab864ebb3c0f3016fe51d3f57",
+      "hmacSha256Hex": "054c7c3c8f1b5554d67600531bb01ceabfebe763d2b176c11afefaaf870e738d"
+    }
+  ]
+}

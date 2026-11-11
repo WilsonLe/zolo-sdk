@@ -1,0 +1,4 @@
+
+> zalo-personal-sdk@0.47.0 build
+> node scripts/upstream-types.mjs && tsc -p tsconfig.json
+

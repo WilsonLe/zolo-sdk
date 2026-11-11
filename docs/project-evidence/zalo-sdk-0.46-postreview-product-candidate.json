@@ -1,0 +1,239 @@
+{
+  "actualChecks": {
+    "js-dollar-control": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-js-dollar-control.log",
+      "logSha256": "d834ef3e054f6b847787235b8eb2e1ac171c527830be572f3fd372c4e0124d20",
+      "record": "zalo-sdk-0.46-js-dollar-control.process.json",
+      "sha256": "7515427fa961f804ba4ba57a7875a2a2eea86dfaf5e1ea370a12f0dcb6ecefc3"
+    },
+    "pass1-fix-build": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-pass1-fix-build.log",
+      "logSha256": "101623238a0d2b1d137fcf5342a8d38258d2cdf4fab3134f34c8cc8fa80a5a53",
+      "record": "zalo-sdk-0.46-pass1-fix-build.process.json",
+      "sha256": "0b4d30f8a57e0370c4fa14ef9e3b1302f97c4c19d594c4c57fa0a6a4097d6917"
+    },
+    "pass1-new-public29": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-pass1-new-public29.log",
+      "logSha256": "d7954f155d2827bc471ee5371e7b75ee9091f77b6ab7b795533b4935f129417b",
+      "record": "zalo-sdk-0.46-pass1-new-public29.process.json",
+      "sha256": "693f8fb166ddf85601237a158f425169d1a27760f4701d8edc94f74d594235aa"
+    },
+    "pass1-regressions7": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-pass1-regressions7.log",
+      "logSha256": "67bc43f93ccf2559db90a4eeffcbddcbb36363cc21fe25c6e875667c9a374b79",
+      "record": "zalo-sdk-0.46-pass1-regressions7.process.json",
+      "sha256": "ede986f994a0f8f91994425a0f35d7a7eefae8c10f2dff80653856c6bf04f00f"
+    },
+    "postreview-consumer-install": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-postreview-consumer-install.log",
+      "logSha256": "2f51fbd3600e7bc1a60aec801b0f33b9b06763d739bd57ecaec5bab65c82f5c7",
+      "record": "zalo-sdk-0.46-postreview-consumer-install.process.json",
+      "sha256": "72bbe174ad211a97918c4b32e5a05350c1038938369a2ecea1c4130881382cc8"
+    },
+    "postreview-focused319": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-postreview-focused319.log",
+      "logSha256": "fbfcb1138dcd9ec34226f6b9906f1b754b48f4e1b0350d2cdbf76e3918be1be3",
+      "record": "zalo-sdk-0.46-postreview-focused319.process.json",
+      "sha256": "9810c9de173d137093afd48a9b8f692cabfccff922b64c3c7c927cc7e12a7852"
+    },
+    "postreview-installed-imports": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-postreview-installed-imports.log",
+      "logSha256": "30c78305f28916478760d529482c213526e50c85cbb52820d8d7b77e5ac64833",
+      "record": "zalo-sdk-0.46-postreview-installed-imports.process.json",
+      "sha256": "8e35c103ac500a53e95abd93a2997327d25f546e9ca05cdb3e350759a8f0b56e"
+    },
+    "postreview-installed-public73": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-postreview-installed-public73.log",
+      "logSha256": "33ca90766445ce3ce904716a07ef4cf88fe243394b1f16b6ca928d6ab7a4dfdf",
+      "record": "zalo-sdk-0.46-postreview-installed-public73.process.json",
+      "sha256": "40974411b2e3b1426ad4a0e88d84ce7747fae2e829dbeb35d34a15b88baa6510"
+    },
+    "postreview-installed-strict38": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-postreview-installed-strict38.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "record": "zalo-sdk-0.46-postreview-installed-strict38.process.json",
+      "sha256": "5e43697df48b7863f02967a590527f84b17c765e946dedc6c5b25cd49ed0d6b5"
+    },
+    "postreview-pack": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-postreview-pack.log",
+      "logSha256": "b7af46edd7ec63c12e9df21ee9bbab5591e4c802bd3e3c4879d9e919dc46fc1d",
+      "record": "zalo-sdk-0.46-postreview-pack.process.json",
+      "sha256": "46e6ef65efd273a8844d93affe22f0664347baf41e82228b01b121e39483f997"
+    },
+    "postreview-production-imports": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-postreview-production-imports.log",
+      "logSha256": "30c78305f28916478760d529482c213526e50c85cbb52820d8d7b77e5ac64833",
+      "record": "zalo-sdk-0.46-postreview-production-imports.process.json",
+      "sha256": "78afbf47f8e0705bfec403c2a38a62c2b54ca0ee38dd90b65b5026960a4ae564"
+    },
+    "postreview-production-install": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-postreview-production-install.log",
+      "logSha256": "cc33558885ff1d074666613fb1d2ff6370e4b0a1412a6b83f3fd57f02ff1b149",
+      "record": "zalo-sdk-0.46-postreview-production-install.process.json",
+      "sha256": "14b903b0597a88b34dc022f63ff0d8f8086fca5f60647be9e150e1b1961ef91d"
+    },
+    "postreview-relocated-ci": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-postreview-relocated-ci.log",
+      "logSha256": "83fa52657556c43add972c9b4f3fcf9bea9e940ef45de686c163658444c72527",
+      "record": "zalo-sdk-0.46-postreview-relocated-ci.process.json",
+      "sha256": "95a7374043832e66b20d9e51b22bf35ce4f5cc382d76532c8f93d20a817028fd"
+    },
+    "postreview-relocated-imports": {
+      "exitCode": 0,
+      "expectedBeforeFailure": false,
+      "log": "zalo-sdk-0.46-postreview-relocated-imports.log",
+      "logSha256": "30c78305f28916478760d529482c213526e50c85cbb52820d8d7b77e5ac64833",
+      "record": "zalo-sdk-0.46-postreview-relocated-imports.process.json",
+      "sha256": "6971e3f12d36388c4982cee89c62094890457e83384eb591c42980fa0af3034b"
+    },
+    "review-context-before-fix": {
+      "exitCode": 1,
+      "expectedBeforeFailure": true,
+      "log": "zalo-sdk-0.46-review-context-before-fix.log",
+      "logSha256": "4ca2a836033412d1d4cc13e2ec2bf2856a1c848704518b85cb03bbf0a51bbf20",
+      "record": "zalo-sdk-0.46-review-context-before-fix.process.json",
+      "sha256": "8afd4ca2b28cf7949d038d7c6be4611090feb74aa22ba1d8c7931c15e49d6f6d"
+    },
+    "review-destination-before-fix": {
+      "exitCode": 1,
+      "expectedBeforeFailure": true,
+      "log": "zalo-sdk-0.46-review-destination-before-fix.log",
+      "logSha256": "f1e14bda7db830d35d6788c98e1bd8aa0bd009439b1f2eabb8aeb20e1ff001ab",
+      "record": "zalo-sdk-0.46-review-destination-before-fix.process.json",
+      "sha256": "d71972a4cc2e1bcf25477dff991b90db0b402491f97abc9a07ac766b280299d7"
+    }
+  },
+  "archive": {
+    "allPayloadsEqualSourceOrDependency": true,
+    "archive": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.46-postreview-package/zalo-personal-sdk-0.46.0.tgz",
+    "bytes": 2846948,
+    "changedFromReviewedArchive": [
+      "dist/signed-photo-upload.js",
+      "docs/operations.md",
+      "docs/signed-video-thumbnail-upload.md"
+    ],
+    "regularPayloads": 1709,
+    "sha256": "f1f2440fffab0e6f2e9797eb2590525e72c9291ed5dff1280ee132812ebb9388",
+    "thisExactArchiveRuntimeAndTypeTested": true,
+    "unchangedBundled1174": true
+  },
+  "artifacts": {
+    "zalo-sdk-0.46-final-product-candidate.json": "be4daeda0ae16a946e165b66507e9b6b7a9dd7d2b5facee6745080afee6d6345",
+    "zalo-sdk-0.46-independent-consumer-author/manifest.json": "827c5b8e753cdd5ab6dfc614d3886ef34df25b5b419c3f2d25a0fc3d1cd52ab0",
+    "zalo-sdk-0.46-js-dollar-control.mjs": "fe58b6abff7fa268f8d51adea7d59fe446ef98870ec4db8b6cf16462e8eec0a2",
+    "zalo-sdk-0.46-pass1-design-acceptance.json": "2061752cc216d8bd5deea71b47fd14b1a17662570f0f64f1b2dbe80f141a25d2",
+    "zalo-sdk-0.46-pass1-dispositions.json": "c3e4e55af79ae2a36ecf5df4b0690405792ab28e931f9c4de9c7a403f627608b",
+    "zalo-sdk-0.46-pass1-doc-reconciliation.json": "4ca958dd2eef7e2a29d863fa3bc99317459caac917135b3341b47c47933ddce1",
+    "zalo-sdk-0.46-postreview-all-manifest.json": "1df47979d9dad50202e2eac01b6e1c85b4fcaab97ee68b34b5f5843d6deaefd5",
+    "zalo-sdk-0.46-postreview-archive.json": "a462006d2f45b7484276966468a44ca32818c76450c938761a321bfcafc27160",
+    "zalo-sdk-0.46-postreview-change-inventory.json": "8e8648c74fa62cd327bfa037ed84b86d85853ac8d14acc917bf8bdfc1f457c70",
+    "zalo-sdk-0.46-postreview-human-manifest.json": "2ec0d0da83247cd1d3acbc032ee781cc62ed4326eb0b87ba7c129798b090230b",
+    "zalo-sdk-0.46-postreview-human.diff": "d861e364afb63d618a5d6fe9ab9156e755757c9594ff7b4299237bb53f9c761f",
+    "zalo-sdk-0.46-postreview-payload-manifest.json": "18eeb2f7324494d20a1e8e24a31bde95556ea3e9252b55218ded7206b9e755e9",
+    "zalo-sdk-0.46-postreview-portability.json": "7cd16c9402616d9e70918222f02280e4a2a07605b4aee99b5d4fce88d964405e",
+    "zalo-sdk-0.46-postreview-runtime-manifest.json": "97fe875541757316b9a213786d63963f0e10985a444a277569963073f36152fd",
+    "zalo-sdk-0.46-review-pass1.md": "1820bd27ffaf62842bb32949fcbc2c38aa1bc8cbf17d4a956fd906346739349d",
+    "zalo-sdk-0.46-runtime-consumer/reviewer-context-callback-counter.test.mjs": "ae22509c40a0423bd7185e3ed04f096f6c894e7dd0ec2361e20f7abda84ca68f",
+    "zalo-sdk-0.46-runtime-consumer/reviewer-destination-callback-counter.test.mjs": "c217baf2a4e39196febef42c02153db90279f34341c4aa4361d17051537a182c",
+    "zalo-sdk-0.46-signed-owner-before-pass1-fix.ts": "51047deb0570c354ee146be6e1fb57000f607664de405dc78b57e73ddd794a75"
+  },
+  "base045": {
+    "all988MainFilesExact": true,
+    "candidateSha256": "35265674e667c91053f1deffb3defb0cf03a42089138e9111eab1655acfb7be2",
+    "finalIndependentReviewSha256": "7092802e2033a5e9ed4cbfb7bc41e6587ac289b2914f5042765e912114251d8c",
+    "snapshot": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.45-postreview-final-candidate-snapshot"
+  },
+  "checks": {
+    "all1709PayloadsExactAtTwoProductionLocations": true,
+    "bundle1174Unchanged": true,
+    "focusedWorkspace": {
+      "files": 30,
+      "includes283inheritedPlus29IndependentPlus7RootRegressions": true,
+      "notFullSuite": true,
+      "pass": 319,
+      "zeroFailSkipCancel": true
+    },
+    "installedPublic": {
+      "files": 11,
+      "genuine127LoopbackAndSyntheticHTTPOnly": true,
+      "includes37InheritedPlus29IndependentPlus7RootRegressions": true,
+      "pass": 73,
+      "zeroFailSkipCancel": true
+    },
+    "installedStrict": {
+      "fixtures": 38,
+      "noSkipLibCheck": true
+    },
+    "offlineSourceAbsentStages": 4,
+    "preexistingCacheNotEmptyCache": true,
+    "runtimeExports": {
+      "classSameESMAndCJS": true,
+      "e2ee": 99,
+      "privateHelpersSubpathsClosed": true,
+      "root": 302
+    },
+    "sameExactArchiveRuntimeTypesPortableTested": true
+  },
+  "generatedChanges": 6,
+  "goalComplete": false,
+  "goalStatus": "active",
+  "historicalInitialCandidate": {
+    "allArtifactAndPlanPinsStillMatch": true,
+    "initialChecksRemainHistorical": true,
+    "sha256": "be4daeda0ae16a946e165b66507e9b6b7a9dd7d2b5facee6745080afee6d6345"
+  },
+  "humanChanges": 21,
+  "humanFiles": 762,
+  "kind": "frozen-corrected-postreview-localSDK046candidate",
+  "liveProviderAccountTargetNativeWasmExecuted": false,
+  "main988FilesStillExact": true,
+  "mainIntegrated": false,
+  "mainVersion": "0.45.0",
+  "nonGitPrGate": "incomplete noGit/remote; no fabricatedissue/branch/PR",
+  "plan": {
+    "path": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.46-plan-v2.md",
+    "sha256": "af05d6c6d084fbdfc8c62ea6e8e2607d850db054ad3f94f90e0b0fc3ef50ec20"
+  },
+  "resourceV4GrantConsumedNotRerun": true,
+  "review": {
+    "automaticPassCeiling": 2,
+    "automaticPassesUsed": 1,
+    "noUnresolvedValidationLeads": true,
+    "pass1ReportSha256": "1820bd27ffaf62842bb32949fcbc2c38aa1bc8cbf17d4a956fd906346739349d",
+    "pass2State": "notstarted",
+    "rootReadComplete": true,
+    "supportedP2Corrected": "R046-DESTINATION-FINAL-CALLBACK"
+  },
+  "rootSoleExecutionOwner": true,
+  "runtimeFiles": 236,
+  "snapshot": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.46-postreview-candidate-snapshot",
+  "snapshotFiles": 998,
+  "sourceFiles": 118,
+  "version": "0.46.0"
+}

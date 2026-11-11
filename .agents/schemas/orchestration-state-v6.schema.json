@@ -1,0 +1,1955 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agentic-workflows:schema:agent-orchestration/state-v6",
+  "title": "Agent Orchestration coordination register v6",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "orchestrator_id",
+    "decision_policy",
+    "gate_decisions",
+    "goal",
+    "inventory",
+    "sdlc_scope",
+    "routing_decisions",
+    "launches",
+    "tasks",
+    "state_revision",
+    "updated_at"
+  ],
+  "properties": {
+    "schema_version": {
+        "const": 6
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "orchestrator_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_policy": {
+      "const": "autopilot"
+    },
+    "gate_decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/gateDecision"
+      }
+    },
+    "goal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "last_checked_at"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "clarifying",
+            "active",
+            "completed",
+            "blocked"
+          ]
+        },
+        "last_checked_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete",
+        "limitation",
+        "rotation_offset"
+      ],
+      "properties": {
+        "complete": {
+          "type": "boolean"
+        },
+        "limitation": {
+          "type": "string",
+          "maxLength": 240
+        },
+        "rotation_offset": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "launches": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/launch"
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/task"
+      }
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "state_revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sdlc_scope": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/sdlcScope"
+        }
+      ]
+    },
+    "routing_decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/routingDecision"
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "gateDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_id",
+        "gate_type",
+        "decision",
+        "task_id",
+        "issue_number",
+        "pr_number",
+        "candidate_revision",
+        "deployment_identity",
+        "evidence_digests",
+        "authority_envelope_digest",
+        "reason_category",
+        "decided_at",
+        "resulting_state",
+        "validity_digest",
+        "request_digest",
+        "invalidated_at"
+      ],
+      "properties": {
+        "decision_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._:-]{0,199}$"
+        },
+        "gate_type": {
+          "enum": [
+            "goal_scope",
+            "plan",
+            "replan",
+            "implementation",
+            "draft_pr",
+            "pr_readiness",
+            "review_remediation",
+            "final_review",
+            "merge",
+            "synchronization",
+            "staging",
+            "production",
+            "provider_mutation",
+            "financial_activity",
+            "destructive_recovery",
+            "archive",
+            "cleanup",
+            "spawned_request"
+          ]
+        },
+        "decision": {
+          "enum": [
+            "proceed",
+            "revise",
+            "retry",
+            "skip",
+            "stop",
+            "blocked"
+          ]
+        },
+        "task_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "issue_number": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "pr_number": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "candidate_revision": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/fullGitObjectId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "deployment_identity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "evidence_digests": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/sha256"
+          }
+        },
+        "authority_envelope_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "reason_category": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]{0,39}$"
+        },
+        "decided_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "resulting_state": {
+          "enum": [
+            "active",
+            "waiting",
+            "blocked",
+            "completed",
+            "skipped",
+            "stopped"
+          ]
+        },
+        "validity_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "request_digest": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "invalidated_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "gate_type": {
+                "const": "spawned_request"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "request_digest": {
+                "$ref": "#/$defs/sha256"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "request_digest": {
+                "const": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "launch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "issue_number",
+        "requested_permission_profile",
+        "effective_permission_profile",
+        "requested_execution_mode",
+        "effective_execution_mode",
+        "selection_source",
+        "verification_state",
+        "blocker_category",
+        "thread_id",
+        "host_id",
+        "last_checked_at"
+      ],
+      "properties": {
+        "issue_number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "requested_permission_profile": {
+          "const": "full_access"
+        },
+        "effective_permission_profile": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z][a-z0-9_-]{0,39}$"
+        },
+        "requested_execution_mode": {
+          "enum": [
+            "goal",
+            "plan"
+          ]
+        },
+        "effective_execution_mode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z][a-z0-9_-]{0,39}$"
+        },
+        "selection_source": {
+          "enum": [
+            "operator",
+            "issue_contract"
+          ]
+        },
+        "verification_state": {
+          "enum": [
+            "requested",
+            "preflight_verified",
+            "created",
+            "verified",
+            "blocked"
+          ]
+        },
+        "blocker_category": {
+          "enum": [
+            null,
+            "host_capability",
+            "permission_mismatch",
+            "mode_mismatch",
+            "readback_unavailable"
+          ]
+        },
+        "thread_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "host_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "last_checked_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "archive_state": {
+                "const": "archived"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "const": "archived_known"
+              },
+              "closeout_result": {
+                "const": "archived"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "archived_known"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "archive_state": {
+                "const": "archived"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "run_mode": {
+                "const": "observed_peer"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "worktree_path": {
+                "const": null
+              },
+              "branch_name": {
+                "const": null
+              },
+              "base_revision": {
+                "const": null
+              },
+              "subject_thread_id": {
+                "const": null
+              },
+              "target_revision": {
+                "const": null
+              },
+              "review_outcome": {
+                "const": null
+              },
+              "cleanup_state": {
+                "const": "not_applicable"
+              },
+              "remediation_turn": {
+                "const": null
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "run_mode": {
+                "const": "issue_session"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "host_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "issue_number": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "worktree_path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "branch_name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "base_revision": {
+                "$ref": "#/$defs/fullGitObjectId"
+              },
+              "subject_thread_id": {
+                "const": null
+              },
+              "target_revision": {
+                "const": null
+              },
+              "review_outcome": {
+                "const": null
+              },
+              "cleanup_state": {
+                "not": {
+                  "const": "not_applicable"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "run_mode": {
+                "const": "issue_session"
+              },
+              "remediation_turn": {
+                "type": "object",
+                "properties": {
+                  "verification_state": {
+                    "const": "blocked"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "const": "blocked"
+              },
+              "blocker_category": {
+                "enum": [
+                  "user_input",
+                  "dependency",
+                  "tooling",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "run_mode": {
+                "const": "review_session"
+              }
+            }
+          },
+          "then": {
+            "anyOf": [
+              {
+                "properties": {
+                  "issue_number": {
+                    "type": "integer"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "pr_number": {
+                    "type": "integer"
+                  }
+                }
+              }
+            ],
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "archive_state": {
+                      "enum": [
+                        "unarchived",
+                        "archive_intent"
+                      ]
+                    },
+                    "status": {
+                      "const": "blocked"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "review_outcome": {
+                      "const": "blocked"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "archive_state": {
+                      "enum": [
+                        "unarchived",
+                        "archive_intent"
+                      ]
+                    },
+                    "review_outcome": {
+                      "const": "blocked"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "status": {
+                      "const": "blocked"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "archive_state": {
+                      "enum": [
+                        "unarchived",
+                        "archive_intent"
+                      ]
+                    },
+                    "review_outcome": {
+                      "enum": [
+                        "clear",
+                        "findings"
+                      ]
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "status": {
+                      "const": "completed"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "archive_state": {
+                      "enum": [
+                        "unarchived",
+                        "archive_intent"
+                      ]
+                    },
+                    "status": {
+                      "const": "completed"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "review_outcome": {
+                      "enum": [
+                        "clear",
+                        "findings",
+                        "stale"
+                      ]
+                    }
+                  }
+                }
+              }
+            ],
+            "properties": {
+              "host_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "worktree_path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "branch_name": {
+                "const": null
+              },
+              "base_revision": {
+                "$ref": "#/$defs/fullGitObjectId"
+              },
+              "subject_thread_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "target_revision": {
+                "$ref": "#/$defs/fullGitObjectId"
+              },
+              "review_outcome": {
+                "enum": [
+                  "pending",
+                  "clear",
+                  "findings",
+                  "blocked",
+                  "stale"
+                ]
+              },
+              "cleanup_state": {
+                "const": "not_applicable"
+              },
+              "remediation_turn": {
+                "const": null
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "run_mode": {
+                "const": "verification_session"
+              }
+            }
+          },
+          "then": {
+            "anyOf": [
+              {
+                "properties": {
+                  "issue_number": {
+                    "type": "integer"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "pr_number": {
+                    "type": "integer"
+                  }
+                }
+              }
+            ],
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "archive_state": {
+                      "enum": [
+                        "unarchived",
+                        "archive_intent"
+                      ]
+                    },
+                    "status": {
+                      "const": "blocked"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "review_outcome": {
+                      "const": "blocked"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "archive_state": {
+                      "enum": [
+                        "unarchived",
+                        "archive_intent"
+                      ]
+                    },
+                    "review_outcome": {
+                      "const": "blocked"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "status": {
+                      "const": "blocked"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "archive_state": {
+                      "enum": [
+                        "unarchived",
+                        "archive_intent"
+                      ]
+                    },
+                    "review_outcome": {
+                      "enum": [
+                        "passed",
+                        "failed"
+                      ]
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "status": {
+                      "const": "completed"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "archive_state": {
+                      "enum": [
+                        "unarchived",
+                        "archive_intent"
+                      ]
+                    },
+                    "status": {
+                      "const": "completed"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "review_outcome": {
+                      "enum": [
+                        "passed",
+                        "failed",
+                        "stale"
+                      ]
+                    }
+                  }
+                }
+              }
+            ],
+            "properties": {
+              "host_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "worktree_path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "branch_name": {
+                "const": null
+              },
+              "base_revision": {
+                "$ref": "#/$defs/fullGitObjectId"
+              },
+              "subject_thread_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "target_revision": {
+                "$ref": "#/$defs/fullGitObjectId"
+              },
+              "review_outcome": {
+                "enum": [
+                  "pending",
+                  "passed",
+                  "failed",
+                  "blocked",
+                  "stale"
+                ]
+              },
+              "cleanup_state": {
+                "const": "not_applicable"
+              },
+              "remediation_turn": {
+                "const": null
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "run_mode": {
+                "enum": [
+                  "observed_peer",
+                  "issue_session"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "requested_model": {
+                "const": null
+              },
+              "effective_model": {
+                "const": null
+              },
+              "requested_reasoning_effort": {
+                "const": null
+              },
+              "effective_reasoning_effort": {
+                "const": null
+              },
+              "settings_verification_state": {
+                "const": "not_applicable"
+              },
+              "settings_blocker_category": {
+                "const": null
+              },
+              "legacy_migration_state": {
+                "const": null
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "run_mode": {
+                "enum": [
+                  "review_session",
+                  "verification_session"
+                ]
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "legacy_migration_state": {
+                      "enum": [
+                        "v4_detached_review",
+                        "v4_unverified_settings"
+                      ]
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "requested_model": {
+                      "const": null
+                    },
+                    "effective_model": {
+                      "const": null
+                    },
+                    "requested_reasoning_effort": {
+                      "const": null
+                    },
+                    "effective_reasoning_effort": {
+                      "const": null
+                    },
+                    "settings_verification_state": {
+                      "const": "legacy_unverified"
+                    },
+                    "settings_blocker_category": {
+                      "const": "readback_unavailable"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "legacy_migration_state": {
+                      "const": null
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "requested_model": {
+                      "const": "gpt-5.6-luna"
+                    },
+                    "requested_reasoning_effort": {
+                      "const": "max"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "settings_verification_state": {
+                      "const": "verified"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "effective_model": {
+                      "const": "gpt-5.6-luna"
+                    },
+                    "effective_reasoning_effort": {
+                      "const": "max"
+                    },
+                    "settings_blocker_category": {
+                      "const": null
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "settings_verification_state": {
+                      "const": "requested"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "effective_model": {
+                      "const": null
+                    },
+                    "effective_reasoning_effort": {
+                      "const": null
+                    },
+                    "settings_blocker_category": {
+                      "const": null
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "settings_verification_state": {
+                      "const": "blocked"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "settings_blocker_category": {
+                      "enum": [
+                        "host_capability",
+                        "model_mismatch",
+                        "reasoning_mismatch",
+                        "readback_unavailable"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "required": [
+        "thread_id",
+        "host_id",
+        "project_id",
+        "title",
+        "status",
+        "issue_number",
+        "pr_number",
+        "cursor",
+        "archive_state",
+        "last_observed_at",
+        "last_action_at",
+        "terminal_verified",
+        "final_read",
+        "reconciled",
+        "needed_for_dependency",
+        "closeout_result",
+        "blocker_category",
+        "run_mode",
+        "worktree_path",
+        "branch_name",
+        "base_revision",
+        "subject_thread_id",
+        "target_revision",
+        "review_outcome",
+        "cleanup_state",
+        "requested_model",
+        "effective_model",
+        "requested_reasoning_effort",
+        "effective_reasoning_effort",
+        "settings_verification_state",
+        "settings_blocker_category",
+        "remediation_turn",
+        "legacy_migration_state"
+      ],
+      "properties": {
+        "thread_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "host_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "status": {
+          "enum": [
+            "active",
+            "waiting",
+            "needs_attention",
+            "blocked",
+            "completed",
+            "archived_known",
+            "excluded"
+          ]
+        },
+        "issue_number": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "pr_number": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "cursor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "archive_state": {
+          "enum": [
+            "unarchived",
+            "archive_intent",
+            "archived"
+          ]
+        },
+        "last_observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_action_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "terminal_verified": {
+          "type": "boolean"
+        },
+        "final_read": {
+          "type": "boolean"
+        },
+        "reconciled": {
+          "type": "boolean"
+        },
+        "needed_for_dependency": {
+          "type": "boolean"
+        },
+        "closeout_result": {
+          "enum": [
+            null,
+            "pending",
+            "reconciled",
+            "ineligible",
+            "archived",
+            "recovered"
+          ]
+        },
+        "blocker_category": {
+          "enum": [
+            null,
+            "user_input",
+            "dependency",
+            "tooling",
+            "unknown"
+          ]
+        },
+        "run_mode": {
+          "enum": [
+            "observed_peer",
+            "issue_session",
+            "review_session",
+            "verification_session"
+          ]
+        },
+        "worktree_path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        },
+        "branch_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 240
+        },
+        "base_revision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(?:[0-9a-fA-F]{40}|[0-9a-fA-F]{64})$"
+        },
+        "subject_thread_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "target_revision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(?:[0-9a-fA-F]{40}|[0-9a-fA-F]{64})$"
+        },
+        "review_outcome": {
+          "enum": [
+            null,
+            "pending",
+            "clear",
+            "findings",
+            "passed",
+            "failed",
+            "blocked",
+            "stale"
+          ]
+        },
+        "cleanup_state": {
+          "enum": [
+            "not_applicable",
+            "active",
+            "cleanup_intent",
+            "cleaned",
+            "preserved"
+          ]
+        },
+        "requested_model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z][a-z0-9._-]{0,63}$"
+        },
+        "effective_model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z][a-z0-9._-]{0,63}$"
+        },
+        "requested_reasoning_effort": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z][a-z0-9._-]{0,63}$"
+        },
+        "effective_reasoning_effort": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z][a-z0-9._-]{0,63}$"
+        },
+        "settings_verification_state": {
+          "enum": [
+            "not_applicable",
+            "requested",
+            "verified",
+            "blocked",
+            "legacy_unverified"
+          ]
+        },
+        "settings_blocker_category": {
+          "enum": [
+            null,
+            "host_capability",
+            "model_mismatch",
+            "reasoning_mismatch",
+            "readback_unavailable"
+          ]
+        },
+        "remediation_turn": {
+          "description": "A blocked Luna/max remediation readback requires the owning issue task to be blocked with a sanitized no-source-work blocker before the register can be persisted.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/remediationTurn"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "legacy_migration_state": {
+          "enum": [
+            null,
+            "v4_detached_review",
+            "v4_unverified_settings"
+          ]
+        }
+      }
+    },
+    "fullGitObjectId": {
+      "type": "string",
+      "pattern": "^(?:[0-9a-fA-F]{40}|[0-9a-fA-F]{64})$"
+    },
+    "remediationTurn": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "turn_id",
+        "requested_model",
+        "effective_model",
+        "requested_reasoning_effort",
+        "effective_reasoning_effort",
+        "verification_state",
+        "blocker_category"
+      ],
+      "properties": {
+        "turn_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "requested_model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z][a-z0-9._-]{0,63}$"
+        },
+        "effective_model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z][a-z0-9._-]{0,63}$"
+        },
+        "requested_reasoning_effort": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z][a-z0-9._-]{0,63}$"
+        },
+        "effective_reasoning_effort": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z][a-z0-9._-]{0,63}$"
+        },
+        "verification_state": {
+          "enum": [
+            "requested",
+            "verified",
+            "blocked"
+          ]
+        },
+        "blocker_category": {
+          "enum": [
+            null,
+            "host_capability",
+            "model_mismatch",
+            "reasoning_mismatch",
+            "readback_unavailable"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "verification_state": {
+                "const": "verified"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "requested_model": {
+                "const": "gpt-5.6-luna"
+              },
+              "effective_model": {
+                "const": "gpt-5.6-luna"
+              },
+              "requested_reasoning_effort": {
+                "const": "max"
+              },
+              "effective_reasoning_effort": {
+                "const": "max"
+              },
+              "blocker_category": {
+                "const": null
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "verification_state": {
+                "const": "requested"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "requested_model": {
+                "const": "gpt-5.6-luna"
+              },
+              "requested_reasoning_effort": {
+                "const": "max"
+              },
+              "effective_model": {
+                "const": null
+              },
+              "effective_reasoning_effort": {
+                "const": null
+              },
+              "blocker_category": {
+                "const": null
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "verification_state": {
+                "const": "blocked"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "blocker_category": {
+                "enum": [
+                  "host_capability",
+                  "model_mismatch",
+                  "reasoning_mismatch",
+                  "readback_unavailable"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "sdlcScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "issue_numbers",
+        "pr_number",
+        "normalized_selector",
+        "last_checked_at"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "all_open",
+            "issues",
+            "pr"
+          ]
+        },
+        "issue_numbers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "pr_number": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "normalized_selector": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "last_checked_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "const": "all_open"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "issue_numbers": {
+                "maxItems": 0
+              },
+              "pr_number": {
+                "type": "null"
+              },
+              "normalized_selector": {
+                "const": "all open issues and PRs"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "const": "issues"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "issue_numbers": {
+                "minItems": 1
+              },
+              "pr_number": {
+                "type": "null"
+              },
+              "normalized_selector": {
+                "pattern": "^issues #[1-9][0-9]*( #[1-9][0-9]*)*$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "const": "pr"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "issue_numbers": {
+                "maxItems": 0
+              },
+              "pr_number": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "normalized_selector": {
+                "pattern": "^PR #[1-9][0-9]*$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "routingDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "route_id",
+        "role",
+        "issue_number",
+        "pr_number",
+        "risk",
+        "requested_model",
+        "effective_model",
+        "requested_reasoning_effort",
+        "effective_reasoning_effort",
+        "session_policy",
+        "worktree_policy",
+        "effective_worktree_policy",
+        "fallback_from_model",
+        "verification_state",
+        "blocker_category",
+        "thread_id",
+        "host_id",
+        "last_checked_at"
+      ],
+      "properties": {
+        "route_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._:-]{0,199}$"
+        },
+        "role": {
+          "enum": [
+            "control_plane",
+            "inventory",
+            "planner",
+            "implementation",
+            "review",
+            "remediation",
+            "verification",
+            "ci_reconciliation",
+            "delivery"
+          ]
+        },
+        "issue_number": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "pr_number": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "risk": {
+          "enum": [
+            "low",
+            "standard",
+            "exceptional",
+            "critical"
+          ]
+        },
+        "requested_model": {
+          "enum": [
+            "gpt-5.6-luna",
+            "gpt-5.6-terra",
+            "gpt-5.6-sol"
+          ]
+        },
+        "effective_model": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "enum": [
+                "gpt-5.6-luna",
+                "gpt-5.6-terra",
+                "gpt-5.6-sol"
+              ]
+            }
+          ]
+        },
+        "requested_reasoning_effort": {
+          "enum": [
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        "effective_reasoning_effort": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "enum": [
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          ]
+        },
+        "session_policy": {
+          "enum": [
+            "reuse_control_plane",
+            "new_bounded",
+            "new_issue_owner",
+            "new_independent",
+            "reuse_issue_owner",
+            "new_delivery"
+          ]
+        },
+        "worktree_policy": {
+          "enum": [
+            "none",
+            "fresh_issue",
+            "detached_exact_head",
+            "reuse_issue",
+            "merged_revision"
+          ]
+        },
+        "effective_worktree_policy": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "enum": [
+                "none",
+                "fresh_issue",
+                "detached_exact_head",
+                "reuse_issue",
+                "merged_revision"
+              ]
+            }
+          ]
+        },
+        "fallback_from_model": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "enum": [
+                "gpt-5.6-luna",
+                "gpt-5.6-terra",
+                "gpt-5.6-sol"
+              ]
+            }
+          ]
+        },
+        "verification_state": {
+          "enum": [
+            "requested",
+            "verified",
+            "blocked"
+          ]
+        },
+        "blocker_category": {
+          "enum": [
+            null,
+            "readback_unavailable",
+            "model_mismatch",
+            "reasoning_mismatch",
+            "worktree_mismatch"
+          ]
+        },
+        "thread_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "host_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "last_checked_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "role"
+            ],
+            "properties": {
+              "role": {
+                "enum": [
+                  "planner",
+                  "implementation",
+                  "remediation"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "issue_number": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "role"
+            ],
+            "properties": {
+              "role": {
+                "enum": [
+                  "review",
+                  "verification",
+                  "delivery"
+                ]
+              }
+            }
+          },
+          "then": {
+            "anyOf": [
+              {
+                "properties": {
+                  "issue_number": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "pr_number": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "verification_state"
+            ],
+            "properties": {
+              "verification_state": {
+                "const": "requested"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "effective_model": {
+                "type": "null"
+              },
+              "effective_reasoning_effort": {
+                "type": "null"
+              },
+              "effective_worktree_policy": {
+                "type": "null"
+              },
+              "blocker_category": {
+                "type": "null"
+              },
+              "thread_id": {
+                "type": "null"
+              },
+              "host_id": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "verification_state"
+            ],
+            "properties": {
+              "verification_state": {
+                "const": "verified"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "effective_model": {
+                "enum": [
+                  "gpt-5.6-luna",
+                  "gpt-5.6-terra",
+                  "gpt-5.6-sol"
+                ]
+              },
+              "effective_reasoning_effort": {
+                "enum": [
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ]
+              },
+              "effective_worktree_policy": {
+                "enum": [
+                  "none",
+                  "fresh_issue",
+                  "detached_exact_head",
+                  "reuse_issue",
+                  "merged_revision"
+                ]
+              },
+              "blocker_category": {
+                "type": "null"
+              },
+              "thread_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "host_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "verification_state"
+            ],
+            "properties": {
+              "verification_state": {
+                "const": "blocked"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "blocker_category": {
+                "enum": [
+                  "readback_unavailable",
+                  "model_mismatch",
+                  "reasoning_mismatch",
+                  "worktree_mismatch"
+                ]
+              },
+              "thread_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "host_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

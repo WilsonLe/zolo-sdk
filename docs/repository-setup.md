@@ -1,0 +1,11 @@
+# Public repository setup — 12 November 2026
+
+The user requested initialization and an initial commit of this project, including documentation, self-contained `.agents` skills and the preserved 0.47 candidate, published publicly as **zolo-sdk**. Target: [WilsonLe/zolo-sdk](https://github.com/WilsonLe/zolo-sdk), default branch `main`. The package remains `zalo-personal-sdk@0.46.0`; the candidate remains separate and unfinished. This is a source-repository publication, not an npm release or provider deployment.
+
+Git author identity is repository-local, using the authenticated owner's GitHub noreply address. No global Git configuration or account credentials are copied. The ignore rules exclude dependency directories, Python/OS caches, environment files and local account/CLI stores. Root generated `dist/` and `types/zca/` remain ignored and are recreated by the documented build. The preserved candidate includes its original generated files and archive so its historical hashes remain verifiable.
+
+Before publication, the staged files and gzip archives were inspected for unexpected file types/paths, account-store names and selected credential patterns. Matches were synthetic invalid-URL cases, intentionally public loopback TLS fixture keys, runtime-generated test-key wrappers and upstream README example URLs. The TLS certificates identify themselves as `Zalo SDK Synthetic Loopback Fixture` and are used by local fixture tests. No real account store or credential was identified by these bounded checks. This is a publication check, not an exhaustive security audit.
+
+The handoff integrity command is `python3 scripts/check-project-handoff.py`. It checks the preserved candidate/archive/evidence, copied skill payloads, unchanged SDK baseline and local navigation. Historical SDK checks were not rerun for this publication. No live-account/native operations ran.
+
+The earlier [wrap-up review](project-wrapup-review.md) and [validation record](project-wrapup-validation.json) describe the pre-Git wrap-up. This publication updates README, AGENTS and the handoff's repository status; their earlier hashes remain historical. The candidate, vendor snapshot and historical evidence are preserved without rewriting their manifests. Future implementation changes should use issues and PRs against this repository.

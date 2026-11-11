@@ -1,0 +1,70 @@
+{
+  "candidateSha256": "d30bc6f557e39268807d09b78a841f453e8dbf8a74371809ef7abe9644b4f7a5",
+  "archiveSha256": "f1f2440fffab0e6f2e9797eb2590525e72c9291ed5dff1280ee132812ebb9388",
+  "reviewPass2Sha256": "7f0730814b59463b87c4180e60d109ef5d639adb1272b981f521ecc560ae5468",
+  "rootFullReviewReportRead": true,
+  "review": "wholecurrent045to046sourcedelta;0actionable/0openleads; historicalP2corrected",
+  "beforeVersion": "0.45.0",
+  "afterVersion": "0.46.0",
+  "changedPaths": [
+    "README.md",
+    "dist/chat-media-upload.d.ts",
+    "dist/chat-media-upload.js",
+    "dist/index.d.ts",
+    "dist/index.js",
+    "dist/signed-photo-upload.d.ts",
+    "dist/signed-photo-upload.js",
+    "docs/chat-media-upload.md",
+    "docs/operation-status.md",
+    "docs/operations.md",
+    "docs/signed-photo-upload.md",
+    "docs/signed-video-thumbnail-upload.md",
+    "docs/signed-video-upload.md",
+    "package-lock.json",
+    "package.json",
+    "src/chat-media-upload.ts",
+    "src/index.ts",
+    "src/signed-photo-upload.ts",
+    "test/signed-thumbnail046/callback-context.test.mjs",
+    "test/signed-thumbnail046/callback-destination.test.mjs",
+    "test/signed-thumbnail046/fixture046.mjs",
+    "test/signed-thumbnail046/thumbnail-core.test.mjs",
+    "test/signed-thumbnail046/thumbnail-fixture.mjs",
+    "test/signed-thumbnail046/thumbnail-ownership.test.mjs",
+    "test/types/signed-thumbnail-guide-types.ts",
+    "test/types/signed-thumbnail-private-exports-types.ts",
+    "test/types/signed-thumbnail-public-types.ts"
+  ],
+  "changedFiles": 27,
+  "newFiles": 10,
+  "all998MainOwnedFilesExact": true,
+  "all1174BundledDependenciesExact": true,
+  "noDeletions": true,
+  "savedSessionsAndUnrelatedFilesOutsideWhitelist": true,
+  "dependencyLeavesCopiedBeforeBarrels": true,
+  "rollbackSnapshot": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.45-postreview-final-candidate-snapshot",
+  "mainBuildChecks": "build0;36thumbnailtests0fail/skip/cancel;CLIhelp0;all998ownedand1174dependencyfilesstillbyteexact",
+  "goalComplete": false,
+  "rootSoleRuntimeOwner": true,
+  "actualMainChecks": {
+    "main-integrated-build": {
+      "record": "zalo-sdk-0.46-main-integrated-build.process.json",
+      "sha256": "1af8f45f99d805dc44e291003ab2de984eb4e970381ccce64e43cc7ac2efdb62",
+      "log": "zalo-sdk-0.46-main-integrated-build.log",
+      "logSha256": "101623238a0d2b1d137fcf5342a8d38258d2cdf4fab3134f34c8cc8fa80a5a53"
+    },
+    "main-integrated-thumbnail36": {
+      "record": "zalo-sdk-0.46-main-integrated-thumbnail36.process.json",
+      "sha256": "aeb07ee663d574c46fa44a502859cf5c208748f2bd329ce6c65cab239b9c8013",
+      "log": "zalo-sdk-0.46-main-integrated-thumbnail36.log",
+      "logSha256": "652df872f96576ed96807642f46b3e67ae942b68fe51b66b6b74dbdb75b7a556"
+    },
+    "main-integrated-cli-help": {
+      "record": "zalo-sdk-0.46-main-integrated-cli-help.process.json",
+      "sha256": "4be48a0b49937ba06de2ef53bb3f5df2616a7d648c31031b5da05ea539062209",
+      "log": "zalo-sdk-0.46-main-integrated-cli-help.log",
+      "logSha256": "a9f667b0496086d280f8522809859c866173ea4e4222cb3a2181ff142316a8a9"
+    }
+  },
+  "mainChecksPassed": true
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: Interactive Plan
+  short_description: Review, revise, approve, and track a plan
+  default_prompt: "Use $interactive-plan to show me the short plan, let me explore the engineering details, and capture my decision before implementation."

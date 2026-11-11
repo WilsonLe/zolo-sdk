@@ -1,0 +1,6 @@
+interface:
+  display_name: "Engineering Exploration"
+  short_description: "Explore designs and prototypes"
+  default_prompt: "Use $engineering-exploration to evaluate the design question with a focused architecture survey or disposable prototype."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Engineering Review"
+  short_description: "Review correctness, trust boundaries and evidence"
+  default_prompt: "Use $engineering-review to try to disprove correctness across the full change and affected contracts. Map coverage, challenge security candidates against existing controls, then report supported actionable findings, unresolved leads, counterevidence, coverage limits and merge risk."
+policy:
+  allow_implicit_invocation: true

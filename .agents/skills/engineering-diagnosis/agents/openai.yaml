@@ -1,0 +1,6 @@
+interface:
+  display_name: "Engineering Diagnosis"
+  short_description: "Reproduce and narrow hard bugs"
+  default_prompt: "Use $engineering-diagnosis to build a symptom-specific feedback loop, find the cause, and verify the original path after the fix."
+policy:
+  allow_implicit_invocation: true

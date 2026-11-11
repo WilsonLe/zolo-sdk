@@ -1,0 +1,16 @@
+import { createPrivateKey } from 'node:crypto';
+
+const hex = (value) => Buffer.from(value, 'hex');
+
+// Separate transfer generated and read by the original WASM, including its metadata handoff.
+export const metadataCiphertext = hex('0a207a054ba65c44947fe09bf22fe5167154c7998e4fff66de5374aae9a3e142aa06127de68dc790d9ce73ef46dab608a81273b90d2f6a7513c1563cc670929b17e2eabb01d90bf01fb55f3e42f8790e6b7f3440af10bab13c296d70382198d900bd05a621af8b25d3c57b627e501968429061c2a6797e2de13460709ff9d210be511109b98963bd889c9e360cbfdf28638c93592b7af95f4da06c9f9cfb2ff51a1a40250f59fa2f04c810e3f413f23d762320dec01b3eab55620229f7c98e97f0ff8353cea36cc265502c5c1039746fb5520399992306d8de67449ab43830335cbb0d222105fb989f740e09f4cc5857905f2c91e8ebfabb14f09a34619a48f8f03966464e132a2ef3c6c76ac46d70690b6f42352f3a45ef51d0030c809c531a572c46cb0807878aeaa12da883c229ab4af00aad6da33001388cd7c585edf684afe101');
+export const metadataContent = hex('2194afee8663626049030fc4ef79c1fcee281a304394aaeaa46acb75b3a8958d645f067b78470bc1476e16759fc00975ee2322302d6825901c2720064baabcb35ca2c097b648aaa407f9fded68f7');
+export const metadataRecord = hex('0a207a054ba65c44947fe09bf22fe5167154c7998e4fff66de5374aae9a3e142aa061220f3a01654931634291f546240d00bfef81f9d5e75d2ea95901de255b169354712188cd7c585edf684afe101');
+function x25519PrivateKey(value) {
+  return createPrivateKey({ format: 'der', type: 'pkcs8', key: Buffer.concat([hex('302e020100300506032b656e04220420'), hex(value)]) });
+}
+export const metadataKeys = {
+  receiverIdentityKey: x25519PrivateKey('384bb0938206463a930e077a707ece9a8cebc3ffc17eaee2ef424cfe8b44a44d'),
+  receiverEphemeralKey: x25519PrivateKey('c8dcf988bf50357297f9c5f6ff64729d14111bf04af3390ad33ee0272a12d353'),
+  senderIdentity: hex('05fb989f740e09f4cc5857905f2c91e8ebfabb14f09a34619a48f8f03966464e13'),
+};

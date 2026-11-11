@@ -1,0 +1,47 @@
+{
+  "changes": {
+    "README.md": {
+      "authorSha256": "f0a31af847e4774ac812a6cb3e1ea4b30380013f446b69144978f573be6613b8",
+      "reconciledSha256": "7cedc18c411652f10942ca2c33cc29581086edd8e562be8e0da62e06e0ac4a35"
+    },
+    "docs/chat-media-upload.md": {
+      "authorSha256": "cec1798cd773030829640db1a4590c4e856851538448ea57e89f801b3d352f37",
+      "reconciledSha256": "408e7984a266ace9901bf1252cce985aeb4098b091e11ef5a14656603617b509"
+    },
+    "docs/signed-video-thumbnail-upload.md": {
+      "authorSha256": "9e896c48e3f5b7140d0716f16ff20b9db09242f1125cc624197697a89d2065bd",
+      "reconciledSha256": "6c4205f3afe95cfca293971b7e094c1bc166da127408994efbf14cc3a144f9ce"
+    },
+    "docs/signed-video-upload.md": {
+      "authorSha256": "9472cbabd377a6810a234825bfa249ecd526cb1f380daaf798d3e015c0d2c820",
+      "reconciledSha256": "cf96c7c4ab08f60425d5029dafad902e4172f505a754dd28d0f2560a4d49901a"
+    },
+    "docs/signed-photo-upload.md": {
+      "authorSha256": "f52845191d07908dbe208f64f0ebda0f4d62434d91e3f6b4c611c45ab99aaada",
+      "reconciledSha256": "333c1a01590099c26b5b28830dc4977808516f31bcc3a2a9c402808d49e90cf4"
+    },
+    "docs/operations.md": {
+      "authorSha256": "c0441b2a5107aea88e25dfd8561562fe693b684001de32f91773383baf5d249a",
+      "reconciledSha256": "83a1e6064f3b5291c9f1428682682389bf11605bc21ed69cb6b300f3fd345661"
+    },
+    "docs/operation-status.md": {
+      "authorSha256": "0673ce91bf699d3b61a88c48ab040f404e18cc0a038c574fbc08164d4ddf2084",
+      "reconciledSha256": "6b0c859165db254aca29892529abc4861b4af0c76db6a1d369213cb480756b7a"
+    },
+    "docs/saved-video-thumbnail-upload.md": {
+      "authorSha256": "5abd5f5f095eb7e88356fbbb64c3dfb05c9f50f0532e8ee9ca30864f0620b432",
+      "reconciledSha256": "57d5a69dfd3189c56b288f50f68fa079a0f00347f403856fef4fdca6f4b56d89"
+    }
+  },
+  "source319InheritedPlus22NewAllPassed": true,
+  "exactGuide35StrictPass": true,
+  "allThreeExamplesUnchangedIncludingFenceNewline": true,
+  "installedAndReviewEvidenceSeparate": true,
+  "preparationErrors": [
+    "Overbroad pending-text assertion matched unrelated history; no docs written on that attempt.",
+    "First pack failed ENOENT without archive because output directory was not yet prepared.",
+    "Code-block hash check initially omitted final fence newline. Same example bytes verified including newline."
+  ],
+  "initialPackLogRetained": true,
+  "noProductCodeOrAssertionsChanged": true
+}

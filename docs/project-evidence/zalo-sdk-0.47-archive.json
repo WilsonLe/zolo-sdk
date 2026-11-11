@@ -1,0 +1,8 @@
+{
+  "archive": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.47-package/zalo-personal-sdk-0.47.0.tgz",
+  "bytes": 2853184,
+  "sha256": "73d1ec9954d8bef0919ceac640ba63ffc6c6e40dd7460a75b5533a7d4b848add",
+  "regularPayloads": 1710,
+  "allPayloadsEqualSourceOrDependency": true,
+  "noLinksTraversalOrDuplicates": true
+}

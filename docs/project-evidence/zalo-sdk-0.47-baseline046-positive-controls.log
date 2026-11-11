@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: BC01 existing signed photo crosses actual 800/feed and explicitly sends a genuine receipt
+ok 1 - BC01 existing signed photo crosses actual 800/feed and explicitly sends a genuine receipt
+  ---
+  duration_ms: 21.932834
+  type: 'test'
+  ...
+# Subtest: BC02 existing photo deadline remains per request across negotiation and two chunks
+ok 2 - BC02 existing photo deadline remains per request across negotiation and two chunks
+  ---
+  duration_ms: 404.219292
+  type: 'test'
+  ...
+# Subtest: BC03 user raw video + raw thumbnail + explicit forward
+ok 3 - BC03 user raw video + raw thumbnail + explicit forward
+  ---
+  duration_ms: 12.155708
+  type: 'test'
+  ...
+# Subtest: BC03 group raw video + raw thumbnail + explicit forward
+ok 4 - BC03 group raw video + raw thumbnail + explicit forward
+  ---
+  duration_ms: 4.52825
+  type: 'test'
+  ...
+# Subtest: public roots exclude internal media issuance/action/preparation and private subpaths
+ok 5 - public roots exclude internal media issuance/action/preparation and private subpaths
+  ---
+  duration_ms: 0.507792
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 766.879958

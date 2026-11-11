@@ -1,0 +1,10 @@
+{
+  "installedAsar": "/Applications/Zalo.app/Contents/Resources/app.asar",
+  "bytes": 183869581,
+  "sha256": "9217d0e419c4f2b89033cf23e89073de0052d7417e6e16270afc2d68e31896d2",
+  "sourceReport": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-next-mydocuments-thumbnail-carrier.md",
+  "sourceReportSha256": "81b631768f09f73bfa3ca5ce71ab7b8ca929691ed5392f9d83c51e9fb8e61940",
+  "all1174BundledFilesUnchanged": true,
+  "staticOnly": true,
+  "targetOrNativeExecuted": false
+}

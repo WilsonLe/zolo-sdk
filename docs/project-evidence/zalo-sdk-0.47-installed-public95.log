@@ -1,0 +1,587 @@
+TAP version 13
+# Subtest: BC01 existing signed photo crosses actual 800/feed and explicitly sends a genuine receipt
+ok 1 - BC01 existing signed photo crosses actual 800/feed and explicitly sends a genuine receipt
+  ---
+  duration_ms: 23.715667
+  type: 'test'
+  ...
+# Subtest: BC02 existing photo deadline remains per request across negotiation and two chunks
+ok 2 - BC02 existing photo deadline remains per request across negotiation and two chunks
+  ---
+  duration_ms: 399.3115
+  type: 'test'
+  ...
+# Subtest: BC03 user raw video + raw thumbnail + explicit forward
+ok 3 - BC03 user raw video + raw thumbnail + explicit forward
+  ---
+  duration_ms: 7.526708
+  type: 'test'
+  ...
+# Subtest: BC03 group raw video + raw thumbnail + explicit forward
+ok 4 - BC03 group raw video + raw thumbnail + explicit forward
+  ---
+  duration_ms: 5.3655
+  type: 'test'
+  ...
+# Subtest: malformed nonbyte chunks cannot bypass the 64 KiB response bound
+ok 5 - malformed nonbyte chunks cannot bypass the 64 KiB response bound
+  ---
+  duration_ms: 23.218625
+  type: 'test'
+  ...
+# Subtest: malformed shadowed-byte-length chunks cannot bypass the 64 KiB response bound
+ok 6 - malformed shadowed-byte-length chunks cannot bypass the 64 KiB response bound
+  ---
+  duration_ms: 5.4195
+  type: 'test'
+  ...
+# Subtest: a fixed shared-backed ordinary byte range is copied without changing response semantics
+ok 7 - a fixed shared-backed ordinary byte range is copied without changing response semantics
+  ---
+  duration_ms: 4.488708
+  type: 'test'
+  ...
+# {"boundary":"prePOST","field":"destination","changed":true,"calls":4,"httpCalls":0,"receiptIssued":false,"code":"destination-unavailable","submitted":false,"acceptedChunks":0}
+# Subtest: a trailing getContext callback cannot change destination before prePOST
+ok 8 - a trailing getContext callback cannot change destination before prePOST
+  ---
+  duration_ms: 20.352334
+  type: 'test'
+  ...
+# {"boundary":"prePOST","field":"account","changed":true,"calls":4,"httpCalls":0,"receiptIssued":false,"code":"feed-unavailable","submitted":false,"acceptedChunks":0}
+# Subtest: a trailing getContext callback cannot change account before prePOST
+ok 9 - a trailing getContext callback cannot change account before prePOST
+  ---
+  duration_ms: 4.561417
+  type: 'test'
+  ...
+# {"boundary":"receipt","field":"destination","changed":true,"calls":3,"httpCalls":1,"receiptIssued":false,"code":"destination-unavailable","submitted":true,"acceptedChunks":1}
+# Subtest: a trailing getContext callback cannot change destination before receipt
+ok 10 - a trailing getContext callback cannot change destination before receipt
+  ---
+  duration_ms: 5.557792
+  type: 'test'
+  ...
+# {"boundary":"receipt","field":"account","changed":true,"calls":3,"httpCalls":1,"receiptIssued":false,"code":"feed-unavailable","submitted":true,"acceptedChunks":1}
+# Subtest: a trailing getContext callback cannot change account before receipt
+ok 11 - a trailing getContext callback cannot change account before receipt
+  ---
+  duration_ms: 3.020083
+  type: 'test'
+  ...
+# Subtest: callback-backed account or advertised fields cannot grant the final binding
+ok 12 - callback-backed account or advertised fields cannot grant the final binding
+  ---
+  duration_ms: 5.112334
+  type: 'test'
+  ...
+# {"phase":"prePOST","changed":true,"calls":3,"httpCalls":0,"receiptIssued":false,"code":"destination-unavailable","submitted":false,"acceptedChunks":0}
+# Subtest: a trailing session callback cannot change the advertised destination before POST
+ok 13 - a trailing session callback cannot change the advertised destination before POST
+  ---
+  duration_ms: 22.743583
+  type: 'test'
+  ...
+# {"phase":"receipt","changed":true,"calls":2,"httpCalls":1,"receiptIssued":false,"code":"destination-unavailable","submitted":true,"acceptedChunks":1}
+# Subtest: a trailing session callback cannot change the advertised destination before receipt issuance
+ok 14 - a trailing session callback cannot change the advertised destination before receipt issuance
+  ---
+  duration_ms: 6.542916
+  type: 'test'
+  ...
+# Subtest: public roots exclude internal media issuance/action/preparation and private subpaths
+ok 15 - public roots exclude internal media issuance/action/preparation and private subpaths
+  ---
+  duration_ms: 0.601
+  type: 'test'
+  ...
+# Subtest: AB01 plain: fake abort event does not consume later native abort
+ok 16 - AB01 plain: fake abort event does not consume later native abort
+  ---
+  duration_ms: 28.5755
+  type: 'test'
+  ...
+# Subtest: AB01 shadowed: fake abort event does not consume later native abort
+ok 17 - AB01 shadowed: fake abort event does not consume later native abort
+  ---
+  duration_ms: 22.479292
+  type: 'test'
+  ...
+# Subtest: AB01 stopped: fake abort event does not consume later native abort
+ok 18 - AB01 stopped: fake abort event does not consume later native abort
+  ---
+  duration_ms: 22.536417
+  type: 'test'
+  ...
+# Subtest: SVS00 Saved thumbnail operation is root-only and reuses the existing neutral thumbnail error
+ok 19 - SVS00 Saved thumbnail operation is root-only and reuses the existing neutral thumbnail error
+  ---
+  duration_ms: 0.809708
+  type: 'test'
+  ...
+# Subtest: SVS01 user advertisement alone derives exact feature9 including safe numeric advertisements
+ok 20 - SVS01 user advertisement alone derives exact feature9 including safe numeric advertisements
+  ---
+  duration_ms: 24.724542
+  type: 'test'
+  ...
+# Subtest: SVS02 group advertisement derives normalized feature9 and exact caller PNG bytes
+ok 21 - SVS02 group advertisement derives normalized feature9 and exact caller PNG bytes
+  ---
+  duration_ms: 2.896
+  type: 'test'
+  ...
+# Subtest: SVS03 two-chunk JPEG and PNG retain full size offsets sequential bytes and full URL cookies
+ok 22 - SVS03 two-chunk JPEG and PNG retain full size offsets sequential bytes and full URL cookies
+  ---
+  duration_ms: 20.279125
+  type: 'test'
+  ...
+# Subtest: SVS04 invalid pure fields and supplied destinations fail before any API callback or effect
+ok 23 - SVS04 invalid pure fields and supplied destinations fail before any API callback or effect
+  ---
+  duration_ms: 19.452167
+  type: 'test'
+  ...
+# Subtest: SVS05 valid pre-abort performs no API lookup while otherwise invalid initial account and feed stay TypeErrors
+ok 24 - SVS05 valid pre-abort performs no API lookup while otherwise invalid initial account and feed stay TypeErrors
+  ---
+  duration_ms: 5.530583
+  type: 'test'
+  ...
+# Subtest: SVS06 account callback native abort or elapsed deadline outranks its bad return or throw
+ok 25 - SVS06 account callback native abort or elapsed deadline outranks its bad return or throw
+  ---
+  duration_ms: 151.459833
+  type: 'test'
+  ...
+# Subtest: SVS07 pure intent and byte range are copied before the first account callback
+ok 26 - SVS07 pure intent and byte range are copied before the first account callback
+  ---
+  duration_ms: 2.25175
+  type: 'test'
+  ...
+# Subtest: SVS08 unavailable advertisements and callback-backed critical data cannot bind and permit explicit retry
+ok 27 - SVS08 unavailable advertisements and callback-backed critical data cannot bind and permit explicit retry
+  ---
+  duration_ms: 15.152417
+  type: 'test'
+  ...
+# Subtest: SVS14 Saved transport retains early terminal ACK incomplete stale and refused facts without replay
+ok 28 - SVS14 Saved transport retains early terminal ACK incomplete stale and refused facts without replay
+  ---
+  duration_ms: 10.982125
+  type: 'test'
+  ...
+# Subtest: SVS15 Saved projection keeps org HD exact provider local ID and protected-result rules
+ok 29 - SVS15 Saved projection keeps org HD exact provider local ID and protected-result rules
+  ---
+  duration_ms: 13.204666
+  type: 'test'
+  ...
+# Subtest: SVS09 target or session changes while awaiting readiness prevent original negotiation handoff
+ok 30 - SVS09 target or session changes while awaiting readiness prevent original negotiation handoff
+  ---
+  duration_ms: 87.564
+  type: 'test'
+  ...
+# Subtest: SVS10 the last queued API callback cannot change binding stop the feed or abort then hand off
+ok 31 - SVS10 the last queued API callback cannot change binding stop the feed or abort then hand off
+  ---
+  duration_ms: 134.795833
+  type: 'test'
+  ...
+# Subtest: SVS11 cookie callbacks cannot change target account or native-abort into a first POST
+ok 32 - SVS11 cookie callbacks cannot change target account or native-abort into a first POST
+  ---
+  duration_ms: 10.857542
+  type: 'test'
+  ...
+# Subtest: SVS12 target changes after ACK never retarget and retain phase-specific actual ACK facts
+ok 33 - SVS12 target changes after ACK never retarget and retain phase-specific actual ACK facts
+  ---
+  duration_ms: 12.912875
+  type: 'test'
+  ...
+# Subtest: SVS13 final getOwnId and getContext callback families are fenced before POST and issuance
+ok 34 - SVS13 final getOwnId and getContext callback families are fenced before POST and issuance
+  ---
+  duration_ms: 22.406625
+  type: 'test'
+  ...
+# Subtest: SVS16 total deadline and native cancellation bound readiness ACK and ignoring late adapters or bodies
+ok 35 - SVS16 total deadline and native cancellation bound readiness ACK and ignoring late adapters or bodies
+  ---
+  duration_ms: 370.441458
+  type: 'test'
+  ...
+# Subtest: SVS17 genuine sent correlation fake abort and late negotiation responses cannot revive a cancelled Saved job
+ok 36 - SVS17 genuine sent correlation fake abort and late negotiation responses cannot revive a cancelled Saved job
+  ---
+  duration_ms: 3.135292
+  type: 'test'
+  ...
+# Subtest: SVS18 Saved9 ordinary0and5 photo16 and video2 share the actual 32-pending feed lane
+ok 37 - SVS18 Saved9 ordinary0and5 photo16 and video2 share the actual 32-pending feed lane
+  ---
+  duration_ms: 4.826791
+  type: 'test'
+  ...
+# Subtest: SVS19 Saved staging shares cross-media active guards releases preHTTP and retires actual handoffs
+ok 38 - SVS19 Saved staging shares cross-media active guards releases preHTTP and retires actual handoffs
+  ---
+  duration_ms: 5.166584
+  type: 'test'
+  ...
+# Subtest: SVS20 genuine Saved thumbnail supplies captured user or group destination for explicit MP4 upload and send
+ok 39 - SVS20 genuine Saved thumbnail supplies captured user or group destination for explicit MP4 upload and send
+  ---
+  duration_ms: 4.400083
+  type: 'test'
+  ...
+# Subtest: SVS21 existing receipt owner rejects misuse and keeps refusal uncertain concurrent and used-send states
+ok 40 - SVS21 existing receipt owner rejects misuse and keeps refusal uncertain concurrent and used-send states
+  ---
+  duration_ms: 8.003625
+  type: 'test'
+  ...
+# Subtest: SV01 exact direct feature-2 negotiation and upload-only result
+ok 41 - SV01 exact direct feature-2 negotiation and upload-only result
+  ---
+  duration_ms: 21.494625
+  type: 'test'
+  ...
+# Subtest: SV02 exact group destination and feature remain video-specific
+ok 42 - SV02 exact group destination and feature remain video-specific
+  ---
+  duration_ms: 4.166584
+  type: 'test'
+  ...
+# Subtest: SV03 default 3 MiB multipart boundary uses exact bytes, total size and global offsets
+ok 43 - SV03 default 3 MiB multipart boundary uses exact bytes, total size and global offsets
+  ---
+  duration_ms: 10.897333
+  type: 'test'
+  ...
+# Subtest: SV04 explicit multipart boundaries remain sequential across exact and short chunks
+ok 44 - SV04 explicit multipart boundaries remain sequential across exact and short chunks
+  ---
+  duration_ms: 68.140042
+  type: 'test'
+  ...
+# Subtest: SV05 both native terminal statuses stop early and count an invalid terminal DTO ACK
+ok 45 - SV05 both native terminal statuses stop early and count an invalid terminal DTO ACK
+  ---
+  duration_ms: 9.044625
+  type: 'test'
+  ...
+# Subtest: SV06 continuation after the final bytes is incomplete with no extra empty POST
+ok 46 - SV06 continuation after the final bytes is incomplete with no extra empty POST
+  ---
+  duration_ms: 1.658125
+  type: 'test'
+  ...
+# Subtest: SV07 irrelevant headers, IDs, unsent and foreign feed responses have no authority
+ok 47 - SV07 irrelevant headers, IDs, unsent and foreign feed responses have no authority
+  ---
+  duration_ms: 4.4465
+  type: 'test'
+  ...
+# Subtest: SV08 matched bad file identity, duplicates, first URL and envelope fail before HTTP
+ok 48 - SV08 matched bad file identity, duplicates, first URL and envelope fail before HTTP
+  ---
+  duration_ms: 12.302542
+  type: 'test'
+  ...
+# Subtest: SV09 public frame mutation cannot grant success or corrupt the private original success
+ok 49 - SV09 public frame mutation cannot grant success or corrupt the private original success
+  ---
+  duration_ms: 2.594125
+  type: 'test'
+  ...
+# Subtest: SV10 shared photo/video 32-pending lane releases a slot without cross-settlement
+ok 50 - SV10 shared photo/video 32-pending lane releases a slot without cross-settlement
+  ---
+  duration_ms: 3.938
+  type: 'test'
+  ...
+# Subtest: SV11 provider and local file IDs keep exact identity and provenance
+ok 51 - SV11 provider and local file IDs keep exact identity and provenance
+  ---
+  duration_ms: 21.952291
+  type: 'test'
+  ...
+# Subtest: SV12 org precedes hd but malformed present renditions never downgrade
+ok 52 - SV12 org precedes hd but malformed present renditions never downgrade
+  ---
+  duration_ms: 11.757708
+  type: 'test'
+  ...
+# Subtest: SV13 secure keys and both capsule families in either rendition reject after known ACK
+ok 53 - SV13 secure keys and both capsule families in either rendition reject after known ACK
+  ---
+  duration_ms: 27.222833
+  type: 'test'
+  ...
+# Subtest: SV14 HTTP/body uncertainty, forged errors and cookie exceptions preserve only private current facts
+ok 54 - SV14 HTTP/body uncertainty, forged errors and cookie exceptions preserve only private current facts
+  ---
+  duration_ms: 18.936334
+  type: 'test'
+  ...
+# Subtest: SV15 stale/refused numeric results preserve earlier ACKs without replay or renewal
+ok 55 - SV15 stale/refused numeric results preserve earlier ACKs without replay or renewal
+  ---
+  duration_ms: 9.253167
+  type: 'test'
+  ...
+# Subtest: SV16 strict own-data admission permits class/null prototypes and rejects unsafe inputs before effects
+ok 56 - SV16 strict own-data admission permits class/null prototypes and rejects unsafe inputs before effects
+  ---
+  duration_ms: 4.056167
+  type: 'test'
+  ...
+# Subtest: SV17 pre-abort, readiness, pending cancellation, stopped feed and fake-event rearming
+ok 57 - SV17 pre-abort, readiness, pending cancellation, stopped feed and fake-event rearming
+  ---
+  duration_ms: 38.930833
+  type: 'test'
+  ...
+# Subtest: SV18 one total budget covers negotiation, accepted chunk and later stalled POST
+ok 58 - SV18 one total budget covers negotiation, accepted chunk and later stalled POST
+  ---
+  duration_ms: 352.405459
+  type: 'test'
+  ...
+# Subtest: SV19 stubborn adapters/bodies/cookies and fake adapter-signal events cannot revive or hide terminal state
+ok 59 - SV19 stubborn adapters/bodies/cookies and fake adapter-signal events cannot revive or hide terminal state
+  ---
+  duration_ms: 241.303667
+  type: 'test'
+  ...
+# Subtest: SV20 owned snapshots survive byte backing-buffer and input metadata mutation after negotiation
+ok 60 - SV20 owned snapshots survive byte backing-buffer and input metadata mutation after negotiation
+  ---
+  duration_ms: 3.448708
+  type: 'test'
+  ...
+# Subtest: SV21 active cross-media guard and permanent submitted actions share their existing owner
+ok 61 - SV21 active cross-media guard and permanent submitted actions share their existing owner
+  ---
+  duration_ms: 4.9315
+  type: 'test'
+  ...
+# Subtest: SV22 genuine signed receipt plus raw thumbnail explicitly forwards direct and group metadata
+ok 62 - SV22 genuine signed receipt plus raw thumbnail explicitly forwards direct and group metadata
+  ---
+  duration_ms: 5.922167
+  type: 'test'
+  ...
+# Subtest: SV23 existing receipt/send owner rejects forged pairs and preserves refusal/unknown/concurrent rules
+ok 63 - SV23 existing receipt/send owner rejects forged pairs and preserves refusal/unknown/concurrent rules
+  ---
+  duration_ms: 7.189042
+  type: 'test'
+  ...
+# Subtest: SV24 public exports and constructor expose readonly neutral facts rather than issuance authority
+ok 64 - SV24 public exports and constructor expose readonly neutral facts rather than issuance authority
+  ---
+  duration_ms: 0.144459
+  type: 'test'
+  ...
+# {"fired":true,"nativeAborted":true,"code":"aborted","submitted":false,"httpCalls":0,"acceptedChunks":0}
+# Subtest: a genuine abort in the fake-event rearm gap prevents the next POST
+ok 65 - a genuine abort in the fake-event rearm gap prevents the next POST
+  ---
+  duration_ms: 22.336916
+  type: 'test'
+  ...
+# Subtest: ST01 direct JPEG keeps present numeric feature zero and an exact upload-only receipt
+ok 66 - ST01 direct JPEG keeps present numeric feature zero and an exact upload-only receipt
+  ---
+  duration_ms: 22.813292
+  type: 'test'
+  ...
+# Subtest: ST02 group PNG normalizes only group prefix and emits fixed feature five without dimensions
+ok 67 - ST02 group PNG normalizes only group prefix and emits fixed feature five without dimensions
+  ---
+  duration_ms: 4.810625
+  type: 'test'
+  ...
+# Subtest: ST03 default two-chunk JPEG uses full size/global offsets and exact full-URL cookies
+ok 68 - ST03 default two-chunk JPEG uses full size/global offsets and exact full-URL cookies
+  ---
+  duration_ms: 12.371917
+  type: 'test'
+  ...
+# Subtest: ST04 PNG boundary and explicit chunk sizes are sequential and ignore raw chunk configuration
+ok 69 - ST04 PNG boundary and explicit chunk sizes are sequential and ignore raw chunk configuration
+  ---
+  duration_ms: 30.744709
+  type: 'test'
+  ...
+# Subtest: ST05 own-data admission rejects hostile fields, unsafe controls, wrong encodings and oversize
+ok 70 - ST05 own-data admission rejects hostile fields, unsafe controls, wrong encodings and oversize
+  ---
+  duration_ms: 16.263083
+  type: 'test'
+  ...
+# Subtest: ST08 all ordinary renditions reject protected capsules, malformed alternates, secure keys and JXL
+ok 71 - ST08 all ordinary renditions reject protected capsules, malformed alternates, secure keys and JXL
+  ---
+  duration_ms: 71.105833
+  type: 'test'
+  ...
+# Subtest: ST09 exact provider IDs and falsey local IDs preserve provenance and shared session uniqueness
+ok 72 - ST09 exact provider IDs and falsey local IDs preserve provenance and shared session uniqueness
+  ---
+  duration_ms: 28.578042
+  type: 'test'
+  ...
+# Subtest: ST10 numeric terminal codes acknowledge only actual early bytes; final continuation is incomplete
+ok 73 - ST10 numeric terminal codes acknowledge only actual early bytes; final continuation is incomplete
+  ---
+  duration_ms: 8.257541
+  type: 'test'
+  ...
+# Subtest: ST11 stale/refused numeric results preserve earlier ACKs and never renew, retry or fall back
+ok 74 - ST11 stale/refused numeric results preserve earlier ACKs and never renew, retry or fall back
+  ---
+  duration_ms: 6.974209
+  type: 'test'
+  ...
+# Subtest: ST12 malformed HTTP/body responses are uncertain after handoff with bounded byte-native reads
+ok 75 - ST12 malformed HTTP/body responses are uncertain after handoff with bounded byte-native reads
+  ---
+  duration_ms: 25.904041
+  type: 'test'
+  ...
+# Subtest: ST13 cookie failures distinguish pre-handoff from known ACKs and clear snapshots at the next phase
+ok 76 - ST13 cookie failures distinguish pre-handoff from known ACKs and clear snapshots at the next phase
+  ---
+  duration_ms: 5.226209
+  type: 'test'
+  ...
+# Subtest: ST14 constructor errors are neutral and untrusted callback errors cannot donate progress
+ok 77 - ST14 constructor errors are neutral and untrusted callback errors cannot donate progress
+  ---
+  duration_ms: 4.1145
+  type: 'test'
+  ...
+# Subtest: ST06 owned input and native typed-array range survive synchronous and later caller mutation
+ok 78 - ST06 owned input and native typed-array range survive synchronous and later caller mutation
+  ---
+  duration_ms: 1.304542
+  type: 'test'
+  ...
+# Subtest: ST07 org then hd fallback is coherent and thumb-only never becomes the receipt URL
+ok 79 - ST07 org then hd fallback is coherent and thumb-only never becomes the receipt URL
+  ---
+  duration_ms: 13.817625
+  type: 'test'
+  ...
+# Subtest: TH00 new thumbnail root operation exists and exposes only neutral readonly public error facts
+ok 80 - TH00 new thumbnail root operation exists and exposes only neutral readonly public error facts
+  ---
+  duration_ms: 0.910958
+  type: 'test'
+  ...
+# Subtest: ST15 missing malformed and unreadable advertised destinations fail privately before effects and release action
+ok 81 - ST15 missing malformed and unreadable advertised destinations fail privately before effects and release action
+  ---
+  duration_ms: 56.926291
+  type: 'test'
+  ...
+# Subtest: ST16 advertised normalized kind plus ID excludes only the exact private destination and never guesses own UID
+ok 82 - ST16 advertised normalized kind plus ID excludes only the exact private destination and never guesses own UID
+  ---
+  duration_ms: 7.267083
+  type: 'test'
+  ...
+# Subtest: ST17 advertisement changes are checked before each POST and receipt; account replacement remains feed-unavailable
+ok 83 - ST17 advertisement changes are checked before each POST and receipt; account replacement remains feed-unavailable
+  ---
+  duration_ms: 14.744958
+  type: 'test'
+  ...
+# Subtest: ST18 pre-abort readiness pending fake/native cancellation and stopped feed keep honest submission facts
+ok 84 - ST18 pre-abort readiness pending fake/native cancellation and stopped feed keep honest submission facts
+  ---
+  duration_ms: 46.747708
+  type: 'test'
+  ...
+# Subtest: ST19 total deadline spans negotiation an ACK and a later abort-ignoring adapter
+ok 85 - ST19 total deadline spans negotiation an ACK and a later abort-ignoring adapter
+  ---
+  duration_ms: 302.598208
+  type: 'test'
+  ...
+# Subtest: ST20 same callback fake plus real native abort wins over provider success or unreadable advertisement
+ok 86 - ST20 same callback fake plus real native abort wins over provider success or unreadable advertisement
+  ---
+  duration_ms: 3.352666
+  type: 'test'
+  ...
+# Subtest: ST21 ignoring adapters bodies and cookie hooks obey native cancellation/deadline and late work stays inert
+ok 87 - ST21 ignoring adapters bodies and cookie hooks obey native cancellation/deadline and late work stays inert
+  ---
+  duration_ms: 558.648084
+  type: 'test'
+  ...
+# Subtest: ST22 exact ingress correlation rejects unsent foreign and mutated public-frame authority
+ok 88 - ST22 exact ingress correlation rejects unsent foreign and mutated public-frame authority
+  ---
+  duration_ms: 7.2875
+  type: 'test'
+  ...
+# Subtest: ST23 matched negotiation DTOs require exact identity strict endpoint and private original egress
+ok 89 - ST23 matched negotiation DTOs require exact identity strict endpoint and private original egress
+  ---
+  duration_ms: 11.48875
+  type: 'test'
+  ...
+# Subtest: ST24 existing photo video and new thumbnail share the genuine 32-pending feed lane
+ok 90 - ST24 existing photo video and new thumbnail share the genuine 32-pending feed lane
+  ---
+  duration_ms: 4.324541
+  type: 'test'
+  ...
+# Subtest: ST25 active cross-media guard releases pre-HTTP actions and permanently retires actual handoffs
+ok 91 - ST25 active cross-media guard releases pre-HTTP actions and permanently retires actual handoffs
+  ---
+  duration_ms: 4.590666
+  type: 'test'
+  ...
+# Subtest: ST26 genuine signed MP4 and signed thumbnail explicitly forward direct and group metadata
+ok 92 - ST26 genuine signed MP4 and signed thumbnail explicitly forward direct and group metadata
+  ---
+  duration_ms: 4.219792
+  type: 'test'
+  ...
+# Subtest: ST27 genuine receipt owner rejects copied wrong-kind foreign and mismatched signed thumbnail pairs
+ok 93 - ST27 genuine receipt owner rejects copied wrong-kind foreign and mismatched signed thumbnail pairs
+  ---
+  duration_ms: 6.70575
+  type: 'test'
+  ...
+# Subtest: ST28 new signed thumbnail keeps existing final-send refusal uncertain and concurrent consumption rules
+ok 94 - ST28 new signed thumbnail keeps existing final-send refusal uncertain and concurrent consumption rules
+  ---
+  duration_ms: 4.248042
+  type: 'test'
+  ...
+# Subtest: an adapter returning no Response preserves uncertain handoff without a receipt or retry
+ok 95 - an adapter returning no Response preserves uncertain handoff without a receipt or retry
+  ---
+  duration_ms: 20.177125
+  type: 'test'
+  ...
+1..95
+# tests 95
+# suites 0
+# pass 95
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5697.826208

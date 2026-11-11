@@ -1,0 +1,113 @@
+{
+  "trackedFiles": 1762,
+  "archivesScanned": 4,
+  "archiveMembersScanned": 3441,
+  "hits": [
+    {
+      "path": "test/desktop-password-login.test.mjs",
+      "kind": "credential-url",
+      "line": 351
+    },
+    {
+      "path": "test/desktop-recovery.test.mjs",
+      "kind": "credential-url",
+      "line": 486
+    },
+    {
+      "path": "test/desktop-session.test.mjs",
+      "kind": "credential-url",
+      "line": 97
+    },
+    {
+      "path": "test/fixtures/listener-tls/listener-key.pem",
+      "kind": "private-key-pem",
+      "line": 1
+    },
+    {
+      "path": "test/gif-forward.test.mjs",
+      "kind": "credential-url",
+      "line": 113
+    },
+    {
+      "path": "test/pcloud-phone-key-enrollment.test.mjs",
+      "kind": "private-key-pem",
+      "line": 41
+    },
+    {
+      "path": "test/resource040/tls/listener-key.pem",
+      "kind": "private-key-pem",
+      "line": 1
+    },
+    {
+      "path": "test/sticker-catalog.test.mjs",
+      "kind": "credential-url",
+      "line": 124
+    },
+    {
+      "path": "work-in-progress/sdk-0.47/test/desktop-password-login.test.mjs",
+      "kind": "credential-url",
+      "line": 351
+    },
+    {
+      "path": "work-in-progress/sdk-0.47/test/desktop-recovery.test.mjs",
+      "kind": "credential-url",
+      "line": 486
+    },
+    {
+      "path": "work-in-progress/sdk-0.47/test/desktop-session.test.mjs",
+      "kind": "credential-url",
+      "line": 97
+    },
+    {
+      "path": "work-in-progress/sdk-0.47/test/fixtures/listener-tls/listener-key.pem",
+      "kind": "private-key-pem",
+      "line": 1
+    },
+    {
+      "path": "work-in-progress/sdk-0.47/test/gif-forward.test.mjs",
+      "kind": "credential-url",
+      "line": 113
+    },
+    {
+      "path": "work-in-progress/sdk-0.47/test/pcloud-phone-key-enrollment.test.mjs",
+      "kind": "private-key-pem",
+      "line": 41
+    },
+    {
+      "path": "work-in-progress/sdk-0.47/test/resource040/tls/listener-key.pem",
+      "kind": "private-key-pem",
+      "line": 1
+    },
+    {
+      "path": "work-in-progress/sdk-0.47/test/sticker-catalog.test.mjs",
+      "kind": "credential-url",
+      "line": 124
+    },
+    {
+      "path": "work-in-progress/zalo-personal-sdk-0.47.0.tgz!package/node_modules/tldts/README.md",
+      "kind": "credential-url",
+      "line": 204
+    },
+    {
+      "path": "work-in-progress/zalo-personal-sdk-0.47.0.tgz!package/node_modules/tldts/README.md",
+      "kind": "credential-url",
+      "line": 221
+    },
+    {
+      "path": "work-in-progress/zalo-personal-sdk-0.47.0.tgz!package/node_modules/tldts/README.md",
+      "kind": "credential-url",
+      "line": 238
+    },
+    {
+      "path": "work-in-progress/zalo-personal-sdk-0.47.0.tgz!package/node_modules/tldts/README.md",
+      "kind": "credential-url",
+      "line": 257
+    }
+  ],
+  "disposition": "All matches inspected: synthetic invalid URL fixtures; intentionally public synthetic loopback TLS keys; runtime-generated test PEM wrapper; upstream tldts README examples. No actual account credential identified by these bounded patterns.",
+  "patterns": "GitHub token, AWS access-key ID, private-key PEM, credential-bearing URL, Slack token",
+  "scope": "Staged project and recursively inspected gzip/tar members; content not emitted in this record.",
+  "handoffIntegrity": "passed:1007candidate,38evidence,132vendor,996unchangedbaseline,424localLinks",
+  "whitespace": "Initial full snapshot check flags preserved TSV empty-column tabs and upstream/fixture whitespace. Preserved bytes intentionally unchanged; publication-edited text passes focused git diff --cached --check.",
+  "stagedFilesAtFinalCommit": 1764
+}

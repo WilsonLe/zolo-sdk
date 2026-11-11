@@ -1,0 +1,103 @@
+# Account-feature contracts and remaining gaps
+
+Retained-companion login is now a separate opt-in SDK 0.43 lifecycle on the existing pairing/login/store owners: original-secret retention, explicit selected history, current scan/list and account-UID checks, version 2 secret-bearing plaintext records, and private accepted-state recovery after later failures. All 45 controlled 0.43 groups pass locally; native/live relink success remains unverified. Remote revocation, application device policy and broader account parity remain open. [Retained contract and complete example](desktop-relink.md)
+
+The separate SDK 0.44 [bounded Desktop encrypted recovery owner](desktop-e2ee-recovery.md) now joins global513/713/516 intake, whole-516 preprocessing, explicit peer/current-archive session ownership, atomic results/state/replay/progress/outbox persistence and a first-party file store. Its collect/recollect/dispatch calls are explicit; intent/unknown controls are not replayed and repair is storage only. Initial content is partial: other media/groups and active lifecycle demands remain whole blocked raw inputs. Explicit recollection resolves only inherited incomplete-collection causes, preserving every ancestor prefix and duplicate while retaining sticky `continuityUnproven`. Reset/eviction, input gaps and unknown outbox remain barriers. Processing limits leave captured rows pending; cutoff skips produce unauthenticated notices without content. Exact committed-candidate adoption can be followed by separate storage-only continuity-gap bookkeeping, with no changed crypto/raw/results/outbox or provider request. None of this proves original-history completeness. Current focused workspace and installed-package checks cover the bounded owner and recovery corrections. Native/live peer/history interoperability plus installed-key import remain open. This does not close the account, voice/resource, phone-transfer or other family gaps below. [Local verification scope](operations.md#sdk-044-local-verification)
+
+This source-only triage records installed Desktop builders, consumers and the remaining implementation prerequisites. Translation settings/manual messages, automatic/suggested translation, voice transcription and profile reads have dedicated modules documented in [translation.md](translation.md), [translation-realtime.md](translation-realtime.md), [voice-transcription.md](voice-transcription.md) and [profile-metadata.md](profile-metadata.md). Native voice URL recovery, suggested-conversation result typing and profile mode remain pending below. This note does not claim live provider availability or entitlement. No live requests, local account secrets or profile data were used for this source investigation. The related two-route emoji-status read slice is documented in [emoji-status.md](emoji-status.md).
+
+The separate [cloud viewer, queue-page and locator operations](cloud-media.md) now implement explicit credential acquisition, forward queue pages and cloud-encrypted lookup for caller-owned noise IDs. Queue action records supply inputs for application-owned message associations; a complete reconciled index and unique noise-ID selection remain unproved because the installed message-key index is nonunique. The [offline PCloud decoder](pcloud-resource.md) now opens explicit GCM/CTR files and separate encrypted metadata with caller-supplied standard RSA keys. The experimental phone/PCloud coordinator and explicit040 ciphertext fetch now have separate implemented owners; native phone/self-session/resource interoperability, trusted key/message association and large-file/cache integration remain unverified or incomplete. The full existing-message voice recovery gap stays open. Separate explicit cloud usage, My Documents usage, subscription/migration-info and settings reads now return optional safe projections with raw data; they do not supply the missing media/resource contracts or modify plan/settings. [Family viewer/profile/usage](family-media.md) now has its separate credential/read workflow, without identity merging, totals, administration or media-key recovery. A separate bounded live check of packaged 0.28 verified viewer/queue/one selected locator; it did not recover/decrypt an original voice file or invoke the account-state/family endpoints.
+
+The pinned `zca-js@2.2.0` has no implementation of the paths below, including its dynamic suffix builders. Its `updateActiveStatus` uses profile `ping`/`deactive`, friend recommendations use `/api/friend/recommendsv2/list`, sticker discovery uses sticker-domain routes, and `sendVoice` sends an existing voice locator. Those are separate operations, not coverage of profile `mode`, suggested conversations or transcription.
+
+All offsets below are zero-based UTF-8 bytes in these exact shipped files:
+
+| Name | Packed member | SHA-256 |
+| --- | --- | --- |
+| SHARED | `pc-dist/lazy/default-login-main-startup-shared-worker-znotification.4bb5e1e2c2e9bab4f7b3.js` | `32090ad21922a614ad11a12bff9709d269bff273667faa9314d237712abca38e` |
+| MAIN | `pc-dist/lazy/main-startup.89bb530b91927fd5dd28.js` | `899609aa5a03f339a77b896d524fadb8f84b9831033041039bca12c14f595121` |
+
+These are installed Zalo Desktop 26.11.10, build 26.11.10.3400. An earlier REA analyzer attempt failed in its macOS Swift ownership helper, so the original route triage used integrity-checked packed bytes. Subsequent task-local CLI recovery completed static trust-WASM inspection without changing global MCP/configuration settings or evaluating the target. Source evidence and the older live results remain distinct.
+
+## AI translation
+
+All five commands use the authenticated `ai_features` service. The shared account response decoder at SHARED 13,736,118 (`kCOK`) checks the outer error code, decrypts `data` with the account key, checks the inner error code, and returns inner `data`. MAIN 2,262,235 is the concrete transport: GET appends common query fields and only appends encrypted `params` if an argument was supplied; POST appends common query fields and sends form `params=encodeURIComponent(accountAES(JSON.stringify(payload)))`.
+
+| Operation | Command | Route / verb | Exact request |
+| --- | --- | --- | --- |
+| Read settings | 13395 | GET `/api/aifeatures/translate/v1/setting` | Common query only; no encrypted `params`, IMEI or language injection. |
+| Update settings | 13396 | POST `/api/aifeatures/translate/v1/setting` | `{threadId,type,settings:{suggest,auto,srcLang,desLang}}`, with `suggest` and `auto` encoded as `1` or `0`. |
+| Manual translation | 13397 | POST `/api/aifeatures/translate/v1/manual` | `{reqId,threadId,type,srcLang,desLang,msg:{text,metadata}}`. Metadata includes `immutableItems`. |
+| Automatic translation | 13398 | POST `/api/aifeatures/translate/v1/auto` | `{reqId,threadId,type,srcLang,desLang,msgs}`. Each message has `{text,metadata:{cmi,gmi,immutableItems}}`. |
+| Suggested/send translation | 13399 | POST `/api/aifeatures/translate/v1/suggest` | `{reqId,threadId,type,srcLang,desLang,msg}`. Message has `{text,metadata:{immutableItems}}`. |
+
+The constants and exact paths are SHARED 10,493,920–10,494,348. `type` is `0` for direct chat and `1` for group chat. The language set is `vi`, `en`, `zh-hans`, `zh-hant`, `ko`; aliases include `kr→ko`, `zh-cn→zh-hans`, `zh-tw→zh-hant`, and `zh→zh-hans`. The shipped default supported pairs are `en:vi`, `zh-hans:vi`, `ko:vi`, `vi:en`, `vi:zh-hans`, `vi:ko`. These constants are not proof that every account can use every pair.
+
+Settings read returns `{version,info:[{threadId,type,settings}]}`. The consumer converts a finite positive `version` to a number or falls back to zero; `suggest`/`auto` become true only when their numeric value is `1`; string source/destination language members are retained. MAIN 2,593,150–2,594,000 (`8jrC`) contains the parser, MAIN 2,119,275 the read wrapper, and MAIN 2,164,470 the update caller. The update wrapper awaits the HTTP acknowledgement but does not use a response layout (MAIN 2,120,098). A control `update_setting` event can also deliver `{threadId,type,settings,version}` as an object or JSON string.
+
+Manual translation is synchronous: the HTTP result must be an object with `reqId` equal to the sent ID after string conversion and a string `text`. Optional `metadata.immutableItems` defaults to an empty list in the display consumer. MAIN 2,120,997 contains this request/result check; the exact wire projection is MAIN 2,172,070–2,172,850. Desktop prefixes its generated manual request ID with `pcw_` (SHARED 10,494,403; MAIN 2,171,611), uses request-ID node 257, and bounds the wait with its manual-translation timeout. The completed generator and explicit immutable-item reconstruction trace are documented in [translation.md](translation.md).
+
+Automatic and suggested translation HTTP replies are acknowledgements, not the final translated text. The shared control dispatcher routes the `translate` collection at SHARED 12,030,581. MAIN 2,126,540–2,127,400 dispatches these `act` values:
+
+| Control `act` | Final payload and consumed identity |
+| --- | --- |
+| `translate_incoming_resp` | `{err,body:{reqId,threadId,type,srcLang,desLang,msgs}}`; each result message exposes `text` and `metadata:{cmi,gmi,immutableItems}`. |
+| `suggest_translate_resp` | `{err,body:{reqId,threadId,type,msg:{text,metadata:{immutableItems}}}}`. |
+
+The automatic consumer indexes pending requests by `reqId`, requires `err===0`, matches each returned `cmi`/`gmi` pair against that request's original messages, buffers results until HTTP acknowledgement and deferred-consumer readiness, ignores unexpected/duplicate messages, and completes only after the expected originals resolve. MAIN 2,180,059 builds the pair identity; MAIN 2,181,318 onward validates up to 50 messages and registers pending state; MAIN 2,183,650–2,186,300 processes acknowledgements and chunks. Shipped telemetry explicitly detects providers corrupting string IDs into numbers (MAIN 2,116,163 onward), so a future implementation must preserve exact identities.
+
+The suggested consumer requires both HTTP success and a valid successful control result, accepting either arrival order. It indexes by `reqId`, rejects nonzero `err`, requires nonempty string output `msg.text`, and ignores stale/duplicate results. MAIN 2,227,070 is the exact wire projection; MAIN 2,228,532–2,231,200 contains HTTP/control coordination and timeout state. Request-ID nodes are 256 (suggest), 257 (manual) and 258 (auto).
+
+The synchronous and shared-feed adapters now implement these contracts with separate node IDs, protected-substring restoration, HTTP/control coordination, partial auto chunks, duplicates, timeout and cancellation. [Realtime translation](translation-realtime.md) records the actual raw wrapper, bounded retained results and fixtures. Provider availability remains unverified: this SDK does not infer translated text from an HTTP acknowledgment or recreate hidden Desktop state.
+
+## Voice-to-text
+
+`POST /api/aifeatures/voice2text` is command 13394 on `ai_features`. MAIN 2,092,331 constructs common query fields and an account-AES form body containing exactly `{url}`; there is no IMEI or language member. It decodes the standard nested encrypted account response. Constants are SHARED 13,976,898 onward.
+
+The successful HTTP result must supply nonempty `req_id`; otherwise the coordinator records a submit-without-ID failure (MAIN 2,100,889–2,101,721). The HTTP result is not transcription text. SHARED 12,030,581 routes the control collection `voice2text`; MAIN 2,093,779 filters `act:'convert_finish'`, requires object `data` with nonempty string `req_id` and numeric `err`, and maps `{req_id,has_more,url,err,text}` to `{requestId,isTruncated,url,errorCode,text}` through SHARED 15,935,998 (`v9mf`).
+
+The coordinator at MAIN 2,097,900–2,102,000 correlates the final result by the server-issued ID, buffers early results that precede HTTP completion, remembers timed-out IDs for late-result handling, and bounds conversion using remote `transcribe.convert_timeout_ms` or a 10-second default. Existing messages can recover an expired/non-fetchable voice URL using Desktop's message recovery path before submitting; that recovery requires a separate established message/locator contract. The SDK's [voice transcription](voice-transcription.md) adapter requires an explicit provider-fetchable URL and caller-owned shared realtime feed. Automatic URL recovery remains outside that adapter; no live submission was performed for this research.
+
+## Profile and conversation reads
+
+| Route / command | Exact request | Proven response consumer / remaining scope |
+| --- | --- | --- |
+| GET `/api/social/profile/extra` / 11864 | `profile` service, common query plus AES `{profile_id:targetUserId,imei:deviceId}`. Builder SHARED 12,498,905; standard decoder wrapper at 12,109,430. | Optional `photos` is mapped to `{url:photos[n],meta:photoMetas?.[n]}` at SHARED 345,958. Optional `groupIds` is copied for common-group/invitation UI at 2,739,199, 9,850,120 and 11,401,952. Exact photo metadata member layout is unproven; retain it raw. Implemented in [profile metadata](profile-metadata.md), including independently traced optional one-layer JSON-string decoding at SHARED 13,937,821. |
+| GET `/api/social/profile/verification/status` / 12150 | `profile` service, common query only; no encrypted `params`. Builder SHARED 12,533,981. | The nested account-AES response exposes numeric `status`, consumed/cached at SHARED 9,160,529. Enum at 15,404,456: `1` verified, `-5` needs verification, `-3` pending manual review, `-2` pending contact review, `-1` automatic review failed, `-6` manual review failed, `-4` forced re-verification. MAIN 1,269,451 uses it to choose community banners/upgrade eligibility. A read wrapper must not invoke the adjacent separate `push-oa` mutation. |
+| GET `/api/suggestconvers/list` / 11233 | `conversation` service (SHARED 14,700,551), common query plus AES `{language}`; no IMEI. Builder SHARED 12,500,401; standard decoder wrapper `getChatNight` at 12,087,155. | No non-wrapper call or result-field consumer was found across extracted `pc-dist/**/*.js`; repeated worker bundles contain copies of the same builder/wrapper. The exact request is established, but a typed useful result remains unproven. Defer a typed feature instead of guessing that it has the friend-recommendation layout. |
+
+## Active friend Desktop/Web client read
+
+`getFriendClientActivity` now implements the positively traced `/api/social/friend/active-pcweb` read (12072), extending the existing profile owner. It is a common-query-only profile GET with standard nested account decoding and HTTP200 qualification, without IMEI/language/target injection or an extra JSON layer. The active invitation picker calls it at SHARED13,623,326 and consumes per-key `isActivePC === 0 && isActiveWeb === 0` at13,621,787. That does not establish a binary flag enum, current presence or timestamp/retention guarantee. The helper preserves every opaque key/raw row and projects only finite numeric fields. [Full read contract](profile-metadata.md#friend-desktopweb-activity-observations)
+
+Existing-message ordinary GIF forwarding is also implemented through its separate numeric-type4 source projection and singular `/forward` request. This fills that explicit operation while leaving ordinary file/photo clone/renew/album and rich multi-target gaps open; the later explicit standalone-file metadata operation below is separate from that orchestration. [GIF forwarding](gif-media.md#forward-an-existing-ordinary-gif)
+
+## Profile mode is a mutation
+
+`GET /api/social/profile/mode` (11865) is a setting change despite its verb. SHARED 12,499,158 builds common query plus encrypted `{mode}` on `profile`, without IMEI injection. SHARED 12,109,537 delegates through the standard encrypted response decoder. The shared UI enum is `AVAILABLE:0`, `AWAY:1`, `BUSY:2`, `INVISIBLE:3` at 1,533,674. Profile consumers read `user_mode` and honor the `enable_busy_mode` feature flag.
+
+No non-wrapper caller of this HTTP method was found in extracted `pc-dist`; the UI also has separate realtime status behavior. Thus enum and builder alone do not establish current server acknowledgement shape, authoritative status persistence or interaction with the realtime mode-setting flow. Keep this mutation pending rather than equating it with upstream active-status ping/deactivation. No mutation was performed.
+
+
+## Implemented explicit file and passive business observations
+
+`forwardFile` now covers the source-established singular numeric-type1 ordinary standalone-file request using caller-normalized URL/name/extension/checksum/size metadata. It applies the common filename NFC transform, explicit destination/TTL/visibility/provenance, current-envelope refusal qualification and one-shot outcome semantics. Rich folder/thumbnail/clone policy, source renewal/download/reupload, photo/album and rich multi-target orchestration remain separate gaps. Existing explicit renewal and initial upload APIs are not automatically invoked. [File forwarding](file-media.md)
+
+The profile extractor now exposes self `profile/biz` patch observations without applying package/onboarding state. The separate business-message extractor covers quick-message create/update records and deletion ID lists plus auto-reply version invalidations, including the source fallback for unknown acts with truthy raw version. The existing pinned HTTP business/quick/auto APIs remain the authenticated counterparts; they are not duplicated. Native cache/DB/version comparison, clock, feature gating, automatic fetch and account entitlement remain application/provider behavior. Both additions retain local/static evidence rather than live delivery claims. [Profile events](account-profile-events.md) · [Business messaging events](business-message-events.md)
+
+
+## Implemented photo and exact catalog boundaries
+
+The two ordinary standalone photo helpers now cover the complete selected normal projection (including explicit original/JXL metadata) and current non-AI photo-sticker projection. Their title/HD/WebP/properties/photoId/pStickerType rules are separate; AI constants are not reused. Rich clone/share/reupload, automatic URL conversion/image processing, album member/skeleton state and multi-target orchestration remain open. [Photo forwarding](photo-media.md#forward-existing-ordinary-photos)
+
+The catalog owner now exposes all eight passive `prod_catalog` acts as ordered observations, including empty product deletion lists and fieldless catalog-delete signals. It performs no reverse dedup, cache/version update, registration, fetch or delete on receipt. Explicit catalog-service POSTs cover native product/view12057 and product/delete12042; view returns the direct row without a fabricated complete DTO/correlation, while deletion preserves unconsumed ACK data and uncertain-submission semantics. The single-delete callable native facade/task/controller/adapter/registry chain is established, but the bounded source search did not prove it is the current normal UI deletion choice. Product/server availability, ownership and deletion effects need separate live evidence. [Product catalogs](product-catalog.md)
+
+
+## Ordinary rich multi-recipient forwarding
+
+SDK0.41 adds the explicit source-established TEXT/RTF, STICKER and LINK batch request as `forwardOrdinaryMessage`. One selected source goes to a homogeneous ordinary destination set, with caller-owned client IDs and separate selected TTLs. Raw native `success`/`failed` data and qualified per-target reports remain distinct from unreported/ambiguous targets; a current account-envelope success is not complete recipient delivery. All 34 synthetic forwarding fixtures pass locally. Album/other media, native E2EE partition, large-group fallback, preview/clone/source renewal and the complete GUI share orchestrator retain their own gaps. [Ordinary batch request and observations](message-forwarding.md)
+
+
+## Ordinary static-location forwarding
+
+SDK 0.42 adds the selected singular location projection as `forwardLocation`: one static point and caller-selected JSON title/description/place metadata, explicit target/action/TTL/group visibility, one FILE POST and bounded raw reply with independently optional message IDs. It shares ordinary forwarding ownership and fixed errors with the rich batch helper. All 31 synthetic location fixtures pass locally. Native GPS/map display/current-location state, recipient orchestration, encrypted dispatch and rendering remain separate. [Static-location request and observations](location-forwarding.md)

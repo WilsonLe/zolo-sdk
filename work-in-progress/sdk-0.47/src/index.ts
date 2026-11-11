@@ -1,0 +1,219 @@
+/// <reference types="node" preserve="true" />
+
+export * from '#zca';
+export { PersonalZalo, ZaloSignInError } from './client.js';
+export type { PersonalZaloOptions, QrLoginEvent, QrLoginOptions } from './client.js';
+export { ZaloWebSignOutError } from './web-signout.js';
+export type { ZaloWebSignOutResult } from './web-signout.js';
+export { getRawTrustedDeviceList, parseRawTrustedDeviceList, verifyTrustedDeviceList } from './trusted-devices.js';
+export type { RawTrustedDeviceCompanion, RawTrustedDeviceList, TrustedDeviceListVerification, TrustedDeviceListVerificationOptions } from './trusted-devices.js';
+export * from './trusted-device-events.js';
+export { createTrustedDevicePairing, TrustedDevicePairingError } from './trusted-device-pairing.js';
+export type {
+  TrustedDevicePairing, TrustedDevicePairingConfirmation, TrustedDevicePairingOptions, TrustedDevicePairingResult,
+  TrustedDevicePairingScan, TrustedDeviceRelinkState,
+} from './trusted-device-pairing.js';
+export { createDesktopAuthTransport, DesktopAuthError } from './desktop-auth.js';
+export type {
+  DesktopAuthOptions, DesktopAuthServerInfo, DesktopAuthTransport, DesktopQrApprovalResult, DesktopQrChallenge,
+  DesktopQrMaterial, DesktopQrScanResult,
+} from './desktop-auth.js';
+export { connectDesktopSession, createDesktopSessionCredentials, DesktopSessionError } from './desktop-session.js';
+export type { DesktopSessionConnection, DesktopSessionCredentials, DesktopSessionIdentity, DesktopSessionOptions } from './desktop-session.js';
+export { CloudMediaError, acquireCloudMediaViewer, restoreCloudMediaViewer, getCloudDownloadUrls, getCloudMediaQueuePage, fetchCloudResourceCiphertext,
+  getCloudMediaUsage, getCloudMyDocumentsUsage, getCloudAccountInfo, getCloudMediaSettings,
+  acquireFamilyMediaViewer, restoreFamilyMediaViewer, getFamilyMediaProfile, getCloudFamilyUsage } from './cloud-media.js';
+export type {
+  CloudMediaOptions, CloudResourceFetchOptions, CloudMediaViewerMetadata, CloudMediaViewer, CloudDownloadUrlsResult, CloudMediaFailure, CloudMediaStage,
+  CloudMediaQueueTrackingSource, CloudMediaQueueOptions, CloudMediaQueuePage,
+  CloudMediaServiceUsageFields, CloudMediaUsageFields, CloudMediaSubscriptionFields, CloudMediaMigrationFields,
+  CloudMediaAccountInfoFields, CloudMediaSettingsFields, CloudMediaUsageResult, CloudAccountInfoResult, CloudMediaSettingsResult,
+  FamilyMediaViewerMetadata, FamilyMediaViewer, FamilyMediaMemberProfileFields, FamilyMediaMemberFields,
+  FamilyMediaProfileFields, FamilyMediaProfileResult, CloudFamilyUsageFields, CloudFamilyUsageKnown, CloudFamilyUsageResult,
+} from './cloud-media.js';
+export { createPCloudResourceDecoder, PCloudResourceError } from './pcloud-resource.js';
+export { PCloudPhoneKeyError } from './pcloud-phone-key-state.js';
+export { restorePCloudPhoneKeyEnrollment } from './pcloud-phone-key-enrollment.js';
+export type {
+  PCloudPhoneKeyAdmission, PCloudPhoneKeyOutcome, PCloudPhoneKeyVersionObservation,
+  PCloudPhoneKeyEnrollmentMetadata, PCloudPhoneKeyEnrollment, PCloudPhoneKeyEnrollmentBinding,
+  PCloudPhoneKeyFailure, PCloudPhoneKeyStage,
+} from './pcloud-phone-key-state.js';
+export type {
+  PCloudResourceAlgorithmVersion, PCloudResourceDecoderOptions, OpenedPCloudResource, PCloudResourceDecoder,
+  PCloudResourceFailure, PCloudResourceStage,
+} from './pcloud-resource.js';
+export { loginDesktopWithQR, DesktopLoginError } from './desktop-login.js';
+export type { DesktopLoginCallbackContext, DesktopLoginEvent, DesktopLoginOptions, DesktopLoginPersistence,
+  DesktopLoginPersistenceState, DesktopLoginResult, DesktopLoginStage } from './desktop-login.js';
+export { FileDesktopSessionStore } from './desktop-session-store.js';
+export type { DesktopSessionRecord, DesktopSessionStore } from './desktop-session-store.js';
+export { renewDesktopSession, DesktopSessionRenewalError } from './desktop-session-renewal.js';
+export type { DesktopSessionRenewalOptions } from './desktop-session-renewal.js';
+export { signOutDesktopSession, DesktopSignOutError } from './desktop-signout.js';
+export type { DesktopSignOutOptions, DesktopSignOutResult } from './desktop-signout.js';
+export * from './personal-tasks.js';
+export * from './recent-search.js';
+export * from './contact-sync.js';
+export * from './sticker-discovery.js';
+export * from './sticker-effects.js';
+export * from './ai-stickers.js';
+export { AiStickerSendError, forwardAiSticker, sendAiSticker } from './ai-sticker-send.js';
+export type {
+  AiStickerForwardProperties, AiStickerForwardResult, AiStickerForwardSource, AiStickerPresentation, AiStickerSendResult,
+  ForwardAiStickerInput, SendAiStickerInput,
+} from './ai-sticker-send.js';
+export * from './reaction-receipts.js';
+export * from './emoji-status.js';
+export * from './profile-metadata.js';
+export * from './profile-rank.js';
+export * from './group-context.js';
+export * from './official-account.js';
+export * from './official-account-ids.js';
+export * from './sticker-catalog.js';
+export * from './translation.js';
+export * from './voice-transcription.js';
+export * from './translation-realtime.js';
+export * from './friend-board.js';
+export { respondToGroupReminder } from './group-reminder-response.js';
+export { getDesktopPasswordStatus } from './desktop-password-status.js';
+export type { DesktopPasswordStatus } from './desktop-password-status.js';
+export * from './desktop-password.js';
+export * from './desktop-two-factor.js';
+export * from './desktop-settings.js';
+export * from './desktop-password-login.js';
+export * from './desktop-recovery.js';
+export { uploadChatVoice, uploadChatVideo, uploadChatVideoThumbnail,
+  sendUploadedChatVoice, sendUploadedChatVideo, ZaloChatMediaError } from './chat-media-upload.js';
+export type { UploadChatVoiceInput, UploadChatVideoInput, UploadChatVideoThumbnailInput,
+  UploadedChatVoice, UploadedChatVideo, UploadedChatVideoThumbnail,
+  SendUploadedChatVoiceOptions, SendUploadedChatVideoOptions, ChatMediaSendResult } from './chat-media-upload.js';
+export { FileSessionStore } from './session-store.js';
+export type { PersonalSession, SessionCookie, SessionStore } from './session-store.js';
+export { DesktopHistoryError, getConversationPreviews, getGroupActivity, getGroupCloudHistory, getGroupCloudThreadPage, getSavedMessagesCloudHistory } from './desktop-history.js';
+export type {
+  ConversationPreviews, ConversationPreviewCursors, GroupActivityBucket, GroupCloudHistoryPage, GroupCloudHistoryRequest,
+  GroupCloudThreadPage, GroupCloudThreadPageRequest,
+} from './desktop-history.js';
+export { getBlockedFriends, getCommunityMemberQuota, getCommunityQuota, getImportantMessages, getMessageStatus } from './desktop-reads.js';
+export type { BlockedFriendsPage, ImportantMessageCursor, ImportantMessagesPage, MessageStatusEntry, MessageStatusRequest } from './desktop-reads.js';
+export {
+  createConversationLabel, deleteConversationLabels, getBlockSharingConversations, getConversationReadMarkers,
+  reorderConversationLabels, setConversationBlockSharing, updateConversationLabel,
+} from './desktop-conversation-operations.js';
+export type {
+  BlockSharingConversation, BlockSharingUpdate, ConversationLabelCreate, ConversationLabelMutation, ConversationLabelMutationOptions,
+  ConversationLabelRevision, ConversationLabelUpdate, ConversationReadMarker, ConversationReadMarkerQuery,
+} from './desktop-conversation-operations.js';
+export * from './conversation-state.js';
+export * from './account-profile-events.js';
+export * from './business-message-events.js';
+export * from './file-media.js';
+export * from './product-catalog.js';
+export {
+  createPcPhoneBackupSession, extractPcPhoneBackupEvents, getPcPhoneBackupConfigs, getPcPhoneBackupMetadata,
+  initializePcPhoneBackup, PcPhoneBackupCreationError, PcPhoneBackupError, signalPcPhoneBackupRestore,
+} from './pc-phone-backup.js';
+export type {
+  PcPhoneBackupChange, PcPhoneBackupConfigs, PcPhoneBackupCreatedSession, PcPhoneBackupCreationOperation,
+  PcPhoneBackupEvent, PcPhoneBackupFailure, PcPhoneBackupFailureReason, PcPhoneBackupId, PcPhoneBackupInitializedSession,
+  PcPhoneBackupInitializeInput, PcPhoneBackupMetadata, PcPhoneBackupMetadataKnown, PcPhoneBackupOperation,
+  PcPhoneBackupOptions, PcPhoneBackupQuantity, PcPhoneBackupRestoreAcknowledgement,
+} from './pc-phone-backup.js';
+export { createPcPhoneBackupCipher, PcPhoneBackupCryptoError } from './pc-phone-backup-crypto.js';
+export type { PcPhoneBackupCipher, PcPhoneBackupCryptoFailure } from './pc-phone-backup-crypto.js';
+export { preparePcPhoneBackupMessageBatch, PcPhoneBackupEncodingError } from './pc-phone-backup-encoding.js';
+export type {
+  EncodedPcPhoneBackupMessageBatch, PcPhoneBackupEncodingDiagnostic, PcPhoneBackupEncodingDiagnosticReason,
+  PcPhoneBackupEncodingErrorCode, PcPhoneBackupGlobalMappings, PcPhoneBackupIdentityReferences, PcPhoneBackupRawMessage,
+  PreparedPcPhoneBackupMessageBatch, PreparePcPhoneBackupMessageBatchOptions,
+} from './pc-phone-backup-encoding.js';
+export { resolvePcPhoneBackupGlobalIds, PcPhoneBackupGlobalIdError } from './pc-phone-backup-global-ids.js';
+export type { PcPhoneBackupGlobalIdFailure, PcPhoneBackupGlobalIdOptions } from './pc-phone-backup-global-ids.js';
+export { createPcPhoneBackupArchive, PcPhoneBackupArchiveError } from './pc-phone-backup-archive.js';
+export type {
+  CreatePcPhoneBackupArchiveOptions, PcPhoneBackupArchive, PcPhoneBackupArchiveChunk,
+  PcPhoneBackupArchiveFailure, PcPhoneBackupArchiveMetadata,
+} from './pc-phone-backup-archive.js';
+export { uploadPcPhoneBackupChunk, PcPhoneBackupChunkUploadError } from './pc-phone-backup-upload.js';
+export type {
+  PcPhoneBackupChunkAcknowledgement, PcPhoneBackupChunkInput, PcPhoneBackupChunkUploadFailure,
+  PcPhoneBackupChunkUploadFailureReason, PcPhoneBackupChunkUploadOptions,
+} from './pc-phone-backup-upload.js';
+export { FilePcPhoneBackupCheckpointStore } from './pc-phone-backup-store.js';
+export type { PcPhoneBackupCheckpointStore } from './pc-phone-backup-store.js';
+export { createPcPhoneBackup, preparePcPhoneBackup, uploadPcPhoneBackup, PcPhoneBackupJobError } from './pc-phone-backup-creation.js';
+export type {
+  PcPhoneBackupJobFailure, PcPhoneBackupJobOptions, PcPhoneBackupJobStage, PcPhoneBackupProgress, PcPhoneBackupProgressPhase,
+  PcPhoneBackupSource, PcPhoneBackupSourcePage, PcPhoneBackupSourceThread, PreparedPcPhoneBackup,
+  PreparePcPhoneBackupOptions, UploadedPcPhoneBackup,
+} from './pc-phone-backup-creation.js';
+export { ZaloProtocolError } from './protocol-request.js';
+export { getDirectMessageQueuePage } from './direct-history.js';
+export type { DirectMessageQueueCursor, DirectMessageQueueOptions, DirectMessageQueuePage, DirectQueuedMessage } from './direct-history.js';
+export { extractCallControls, sendCallSignal } from './call-signaling.js';
+export type { CallControl, CallSignalInputs, CallSignalOperation } from './call-signaling.js';
+export { RealtimeFrameFeedError, startRealtimeFrameFeed } from './realtime-feed.js';
+export type { RealtimeFrame, RealtimeFrameFeed, RealtimeFrameFeedOptions, RealtimeQueueSelector } from './realtime-feed.js';
+export { startManagedRealtime } from './managed-realtime.js';
+export type { ManagedRealtime, ManagedRealtimeConnection, ManagedRealtimeEnd, ManagedRealtimeEndReason, ManagedRealtimeOptions, ManagedRealtimeStatus } from './managed-realtime.js';
+export { recoverChatOfflineQueue, requestChatOfflinePage, E2eeOfflinePageError as ZaloOfflinePageError } from './e2ee-offline.js';
+export type { ChatOfflineCursor, ChatOfflinePage, ChatOfflinePageOptions, ChatOfflineQueue, ChatOfflineRecovery, ChatOfflineRecoveryOptions } from './e2ee-offline.js';
+export type { ChatOfflineReset } from './e2ee-offline.js';
+export { ReactionOfflinePageError, recoverReactionOfflineQueue, requestReactionOfflinePage } from './e2ee-offline.js';
+export type {
+  ReactionOfflineCursor, ReactionOfflineDataPage, ReactionOfflinePage, ReactionOfflinePageOptions, ReactionOfflineQueue,
+  ReactionOfflineRecovery, ReactionOfflineRecoveryOptions, ReactionOfflineResetPage, ReactionOfflineSelector,
+} from './e2ee-offline.js';
+export { getSavedMessagesThread, sendSavedMessage } from './saved-messages.js';
+export type { SavedMessagesThread } from './saved-messages.js';
+export { getPinnedGroupBoard, pinGroupBoardItem, removeGroupBoardTopic, reorderGroupBoardItems, unpinGroupBoardItems } from './group-board.js';
+export type { BoardTopicRef, BoardVersion, PinnedGroupBoard } from './group-board.js';
+export { recallMessages, forwardOrdinaryMessage, forwardLocation, OrdinaryMessageForwardError } from './message-operations.js';
+export type { RecallMessageRef, OrdinaryForwardJsonValue, ForwardOrdinaryTargetInput, ForwardOrdinaryTextSource,
+  ForwardOrdinaryStickerSource, ForwardOrdinaryLinkSource, ForwardOrdinaryMessageSource, ForwardOrdinaryMessageInput,
+  OrdinaryForwardTarget, OrdinaryForwardReport, OrdinaryMessageForwardResult, OrdinaryMessageForwardFailure,
+  ForwardLocationSource, ForwardLocationInput, LocationForwardResult } from './message-operations.js';
+export { AttachmentRenewalError, extractAttachmentRenewalEvents, renewAttachmentLinks } from './attachment-renewal.js';
+export type { AttachmentRenewalEvent, AttachmentRenewalInput, AttachmentRenewalKind, AttachmentRenewalOptions, AttachmentRenewalResult, RenewedAttachmentLinks } from './attachment-renewal.js';
+export { getDefaultGuggies, getGifCategories, getGifsByCategory, getGifsByDictionary, getTrendingGifs, searchGifs, searchGuggies, sendGif, sendLocalGif, ZaloGifUploadError, forwardGif, GifForwardError } from './gif-media.js';
+export type { GifAsset, GifCategory, GifPageOptions, GifSendResult, GuggyAsset, GuggyOptions, SendGifInput, SendLocalGifInput,
+  ForwardGifSource, ForwardGifInput, GifForwardResult, GifForwardFailure } from './gif-media.js';
+export { sendUploadedChatPhoto, uploadChatPhoto, ZaloChatPhotoError, forwardPhoto, forwardPhotoSticker, PhotoForwardError } from './photo-media.js';
+export type { ChatPhotoQuality, ChatPhotoSendResult, SendUploadedChatPhotoOptions, UploadedChatPhoto, UploadChatPhotoInput,
+  ForwardPhotoSource, ForwardPhotoStickerSource, ForwardPhotoInput, ForwardPhotoStickerInput, PhotoForwardResult, PhotoForwardFailure } from './photo-media.js';
+export { SignedPhotoUploadError, uploadSignedChatPhoto, SignedVideoUploadError, uploadSignedChatVideo,
+  SignedVideoThumbnailUploadError, uploadSignedChatVideoThumbnail, uploadSignedSavedVideoThumbnail } from './signed-photo-upload.js';
+export type { SignedUploadedChatPhoto, UploadSignedChatPhotoInput, SignedUploadedChatVideo, UploadSignedChatVideoInput,
+  SignedUploadedChatVideoThumbnail, UploadSignedChatVideoThumbnailInput, UploadSignedSavedVideoThumbnailInput } from './signed-photo-upload.js';
+export { getMediaLibraryPage, getMediaLibraryPreview, removeMediaLibraryItem } from './media-library.js';
+export type { MediaLibraryCategory, MediaLibraryItem, MediaLibraryPage, MediaLibraryPageOptions, MediaLibraryPreviewOptions, MediaLibraryTarget } from './media-library.js';
+export { HistoryArchiveError, openHistoryArchive } from './history-archive.js';
+export type { HistoryArchive, HistoryArchiveCursor, HistoryArchiveMessage, HistoryArchiveOptions, HistoryArchivePage } from './history-archive.js';
+export { createNativeCallCodec, NativeCallBridgeError, startNativeCallBridge } from './native-call-bridge.js';
+export type {
+  NativeCallBridge, NativeCallBridgeOptions, NativeCallContact, NativeCallHelperSource, NativeCallMessage,
+  NativeCallRequestOptions, NativeCallRequests, NativeCallResponses, NativeCallStatus, NativeMakeCallRequest,
+} from './native-call-bridge.js';
+export { NativeCallControllerError, startNativeCallController } from './native-call-controller.js';
+export type { NativeCallController, NativeCallControllerOptions } from './native-call-controller.js';
+export { attachMobileSyncControl, decodeMobileSyncFrame, MobileSyncControlError, splitMobileSyncBatchFile } from './mobile-sync.js';
+export type {
+  MobileSyncBatchEvent, MobileSyncBatchScope, MobileSyncControl, MobileSyncControlOptions, MobileSyncDeviceStatus, MobileSyncDisposeReason,
+  MobileSyncEvent, MobileSyncPhase, MobileSyncProgress, MobileSyncQuery, MobileSyncRequestInput,
+} from './mobile-sync.js';
+export {
+  decodeMobileSyncSnapshotBlock, decryptMobileSyncSnapshotBlock, decryptMobileSyncSnapshotMetadata, MobileSnapshotError,
+} from './mobile-snapshot.js';
+export { createMobileSyncSnapshotReader, downloadMobileSyncSnapshotBatch, MobileSyncSnapshotDeliveryError } from './mobile-snapshot-delivery.js';
+export type {
+  MobileSyncSnapshotBatchChunk, MobileSyncSnapshotDownloadOptions, MobileSyncSnapshotReader, MobileSyncSnapshotReaderOptions,
+} from './mobile-snapshot-delivery.js';
+export type {
+  DecryptedMobileSnapshotBlock, DecryptedMobileSnapshotMetadata, MobileSnapshotAttachment, MobileSnapshotChunk, MobileSnapshotConversation,
+  MobileSnapshotConversationChunk, MobileSnapshotDecodeOptions, MobileSnapshotMention, MobileSnapshotMessage,
+  MobileSnapshotMessageChunk, MobileSnapshotMetadata, MobileSnapshotMetadataKeys, MobileSnapshotQuote,
+} from './mobile-snapshot.js';
+
+export { getGroupListPage, getGroupMemberPage, getEncryptedGroupIds } from './group-pages.js';
+export type { GroupReadPageOptions, GroupListPage, GroupMemberPage, EncryptedGroupId, EncryptedGroupIds } from './group-pages.js';

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "node",
+    "imports.mjs"
+  ],
+  "cwd": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.47-runtime-consumer",
+  "ownedPid": 50570,
+  "ownedProcessGroup": 50570,
+  "deadlineSeconds": 30.0,
+  "boundExceeded": false,
+  "exitCode": 0,
+  "terminalObserved": true,
+  "seconds": 0.179,
+  "log": "zalo-sdk-0.47-installed-imports.log"
+}

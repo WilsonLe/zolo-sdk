@@ -1,0 +1,6 @@
+interface:
+  display_name: "UI Design"
+  short_description: "Minimal interfaces with purposeful disclosure"
+  default_prompt: "Use $ui-design to design or review a purposeful, minimal frontend for the user's current task."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "worktree_identity": "path:/workspace/example.worktrees/issue-49",
+  "state": "claimed",
+  "controller_id": "thread-control-plane",
+  "task_id": "thread-verification-1",
+  "revision": 3,
+  "updated_at": "2026-07-30T08:00:00Z"
+}

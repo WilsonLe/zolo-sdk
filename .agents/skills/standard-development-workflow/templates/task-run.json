@@ -1,0 +1,205 @@
+{
+  "applicability": {
+    "execution_contract": {
+      "evidence_refs": [
+        "issue"
+      ],
+      "reason": "The approved task requires a pre-implementation contract.",
+      "state": "required"
+    }
+  },
+  "approvals": [
+    {
+      "id": "plan-approval",
+      "kind": "implementation_plan",
+      "scope": "Replace with the scope presented for approval.",
+      "state": "pending"
+    }
+  ],
+  "artifacts": [],
+  "delivery_contract": {
+    "changes": [],
+    "requirements": []
+  },
+  "delivery_tracking": {
+    "issues": [
+      {
+        "readback_ref": "replace-with-live-issue-readback",
+        "url": "https://github.com/OWNER/REPO/issues/1"
+      }
+    ],
+    "links": [],
+    "pull_requests": []
+  },
+  "decomposition": {
+    "mode": "single",
+    "decision_ref": "issue plan",
+    "parent_issue": "",
+    "parent_branch": "",
+    "default_branch": "main",
+    "default_revision_at_branch": "",
+    "parent_base_revision": "",
+    "branch_creation_ref": "",
+    "children": [],
+    "combined_tests_state": "pending",
+    "combined_tests_revision": "",
+    "combined_evidence_ref": "",
+    "main_merge_state": "not_requested",
+    "main_approval_ref": "",
+    "main_approval_scope": "branch",
+    "approved_branch": "",
+    "approved_head_revision": "",
+    "approved_pr_url": "",
+    "parent_head_revision": "",
+    "parent_pr_url": "",
+    "parent_pr_base": "",
+    "parent_pr_head_revision": "",
+    "parent_pr_child_issues": [],
+    "parent_pr_readback_ref": "",
+    "main_auto_merge_state": "disabled"
+  },
+  "diagnostics": [],
+  "evidence": {
+    "artifact_refs": [],
+    "claim_refs": [],
+    "files": [],
+    "finalized_at": "",
+    "limitations": [],
+    "source_revision": "replace-with-source-revision",
+    "status": "rehearsal",
+    "tracked_source_clean": false,
+    "validation_refs": []
+  },
+  "external_work": {
+    "artifact_checks": [],
+    "provider_steps": [],
+    "source_routes": []
+  },
+  "interaction_decisions": {
+    "questions": [],
+    "independent_work": []
+  },
+  "failures": [],
+  "impact_inventory": {
+    "discovered_surface_ids": [],
+    "discovery_evidence_refs": [],
+    "pattern_wide": false,
+    "surfaces": []
+  },
+  "operations": [],
+  "pr_handoff": {
+    "worktree_changed": false,
+    "changed_paths": [],
+    "explicit_local_only": false,
+    "override_ref": "",
+    "state": "not_applicable",
+    "branch": "",
+    "base_branch": "",
+    "head_revision": "",
+    "pr_url": "",
+    "pr_head_revision": "",
+    "pr_base_branch": "",
+    "pr_state": "",
+    "review_state": "",
+    "checks_state": "unavailable",
+    "readback_ref": "",
+    "blocker": "",
+    "existing_pr_url": "",
+    "preserved_work_ref": ""
+  },
+  "profile_ref": {
+    "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "record_id": "replace-with-profile-id"
+  },
+  "provenance": {
+    "created_at": "2000-01-01T00:00:00Z",
+    "sources": [
+      {
+        "checked_at": "2000-01-01T00:00:00Z",
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "freshness": "revision_bound",
+        "id": "issue",
+        "kind": "github_issue",
+        "location": "replace-with-issue-url"
+      }
+    ]
+  },
+  "record_id": "replace-with-stable-task-id",
+  "record_kind": "task_run",
+  "release_readback": {
+    "active_mode": "",
+    "active_revision": "",
+    "artifact_digest": "",
+    "configuration_identity": "",
+    "deployment_id": "",
+    "expected_mode": "",
+    "handle_state": "not_applicable",
+    "health": "not_checked",
+    "intended_revision": "",
+    "live_evidence_ref": "",
+    "merged_revision": "",
+    "observed_at": "",
+    "process_handle": "",
+    "public_reachable": false,
+    "state": "not_requested",
+    "target_surface": "",
+    "target_url": "",
+    "user_flow": "not_checked"
+  },
+  "release_invariants": {
+    "applicability": "not_applicable",
+    "reason": "Set required for a stateful release; this template has no release target yet.",
+    "baseline_ref": "",
+    "rollback_ref": "",
+    "checks": []
+  },
+  "repository": {
+    "default_branch": "main",
+    "identity": "replace-with-repository-identity",
+    "revision": "replace-with-source-revision"
+  },
+  "resources": [],
+  "sandboxes": [],
+  "schema_version": 1,
+  "scope": {
+    "change_envelope": [],
+    "direct": [],
+    "enabling": [],
+    "expansion": {
+      "approval_state": "not_triggered",
+      "reasons": [],
+      "triggered": false
+    },
+    "follow_up": [],
+    "prohibited": []
+  },
+  "status": "planned",
+  "task": {
+    "base_revision": "replace-with-source-revision",
+    "issue": "https://github.com/OWNER/REPO/issues/1",
+    "objective": "Replace with the approved observable outcome.",
+    "plan": {
+      "canonical_comment_count": 1,
+      "comment_id": 1,
+      "comment_url": "https://github.com/OWNER/REPO/issues/1#issuecomment-1",
+      "findings_count": 0,
+      "last_reconciled_at": "2000-01-01T00:00:00Z",
+      "marker": "<!-- standard-development-plan -->",
+      "pinned": true,
+      "pinned_at": "2000-01-01T00:00:00Z",
+      "reconciled_revision": "replace-with-source-revision",
+      "state": "awaiting_approval"
+    },
+    "plan_digest": null,
+    "planning_mode": "github_issue",
+    "worktree": "replace-with-dedicated-worktree"
+  },
+  "validation": {
+    "source_revision": "replace-with-source-revision",
+    "steps": []
+  },
+  "verification_runs": [],
+  "verification": {
+    "claims": []
+  }
+}

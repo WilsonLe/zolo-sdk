@@ -1,0 +1,49 @@
+{
+  "name": "zca-js",
+  "version": "2.2.0",
+  "localSdkPatch": "HTTP cookie URL/redirect policy and synchronous per-connection Listener cookie selection",
+  "upstreamRegistryIntegrity": "sha512-pBU0T0/uadH3Neq7yMssUmE769VVuqKhL8YD1HqQQG8e6lkwueAopNu0vhJdqiJRHZdPIEomT2FxRzauOx4pgA==",
+  "originalPayloadFiles": 577,
+  "unchangedFiles": 573,
+  "changes": [
+    {
+      "path": "dist/apis/listen.js",
+      "originalSha256": "4688a1b828f5a25af36ce4841bf5ec1e2a5a914c2eb19a74769c9963eeb0dc13",
+      "patchedSha256": "cb0eb9a4d535387eb676cd61b0dbd65abac13a617b6a4489c19ec40bb8267ce8"
+    },
+    {
+      "path": "dist/cjs/apis/listen.cjs",
+      "originalSha256": "64686b7111249f606fa47fc4d54a127077f4cf5d00afdf4125a7fd8c2b028863",
+      "patchedSha256": "13d925cc880dd8700c9bcd573e28958a06147986ee4048cc0dccec7278f9a163"
+    },
+    {
+      "path": "dist/cjs/utils.cjs",
+      "originalSha256": "446135b356515d0832831b59ef50897dd3c95a693d40386c2705529baeb0ed34",
+      "patchedSha256": "57a9ec87bfd30c8ae58e4031b82918e058ef0f57a7f8a6911ae0dcd84a766af3"
+    },
+    {
+      "path": "dist/utils.js",
+      "originalSha256": "9876405d1e84fa6c6512dcabc0ab9946ae8e42bf5eff918a2a5a52373d70ef5d",
+      "patchedSha256": "f65ca9245a33078d4367ffdb82327314ebb6063ceb8443a6a3d462065fef6f85"
+    }
+  ],
+  "unchangedPackageJsonSha256": "f3e220eecfcd07f33ffc1d01e1c495dbb4cd0ccad9379c6aa1a3d145e798582d",
+  "unchangedLicenseSha256": "517f4df002c16fc050acc6391dfe31670f4927e58fd281eeea2101f581da75a9",
+  "patchSha256": "bade4fd2da0fbba38804c27865d839b67c83a5ab32a2279aa914d8b647adb8ae",
+  "archive": "zca-js-2.2.0-cookie-ws-r1.tgz",
+  "archiveSha256": "ddfced8d2c87c4a19cdeef94709243cd7196907e830b91d25d5df9b9216a98bd",
+  "archiveIntegrity": "sha512-QqiWNwzgvkjyPPAZbe8nKE92zfc+S3Qtt1IDvTQZoGMGk7OtoZ/1rq8GmWgWpz4DtM9iqOR5EVj2cYkEsPzsZg==",
+  "archiveBytes": 159496,
+  "deterministicPackaging": {
+    "gzipMtime": 0,
+    "tarMtime": 0,
+    "owner": 0,
+    "sortedMembers": true,
+    "originalFileModes": true
+  },
+  "crossCopyJarCompatibility": "Retain parse guard; pass original Set-Cookie string to receiver jar rather than a module-local Cookie instance.",
+  "redirectSafety": "Normal inputs admit only undefined or primitive manual/error; undefined defaults to error; every other value rejected before adapter without coercion. Caller Cookie/Authorization/Proxy-Authorization removed at visible origin changes including raw.",
+  "listenerSelection": "Retain constructor; each new start synchronously selects current jar for full current wsURL. Recheck existing ws after synchronous lookup to refuse reentrant outer allocation; preserve existing field/lifecycle/headers/agent.",
+  "upstreamMetadataDeclarationsExportsAPIZaloClassFilesDependenciesAndLicenseUnchanged": true,
+  "ListenerClassChange": "Only synchronous start cookie selection and its post-lookup existing-socket guard change. Listener declaration/prototype graph/other methods remain unchanged."
+}

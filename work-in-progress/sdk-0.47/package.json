@@ -1,0 +1,59 @@
+{
+  "name": "zalo-personal-sdk",
+  "version": "0.47.0",
+  "private": true,
+  "description": "Node.js SDK for user-approved Zalo personal sessions",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "imports": {
+    "#zca": {
+      "types": "./types/zca/index.d.ts",
+      "default": "zca-js"
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./e2ee": {
+      "types": "./dist/e2ee-api.d.ts",
+      "default": "./dist/e2ee-api.js"
+    }
+  },
+  "bin": {
+    "zalo-personal": "./bin/zalo.mjs"
+  },
+  "files": [
+    "dist",
+    "types",
+    "bin",
+    "README.md",
+    "docs",
+    "examples",
+    "vendor"
+  ],
+  "scripts": {
+    "build": "node scripts/upstream-types.mjs && tsc -p tsconfig.json",
+    "prepack": "npm run build",
+    "test": "npm run build && node --test test/*.test.mjs test/resource040/*.test.mjs test/signed-video045/*.test.mjs test/signed-thumbnail046/*.test.mjs test/saved-thumbnail047/*.test.mjs",
+    "zalo": "node bin/zalo.mjs"
+  },
+  "dependencies": {
+    "@types/crypto-js": "4.2.2",
+    "@types/node": "22.20.5",
+    "curve25519-js": "0.0.4",
+    "qrcode": "1.5.4",
+    "tough-cookie": "5.1.2",
+    "zca-js": "file:vendor/zca-js-2.2.0-cookie-ws-r1.tgz"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "ws": "8.22.1"
+  },
+  "bundledDependencies": [
+    "zca-js"
+  ]
+}

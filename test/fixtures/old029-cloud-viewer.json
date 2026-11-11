@@ -1,0 +1,21 @@
+{
+  "producerVersion": "0.29.0",
+  "producerArchiveSha256": "2f747b15131276526cce3a2b7716de03b2371a3617f418d5a58838c48187de3c",
+  "scope": "Literal emitted by immutable old public SDK against synthetic HTTP only; no shipped target or live account.",
+  "identity": {
+    "uid": "9300000000000002701",
+    "imei": "synthetic-cloud-imei",
+    "authOrigin": "https://auth.cloud-fixture.zaloapp.com"
+  },
+  "wrappingKeyFillByte": 48,
+  "sealed": "zalo-cloud-media-viewer.v1.z0BvSacdT5JGI6g7GCKAtBUply0W-ETEO1fjXxmlm9dpkgzawBghbu8OZZ9PbkkfUzWgEsh9iULVw1Kjizxqaj7MGAqW6NtZvSP4saeZv4lORtHf7JLJe990Sf3wl9pyqaBfoqjyT1bK3XU1OuZDMrgSqNfv5TiJN_vhLpa5JFROhEtigb2lOjnf6K31PprS3BhzdEcVmIZDf9zP4aTMxr8Yxtzo7mGBuLUUOWlG4jnL4p4aFo22cKfevno0gzYF62a1gpJvsSCdWsGaVbu8z_1R2wJRF2vUcDxQgyQWypCA8MGhmKCxfCyfkShv9UDO2kXW6K-UdK7UaFcYS69ast3FPM8rznfPvVdVcS4CGGu8Sch9HyPZ57TKRNEO6AM5T5OBwLF2BmFOzE365f-Q3E52iR7heXtfzMDMpmc9Ow3Gz3dM94x4hsPkxgzw",
+  "expectedMetadata": {
+    "identityBinding": "2c3cd20f780c6c24a47a7397938c39162da9e0b8e04b3c934467a48f9e63dab0",
+    "authOrigin": "https://auth.cloud-fixture.zaloapp.com",
+    "acquiredAtMilliseconds": 1793968890972
+  },
+  "syntheticViewerHeader": "synthetic cloud viewer / + = opaque",
+  "syntheticCloudKeyBase64": "Tk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk4=",
+  "operationCalls": 1,
+  "realNetwork": false
+}

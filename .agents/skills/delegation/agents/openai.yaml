@@ -1,0 +1,4 @@
+interface:
+  display_name: "Delegation"
+  short_description: "Delegate tasks with the chosen harness configuration"
+  default_prompt: "Use $delegation to start a separate task using the chosen harness configuration and verify its effective settings before work."

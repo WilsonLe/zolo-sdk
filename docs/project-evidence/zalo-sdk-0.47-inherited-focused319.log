@@ -1,0 +1,1931 @@
+TAP version 13
+# Subtest: uploads AAC chunks unchanged, accepts an early first control once and explicitly sends direct voice
+ok 1 - uploads AAC chunks unchanged, accepts an early first control once and explicitly sends direct voice
+  ---
+  duration_ms: 30.92925
+  type: 'test'
+  ...
+# Subtest: selects AMR primary and AAC alternate for group voice with installed group forward fields
+ok 2 - selects AMR primary and AAC alternate for group voice with installed group forward fields
+  ---
+  duration_ms: 4.66175
+  type: 'test'
+  ...
+# Subtest: uploads MP4 and a separate JPEG thumbnail on exact routes, then explicitly sends video metadata
+ok 3 - uploads MP4 and a separate JPEG thumbnail on exact routes, then explicitly sends video metadata
+  ---
+  duration_ms: 4.947458
+  type: 'test'
+  ...
+# Subtest: matches delayed group video and photo controls including photo fallback and does not open another socket
+ok 4 - matches delayed group video and photo controls including photo fallback and does not open another socket
+  ---
+  duration_ms: 3.795834
+  type: 'test'
+  ...
+# Subtest: rejects forged, foreign account and destination-mismatched receipts before sending
+ok 5 - rejects forged, foreign account and destination-mismatched receipts before sending
+  ---
+  duration_ms: 4.964792
+  type: 'test'
+  ...
+# Subtest: rejects premature success, duplicates and nonzero provider responses without uploading remaining bytes
+ok 6 - rejects premature success, duplicates and nonzero provider responses without uploading remaining bytes
+  ---
+  duration_ms: 8.170625
+  type: 'test'
+  ...
+# Subtest: keeps explicit final-send refusals retryable and consumes both receipts after an uncertain send
+ok 7 - keeps explicit final-send refusals retryable and consumes both receipts after an uncertain send
+  ---
+  duration_ms: 3.311625
+  type: 'test'
+  ...
+# Subtest: bounds a stalled HTTP response body and late completion without allowing a retry of the action
+ok 8 - bounds a stalled HTTP response body and late completion without allowing a retry of the action
+  ---
+  duration_ms: 22.179
+  type: 'test'
+  ...
+# Subtest: reports abort and feed closure while waiting, and releases active guards without retrying any chunk
+ok 9 - reports abort and feed closure while waiting, and releases active guards without retrying any chunk
+  ---
+  duration_ms: 3.812666
+  type: 'test'
+  ...
+# Subtest: refuses encrypted media keys and capsule renditions instead of substituting an ordinary preview
+ok 10 - refuses encrypted media keys and capsule renditions instead of substituting an ordinary preview
+  ---
+  duration_ms: 30.124584
+  type: 'test'
+  ...
+# Subtest: enforces action collisions and completion ID reuse while accepting a standalone M4A container
+ok 11 - enforces action collisions and completion ID reuse while accepting a standalone M4A container
+  ---
+  duration_ms: 1.973
+  type: 'test'
+  ...
+# Subtest: validates encoding, metadata, service and no-feed boundaries before an accidental write
+ok 12 - validates encoding, metadata, service and no-feed boundaries before an accidental write
+  ---
+  duration_ms: 3.6655
+  type: 'test'
+  ...
+# Subtest: invalidates BOTH active uploads when the provider reuses a media completion ID
+ok 13 - invalidates BOTH active uploads when the provider reuses a media completion ID
+  ---
+  duration_ms: 1.913334
+  type: 'test'
+  ...
+# Subtest: keeps global chunk IDs across the installed twenty MiB local part boundary
+ok 14 - keeps global chunk IDs across the installed twenty MiB local part boundary
+  ---
+  duration_ms: 47.29975
+  type: 'test'
+  ...
+# Subtest: accepts transport-enveloped completion with no redundant inner status while rejecting an outer error
+ok 15 - accepts transport-enveloped completion with no redundant inner status while rejecting an outer error
+  ---
+  duration_ms: 1.800292
+  type: 'test'
+  ...
+# Subtest: rejects malformed service-origin lists with fixed errors before bootstrap
+ok 16 - rejects malformed service-origin lists with fixed errors before bootstrap
+  ---
+  duration_ms: 2.644375
+  type: 'test'
+  ...
+# Subtest: installs Desktop cookie scopes and bootstraps a normal API plus wrapper with encrypted fixture credentials
+ok 17 - installs Desktop cookie scopes and bootstraps a normal API plus wrapper with encrypted fixture credentials
+  ---
+  duration_ms: 16.634792
+  type: 'test'
+  ...
+# Subtest: accepts exact plain config and a single provider-19000 fallback
+ok 18 - accepts exact plain config and a single provider-19000 fallback
+  ---
+  duration_ms: 2.789125
+  type: 'test'
+  ...
+# Subtest: treats encrypted inner getLoginInfo code 19000 as a refusal without a plain retry
+ok 19 - treats encrypted inner getLoginInfo code 19000 as a refusal without a plain retry
+  ---
+  duration_ms: 0.62075
+  type: 'test'
+  ...
+# Subtest: Desktop credentials reject Web sessions, replacements and malformed raw approvals
+ok 20 - Desktop credentials reject Web sessions, replacements and malformed raw approvals
+  ---
+  duration_ms: 0.127792
+  type: 'test'
+  ...
+# Subtest: rejects account mismatch, malformed AES/settings, incomplete and hostile service/socket maps before API construction
+ok 21 - rejects account mismatch, malformed AES/settings, incomplete and hostile service/socket maps before API construction
+  ---
+  duration_ms: 4.140375
+  type: 'test'
+  ...
+# Subtest: accepts shipped named retry profiles alongside numeric close codes without changing their values
+ok 22 - accepts shipped named retry profiles alongside numeric close codes without changing their values
+  ---
+  duration_ms: 2.672416
+  type: 'test'
+  ...
+# Subtest: caller may explicitly allow an exact alternate service origin without broadening default domains
+ok 23 - caller may explicitly allow an exact alternate service origin without broadening default domains
+  ---
+  duration_ms: 1.291042
+  type: 'test'
+  ...
+# Subtest: snapshot resumes through fresh bootstrap and callback TTL/replacement/close lifecycle is owned locally
+ok 24 - snapshot resumes through fresh bootstrap and callback TTL/replacement/close lifecycle is owned locally
+  ---
+  duration_ms: 13.817417
+  type: 'test'
+  ...
+# Subtest: bounds responses, redacts provider/transport errors and forbids redirects
+ok 25 - bounds responses, redacts provider/transport errors and forbids redirects
+  ---
+  duration_ms: 0.952083
+  type: 'test'
+  ...
+# Subtest: cancels ignored fetch/body work and detaches bootstrap signal after a successful connection
+ok 26 - cancels ignored fetch/body work and detaches bootstrap signal after a successful connection
+  ---
+  duration_ms: 7.23425
+  type: 'test'
+  ...
+# Subtest: normal account API deadline covers a stalled response body after headers
+ok 27 - normal account API deadline covers a stalled response body after headers
+  ---
+  duration_ms: 11.74425
+  type: 'test'
+  ...
+# Subtest: connection close cancels a normal account API body from an abort-ignoring adapter
+ok 28 - connection close cancels a normal account API body from an abort-ignoring adapter
+  ---
+  duration_ms: 2.328417
+  type: 'test'
+  ...
+# Subtest: normal response lifecycle preserves binary/status/headers/url and releases complete or cancelled bodies
+ok 29 - normal response lifecycle preserves binary/status/headers/url and releases complete or cancelled bodies
+  ---
+  duration_ms: 21.955417
+  type: 'test'
+  ...
+# Subtest: normal requests honor per-request cancellation, close pending headers, and cancel a late ignored response
+ok 30 - normal requests honor per-request cancellation, close pending headers, and cancel a late ignored response
+  ---
+  duration_ms: 2.274417
+  type: 'test'
+  ...
+# Subtest: closed connection suppresses queued pinned socket retries before start or rotation
+ok 31 - closed connection suppresses queued pinned socket retries before start or rotation
+  ---
+  duration_ms: 2.193833
+  type: 'test'
+  ...
+# Subtest: direct and group ordinary file forwarding use numeric1, nested accountAES, exact five-field source and independent NFC/reference/decor serialization
+ok 32 - direct and group ordinary file forwarding use numeric1, nested accountAES, exact five-field source and independent NFC/reference/decor serialization
+  ---
+  duration_ms: 9.040333
+  type: 'test'
+  ...
+# Subtest: own undefined means omission, null remains explicit, and empty filename/extension/checksum/reference never acquire fallbacks
+ok 33 - own undefined means omission, null remains explicit, and empty filename/extension/checksum/reference never acquire fallbacks
+  ---
+  duration_ms: 1.240375
+  type: 'test'
+  ...
+# Subtest: size strings retain zero/leading zeros/full40digit precision independently of numeric-safe policy and native clone thresholds
+ok 34 - size strings retain zero/leading zeros/full40digit precision independently of numeric-safe policy and native clone thresholds
+  ---
+  duration_ms: 3.840083
+  type: 'test'
+  ...
+# Subtest: filename NFC is the only text normalization, with byte bounds before and after and no path/extension inference
+ok 35 - filename NFC is the only text normalization, with byte bounds before and after and no path/extension inference
+  ---
+  duration_ms: 9.452042
+  type: 'test'
+  ...
+# Subtest: URL admission rejects protected raw/query markers without strip/decrypt/downgrade and preserves unrelated spelling verbatim
+ok 36 - URL admission rejects protected raw/query markers without strip/decrypt/downgrade and preserves unrelated spelling verbatim
+  ---
+  duration_ms: 1.583375
+  type: 'test'
+  ...
+# Subtest: extension/checksum and bounded provenance are explicit metadata with no recomputation, derivation or recursive JSON layer
+ok 37 - extension/checksum and bounded provenance are explicit metadata with no recomputation, derivation or recursive JSON layer
+  ---
+  duration_ms: 13.173
+  type: 'test'
+  ...
+# Subtest: destination/action policy is exact full decimal text and safe numeric intent, with group-only prefix/visibility
+ok 38 - destination/action policy is exact full decimal text and safe numeric intent, with group-only prefix/visibility
+  ---
+  duration_ms: 1.1185
+  type: 'test'
+  ...
+# Subtest: preflight own-data admission rejects Proxy/class/accessor/unknown fields without invoking caller code or dispatch
+ok 39 - preflight own-data admission rejects Proxy/class/accessor/unknown fields without invoking caller code or dispatch
+  ---
+  duration_ms: 0.929833
+  type: 'test'
+  ...
+# Subtest: snapshots chosen source/route/flags before await and holds only original API/clientId until completion
+ok 40 - snapshots chosen source/route/flags before await and holds only original API/clientId until completion
+  ---
+  duration_ms: 1.609667
+  type: 'test'
+  ...
+# Subtest: lease scope is perAPI/clientId and releases on acknowledgment, current refusal, unknown response and local validation
+ok 41 - lease scope is perAPI/clientId and releases on acknowledgment, current refusal, unknown response and local validation
+  ---
+  duration_ms: 1.766125
+  type: 'test'
+  ...
+# Subtest: current genuine outer/inner provider refusals are the only known post-handoff rejection, with no automatic replay
+ok 42 - current genuine outer/inner provider refusals are the only known post-handoff rejection, with no automatic replay
+  ---
+  duration_ms: 0.760792
+  type: 'test'
+  ...
+# Subtest: fresh public errors and a genuinely issued prior read refusal thrown by a later response body never acquire current-write refusal authority
+ok 43 - fresh public errors and a genuinely issued prior read refusal thrown by a later response body never acquire current-write refusal authority
+  ---
+  duration_ms: 1.081792
+  type: 'test'
+  ...
+# Subtest: strictHTTP200/redirect admission with unread-body cleanup leaves exactly one submitted unknown attempt
+ok 44 - strictHTTP200/redirect admission with unread-body cleanup leaves exactly one submitted unknown attempt
+  ---
+  duration_ms: 1.216625
+  type: 'test'
+  ...
+# Subtest: usable ACK IDs are exact while optional own url is independently qualified; unknown raw extensions remain shallow
+ok 45 - usable ACK IDs are exact while optional own url is independently qualified; unknown raw extensions remain shallow
+  ---
+  duration_ms: 3.24675
+  type: 'test'
+  ...
+# Subtest: malformed ACKs and labelled POST-DECODE custom-object ACKs remain unknown without invoking accessors or freezing nested unknowns
+ok 46 - malformed ACKs and labelled POST-DECODE custom-object ACKs remain unknown without invoking accessors or freezing nested unknowns
+  ---
+  duration_ms: 1.993834
+  type: 'test'
+  ...
+# Subtest: pre-abort is unsubmitted; genuine hostile-own-property signals work normally and post-handoff resistant abort stays aborted/unknown with cleanup
+ok 47 - pre-abort is unsubmitted; genuine hostile-own-property signals work normally and post-handoff resistant abort stays aborted/unknown with cleanup
+  ---
+  duration_ms: 1.03225
+  type: 'test'
+  ...
+# Subtest: ordinary transport keeps destination-scoped cookies/defaultheaders and unsupported service remains unsubmitted
+ok 48 - ordinary transport keeps destination-scoped cookies/defaultheaders and unsupported service remains unsubmitted
+  ---
+  duration_ms: 0.6535
+  type: 'test'
+  ...
+# Subtest: local callback/body/status faults and public error metadata cannot leak private values or establish a provider refusal
+ok 49 - local callback/body/status faults and public error metadata cannot leak private values or establish a provider refusal
+  ---
+  duration_ms: 0.760875
+  type: 'test'
+  ...
+# Subtest: one direct and one group ordinary existing-GIF forward preserve exact source/provenance/nulls with no initial-GIF fallback or fetch
+ok 50 - one direct and one group ordinary existing-GIF forward preserve exact source/provenance/nulls with no initial-GIF fallback or fetch
+  ---
+  duration_ms: 9.52225
+  type: 'test'
+  ...
+# Subtest: omitted/own-undefined source fields and direct visibility mean omission, but empty title/reference and explicit null are retained
+ok 51 - omitted/own-undefined source fields and direct visibility mean omission, but empty title/reference and explicit null are retained
+  ---
+  duration_ms: 1.423125
+  type: 'test'
+  ...
+# Subtest: thread decimal fullmatches preserve leading zeros and single group prefix while newline/whitespace/nondecimal inputs reject without dispatch
+ok 52 - thread decimal fullmatches preserve leading zeros and single group prefix while newline/whitespace/nondecimal inputs reject without dispatch
+  ---
+  duration_ms: 2.436625
+  type: 'test'
+  ...
+# Subtest: dimensions use exact nonnegative safe numbers or bounded digit strings, never Number-trimming or exponent/fraction/coercive fallback
+ok 53 - dimensions use exact nonnegative safe numbers or bounded digit strings, never Number-trimming or exponent/fraction/coercive fallback
+  ---
+  duration_ms: 2.566708
+  type: 'test'
+  ...
+# Subtest: ordinary URL admission rejects credentials/whitespace/backslash/nonHTTP and all explicit raw/decoded/case-insensitive encrypted query capsules
+ok 54 - ordinary URL admission rejects credentials/whitespace/backslash/nonHTTP and all explicit raw/decoded/case-insensitive encrypted query capsules
+  ---
+  duration_ms: 1.643292
+  type: 'test'
+  ...
+# Subtest: text/URL/reference/decor bounds are UTF8 and validate without normalizing, parsing provenance or fetching asset metadata
+ok 55 - text/URL/reference/decor bounds are UTF8 and validate without normalizing, parsing provenance or fetching asset metadata
+  ---
+  duration_ms: 19.895167
+  type: 'test'
+  ...
+# Subtest: own-data admission rejects Proxy/accessor/class/unknown and required-undefined fields before reading caller code
+ok 56 - own-data admission rejects Proxy/accessor/class/unknown and required-undefined fields before reading caller code
+  ---
+  duration_ms: 1.177375
+  type: 'test'
+  ...
+# Subtest: all intent is snapshotted before await, a held original clientId stays leased, and mutable caller source is not retained
+ok 57 - all intent is snapshotted before await, a held original clientId stays leased, and mutable caller source is not retained
+  ---
+  duration_ms: 1.095583
+  type: 'test'
+  ...
+# Subtest: lease is perAPI/clientId only, allows other IDs/APIs and releases on ACK/refusal/malformed/validation/unsupported terminal paths
+ok 58 - lease is perAPI/clientId only, allows other IDs/APIs and releases on ACK/refusal/malformed/validation/unsupported terminal paths
+  ---
+  duration_ms: 3.221958
+  type: 'test'
+  ...
+# Subtest: current outer/inner nonzero provider refusals are known while HTTP201 rejects before body and remains submitted-unknown
+ok 59 - current outer/inner nonzero provider refusals are known while HTTP201 rejects before body and remains submitted-unknown
+  ---
+  duration_ms: 1.057875
+  type: 'test'
+  ...
+# Subtest: existing initial sendGif still accepts a valid HTTP201 nested ACK and keeps its distinct initialGIF endpoint
+ok 60 - existing initial sendGif still accepts a valid HTTP201 nested ACK and keeps its distinct initialGIF endpoint
+  ---
+  duration_ms: 0.835125
+  type: 'test'
+  ...
+# Subtest: usable ACK IDs preserve exact leading zeros and large integer tokens, but malformed ACKs never confirm a submitted message
+ok 61 - usable ACK IDs preserve exact leading zeros and large integer tokens, but malformed ACKs never confirm a submitted message
+  ---
+  duration_ms: 2.640209
+  type: 'test'
+  ...
+# Subtest: pre-abort is unsubmitted; an adapter abort after actual handoff is unknown and releases the action lease without retry
+ok 62 - pre-abort is unsubmitted; an adapter abort after actual handoff is unknown and releases the action lease without retry
+  ---
+  duration_ms: 0.748375
+  type: 'test'
+  ...
+# Subtest: fresh caller-created and previously genuinely issued ZaloProtocolErrors thrown by later Response.text never acquire CURRENT-forward refusal authority
+ok 63 - fresh caller-created and previously genuinely issued ZaloProtocolErrors thrown by later Response.text never acquire CURRENT-forward refusal authority
+  ---
+  duration_ms: 1.239667
+  type: 'test'
+  ...
+# Subtest: caller public send-errors, throwing status/body accessors and ordinary local faults stay private fixed unknown submissions
+ok 64 - caller public send-errors, throwing status/body accessors and ordinary local faults stay private fixed unknown submissions
+  ---
+  duration_ms: 1.080042
+  type: 'test'
+  ...
+# Subtest: genuine GIF signals ignore hostile own getters, clean their scope and propagate cancellation despite an earlier blocking listener
+ok 65 - genuine GIF signals ignore hostile own getters, clean their scope and propagate cancellation despite an earlier blocking listener
+  ---
+  duration_ms: 0.885042
+  type: 'test'
+  ...
+# Subtest: G01 public root adds only standalone reads; E2EE and upstream instance methods stay distinct
+ok 66 - G01 public root adds only standalone reads; E2EE and upstream instance methods stay distinct
+  ---
+  duration_ms: 13.102667
+  type: 'test'
+  ...
+# Subtest: G02 all three exact GETs use account CBC, common values, scoped cookies and preserved service prefix
+ok 67 - G02 all three exact GETs use account CBC, common values, scoped cookies and preserved service prefix
+  ---
+  duration_ms: 14.069583
+  type: 'test'
+  ...
+# Subtest: G03 explicit maximal page/count and forty-digit prefixed ID remain exact without a page99 limit
+ok 68 - G03 explicit maximal page/count and forty-digit prefixed ID remain exact without a page99 limit
+  ---
+  duration_ms: 3.049542
+  type: 'test'
+  ...
+# Subtest: G04 absent and own undefined options default while frozen/null-prototype options are captured once
+ok 69 - G04 absent and own undefined options default while frozen/null-prototype options are captured once
+  ---
+  duration_ms: 4.553625
+  type: 'test'
+  ...
+# Subtest: G05 options structure rejects unknown/symbol/hidden/accessor/class/Proxy without private reads before scalar validation
+ok 70 - G05 options structure rejects unknown/symbol/hidden/accessor/class/Proxy without private reads before scalar validation
+  ---
+  duration_ms: 2.360541
+  type: 'test'
+  ...
+# Subtest: G06 member ID grammar rejects coercion/trimming/alternate prefixes before invalid range and never reads an ID object
+ok 71 - G06 member ID grammar rejects coercion/trimming/alternate prefixes before invalid range and never reads an ID object
+  ---
+  duration_ms: 2.351458
+  type: 'test'
+  ...
+# Subtest: G07 exact range faults precede signal capture and reject every wrong scalar with zero dispatch
+ok 72 - G07 exact range faults precede signal capture and reject every wrong scalar with zero dispatch
+  ---
+  duration_ms: 4.146375
+  type: 'test'
+  ...
+# Subtest: G08 inherited page/count never supply values, and mutable options cannot alter captured intent
+ok 73 - G08 inherited page/count never supply values, and mutable options cannot alter captured intent
+  ---
+  duration_ms: 3.319125
+  type: 'test'
+  ...
+# Subtest: G09 fake/Proxy signals are fixed input faults and genuine pre-abort wins missing service without a request
+ok 74 - G09 fake/Proxy signals are fixed input faults and genuine pre-abort wins missing service without a request
+  ---
+  duration_ms: 2.031708
+  type: 'test'
+  ...
+# Subtest: G10 V3 preserves unformatted rows, duplicates, opaque fields and raw continuation without extra paging
+ok 75 - G10 V3 preserves unformatted rows, duplicates, opaque fields and raw continuation without extra paging
+  ---
+  duration_ms: 1.275042
+  type: 'test'
+  ...
+# Subtest: G11 member metadata-only, absent, unsupported and actual empty arrays remain distinct without unwrapping
+ok 76 - G11 member metadata-only, absent, unsupported and actual empty arrays remain distinct without unwrapping
+  ---
+  duration_ms: 1.505209
+  type: 'test'
+  ...
+# Subtest: G12 member collections preserve order/duplicates and never fold admins, rewrite identities or normalize continuation
+ok 77 - G12 member collections preserve order/duplicates and never fold admins, rewrite identities or normalize continuation
+  ---
+  duration_ms: 0.80875
+  type: 'test'
+  ...
+# Subtest: G13 encrypted IDs preserve literal precision, arbitrary strings, order and duplicates with only mechanical observations
+ok 78 - G13 encrypted IDs preserve literal precision, arbitrary strings, order and duplicates with only mechanical observations
+  ---
+  duration_ms: 0.623583
+  type: 'test'
+  ...
+# Subtest: G14 encrypted ID string observation has UTF8 byte/wellformedness bounds but never filters raw slots
+ok 79 - G14 encrypted ID string observation has UTF8 byte/wellformedness bounds but never filters raw slots
+  ---
+  duration_ms: 0.497375
+  type: 'test'
+  ...
+# Subtest: G15 direct-result shape rejects empty ACKs/falsey roots/extra JSON layers but valid empty pages/arrays survive
+ok 80 - G15 direct-result shape rejects empty ACKs/falsey roots/extra JSON layers but valid empty pages/arrays survive
+  ---
+  duration_ms: 10.771
+  type: 'test'
+  ...
+# Subtest: G16 LOCAL postdecode root descriptors and proxies reject without getters; required groups must be own
+ok 81 - G16 LOCAL postdecode root descriptors and proxies reject without getters; required groups must be own
+  ---
+  duration_ms: 3.918542
+  type: 'test'
+  ...
+# Subtest: G17 LOCAL required arrays reject holes/extras/accessors/prototypes/Proxy before entry reads or iterators
+ok 82 - G17 LOCAL required arrays reject holes/extras/accessors/prototypes/Proxy before entry reads or iterators
+  ---
+  duration_ms: 3.522667
+  type: 'test'
+  ...
+# Subtest: G18 LOCAL optional member nonarrays/Proxy stay opaque but every recognized malformed real array rejects
+ok 83 - G18 LOCAL optional member nonarrays/Proxy stay opaque but every recognized malformed real array rejects
+  ---
+  duration_ms: 6.605959
+  type: 'test'
+  ...
+# Subtest: G19 LOCAL shallow copies freeze only new containers, preserve raw aliases and accept frozen/null-prototype dense arrays
+ok 84 - G19 LOCAL shallow copies freeze only new containers, preserve raw aliases and accept frozen/null-prototype dense arrays
+  ---
+  duration_ms: 1.136167
+  type: 'test'
+  ...
+# Subtest: G20 exact root/array/key caps accept boundaries and reject one-over; member arrays have independent per-array limits
+ok 85 - G20 exact root/array/key caps accept boundaries and reject one-over; member arrays have independent per-array limits
+  ---
+  duration_ms: 133.416375
+  type: 'test'
+  ...
+# Subtest: G21 account status layers preserve safe refusal codes and malformed ciphertext/JSON never become a shape success
+ok 86 - G21 account status layers preserve safe refusal codes and malformed ciphertext/JSON never become a shape success
+  ---
+  duration_ms: 4.465417
+  type: 'test'
+  ...
+# Subtest: G22 missing service stays local and adapter public errors remain fixed shared-boundary failures without invented absence
+ok 87 - G22 missing service stays local and adapter public errors remain fixed shared-boundary failures without invented absence
+  ---
+  duration_ms: 4.985292
+  type: 'test'
+  ...
+# Subtest: G23 new reads strictly reject HTTP201 before body consumption while old verification read remains HTTP-ok compatible
+ok 88 - G23 new reads strictly reject HTTP201 before body consumption while old verification read remains HTTP-ok compatible
+  ---
+  duration_ms: 1.127042
+  type: 'test'
+  ...
+# Subtest: G24 every redirect-admission failure stays one dispatch, unread/cancelled and private, including empty Location
+ok 89 - G24 every redirect-admission failure stays one dispatch, unread/cancelled and private, including empty Location
+  ---
+  duration_ms: 9.551125
+  type: 'test'
+  ...
+# Subtest: G25 genuine signal snapshots ignore hostile own getters, clean subscriptions and resist blocked abort propagation
+ok 90 - G25 genuine signal snapshots ignore hostile own getters, clean subscriptions and resist blocked abort propagation
+  ---
+  duration_ms: 1.786375
+  type: 'test'
+  ...
+# Subtest: G26 projection/body/provider failures stop only their scope and preserve exact shared cancellation classification
+ok 91 - G26 projection/body/provider failures stop only their scope and preserve exact shared cancellation classification
+  ---
+  duration_ms: 1.582083
+  type: 'test'
+  ...
+# Subtest: G27 concurrent distinct APIs keep account keys/transports and genuine cancellation isolated
+ok 92 - G27 concurrent distinct APIs keep account keys/transports and genuine cancellation isolated
+  ---
+  duration_ms: 0.860917
+  type: 'test'
+  ...
+# Subtest: G28 truthy/raw continuations and duplicate manual pages never cause paging, fallback, enrichment or E2EE/listener work
+ok 93 - G28 truthy/raw continuations and duplicate manual pages never cause paging, fallback, enrichment or E2EE/listener work
+  ---
+  duration_ms: 0.753208
+  type: 'test'
+  ...
+# Subtest: I01 exact records reject unknown keys/kinds/mixed APIs and caller accessors/Proxies without invoking traps
+ok 94 - I01 exact records reject unknown keys/kinds/mixed APIs and caller accessors/Proxies without invoking traps
+  ---
+  duration_ms: 10.150958
+  type: 'test'
+  ...
+# Subtest: I02 target count/density/exact array shape are checked without index accessors or custom iteration
+ok 95 - I02 target count/density/exact array shape are checked without index accessors or custom iteration
+  ---
+  duration_ms: 0.884333
+  type: 'test'
+  ...
+# Subtest: I03 client/target IDs and TTLs require exact independent domains, normalized duplicates reject before any batch lease
+ok 96 - I03 client/target IDs and TTLs require exact independent domains, normalized duplicates reject before any batch lease
+  ---
+  duration_ms: 2.706875
+  type: 'test'
+  ...
+# Subtest: I04 source scalar/Unicode/byte domains reject coercion while preserving empty text, open signed type and defined optional omissions
+ok 97 - I04 source scalar/Unicode/byte domains reject coercion while preserving empty text, open signed type and defined optional omissions
+  ---
+  duration_ms: 11.175208
+  type: 'test'
+  ...
+# Subtest: I05 ordinary URL admission rejects protected query keys without fetching/rewriting and preserves non-key values/fragments
+ok 98 - I05 ordinary URL admission rejects protected query keys without fetching/rewriting and preserves non-key values/fragments
+  ---
+  duration_ms: 2.558833
+  type: 'test'
+  ...
+# Subtest: I06 bounded JSON snapshots reject accessors/proxies/cycles/nested undefined/holes/symbols/toJSON without executing them; aliases remain valid
+ok 99 - I06 bounded JSON snapshots reject accessors/proxies/cycles/nested undefined/holes/symbols/toJSON without executing them; aliases remain valid
+  ---
+  duration_ms: 1.818666
+  type: 'test'
+  ...
+# Subtest: I07 JSON node/depth/serialized-byte and complete512KiB limits are enforced before I/O, counting repeated aliases independently
+ok 100 - I07 JSON node/depth/serialized-byte and complete512KiB limits are enforced before I/O, counting repeated aliases independently
+  ---
+  duration_ms: 6.744
+  type: 'test'
+  ...
+# Subtest: I08 reference/decor are independent strings with exact omission and object-or-array JSON root validation, never coercive metadata knobs
+ok 101 - I08 reference/decor are independent strings with exact omission and object-or-array JSON root validation, never coercive metadata knobs
+  ---
+  duration_ms: 2.281833
+  type: 'test'
+  ...
+# Subtest: I09 all route/targets/source/extensions are captured before awaits; caller mutation cannot alter wire or returned target metadata
+ok 102 - I09 all route/targets/source/extensions are captured before awaits; caller mutation cannot alter wire or returned target metadata
+  ---
+  duration_ms: 2.209083
+  type: 'test'
+  ...
+# Subtest: W01 direct TEXT batches retain per-target TTLs, separate top TTL and exact common/accountAES form with no singular fields
+ok 103 - W01 direct TEXT batches retain per-target TTLs, separate top TTL and exact common/accountAES form with no singular fields
+  ---
+  duration_ms: 8.972833
+  type: 'test'
+  ...
+# Subtest: W02 group batches strip one lowercase g, omit IMEI/visibility and use FILE group/mforward instead of group service
+ok 104 - W02 group batches strip one lowercase g, omit IMEI/visibility and use FILE group/mforward instead of group service
+  ---
+  duration_ms: 1.2375
+  type: 'test'
+  ...
+# Subtest: W03 final RTF text/style stay byte exact, positive containType adds only its two-field paramsExt, and reference/decor are independent JSON text
+ok 105 - W03 final RTF text/style stay byte exact, positive containType adds only its two-field paramsExt, and reference/decor are independent JSON text
+  ---
+  duration_ms: 2.023708
+  type: 'test'
+  ...
+# Subtest: W04 STICKER preserves numeric/text ID representation, category0 and open type, normalizing only native falsey extInfo
+ok 106 - W04 STICKER preserves numeric/text ID representation, category0 and open type, normalizing only native falsey extInfo
+  ---
+  duration_ms: 4.049917
+  type: 'test'
+  ...
+# Subtest: W05 LINK maps title to message but always url to linkTitle, retaining null/empty fields and opaque extension string
+ok 107 - W05 LINK maps title to message but always url to linkTitle, retaining null/empty fields and opaque extension string
+  ---
+  duration_ms: 2.187625
+  type: 'test'
+  ...
+# Subtest: W06 independent AES128/192/256 account envelopes all produce one batch and never fetch source/preview/thumbnail
+ok 108 - W06 independent AES128/192/256 account envelopes all produce one batch and never fetch source/preview/thumbnail
+  ---
+  duration_ms: 1.532708
+  type: 'test'
+  ...
+# Subtest: W07 maximum50 destinations retain input order and caller IDs/TTLs without native splitting, discovery or generated action IDs
+ok 109 - W07 maximum50 destinations retain input order and caller IDs/TTLs without native splitting, discovery or generated action IDs
+  ---
+  duration_ms: 1.6845
+  type: 'test'
+  ...
+# Subtest: W08 pinned public api.forwardMessage remains a separate unchanged TEXT helper with its original success/fail vocabulary
+ok 110 - W08 pinned public api.forwardMessage remains a separate unchanged TEXT helper with its original success/fail vocabulary
+  ---
+  duration_ms: 1.932459
+  type: 'test'
+  ...
+# Subtest: attach is local, initializes an independently inspectable aggregate and holds the native owner claim
+ok 111 - attach is local, initializes an independently inspectable aggregate and holds the native owner claim
+  ---
+  duration_ms: 57.411292
+  type: 'test'
+  ...
+# Subtest: the device is claimed before asynchronous load and reentrant store code cannot mutate it
+ok 112 - the device is claimed before asynchronous load and reentrant store code cannot mutate it
+  ---
+  duration_ms: 26.489959
+  type: 'test'
+  ...
+# Subtest: one explicit GET uses captured account AES/common fields, durable intent and a confirmed Signal/RSA transaction
+ok 113 - one explicit GET uses captured account AES/common fields, durable intent and a confirmed Signal/RSA transaction
+  ---
+  duration_ms: 139.167208
+  type: 'test'
+  ...
+# Subtest: immutable service/account/name capture defeats mutable API context, credentials snapshot and custom-method decoys
+ok 114 - immutable service/account/name capture defeats mutable API context, credentials snapshot and custom-method decoys
+  ---
+  duration_ms: 39.819375
+  type: 'test'
+  ...
+# Subtest: absent zcloud uses the exact native fallback while an advertised malformed base never falls back
+ok 115 - absent zcloud uses the exact native fallback while an advertised malformed base never falls back
+  ---
+  duration_ms: 40.648959
+  type: 'test'
+  ...
+# Subtest: private original feed readiness and subscription ignore mutable public Promise/method decoys
+ok 116 - private original feed readiness and subscription ignore mutable public Promise/method decoys
+  ---
+  duration_ms: 42.230833
+  type: 'test'
+  ...
+# Subtest: the captured original connection close closes its socket despite mutable listener/ws/stop decoys
+ok 117 - the captured original connection close closes its socket despite mutable listener/ws/stop decoys
+  ---
+  duration_ms: 30.503333
+  type: 'test'
+  ...
+# Subtest: copied/proxy/wrong API owners and lost original listener/socket/wrapper are rejected before GET
+ok 118 - copied/proxy/wrong API owners and lost original listener/socket/wrapper are rejected before GET
+  ---
+  duration_ms: 77.673125
+  type: 'test'
+  ...
+# Subtest: invalid attach/wait inputs are fixed before side effects and genuine hostile-own signals use intrinsic slots
+ok 119 - invalid attach/wait inputs are fixed before side effects and genuine hostile-own signals use intrinsic slots
+  ---
+  duration_ms: 39.433917
+  type: 'test'
+  ...
+# Subtest: attach/wait option descriptors and Proxies reject without invoking caller traps or exposing their exceptions
+ok 120 - attach/wait option descriptors and Proxies reject without invoking caller traps or exposing their exceptions
+  ---
+  duration_ms: 15.464875
+  type: 'test'
+  ...
+# Subtest: a trusted intent commit may delay a method but an expired local window cannot subsequently hand off a GET
+ok 121 - a trusted intent commit may delay a method but an expired local window cannot subsequently hand off a GET
+  ---
+  duration_ms: 60.351292
+  type: 'test'
+  ...
+# Subtest: reentrant ownership loss during durable intent is fenced again before the sole HTTP handoff
+ok 122 - reentrant ownership loss during durable intent is fenced again before the sole HTTP handoff
+  ---
+  duration_ms: 44.359917
+  type: 'test'
+  ...
+# Subtest: current decoded refusal is known, but public/caller/prior errors have no refusal authority and unknown waits stay bounded
+ok 123 - current decoded refusal is known, but public/caller/prior errors have no refusal authority and unknown waits stay bounded
+  ---
+  duration_ms: 3130.845291
+  type: 'test'
+  ...
+# Subtest: post-handoff HTTP/body/redirect faults keep one deadline and accept a late matching phone result without retry
+ok 124 - post-handoff HTTP/body/redirect faults keep one deadline and accept a late matching phone result without retry
+  ---
+  duration_ms: 219.81875
+  type: 'test'
+  ...
+# Subtest: unknown admission deadline suspends exactly and resume uses the same session with zero additional GETs
+ok 125 - unknown admission deadline suspends exactly and resume uses the same session with zero additional GETs
+  ---
+  duration_ms: 1056.479542
+  type: 'test'
+  ...
+# Subtest: outer-zero falsey data and inner-zero arbitrary data acknowledge admission only, never an RSA enrollment
+ok 126 - outer-zero falsey data and inner-zero arbitrary data acknowledge admission only, never an RSA enrollment
+  ---
+  duration_ms: 6239.910958
+  type: 'test'
+  ...
+# Subtest: a matched first phone claim wins delayed contradictory HTTP; wrong/malformed/control-reset rows never claim
+ok 127 - a matched first phone claim wins delayed contradictory HTTP; wrong/malformed/control-reset rows never claim
+  ---
+  duration_ms: 44.158458
+  type: 'test'
+  ...
+# Subtest: matching controls before durable intent/network handoff are ignored
+ok 128 - matching controls before durable intent/network handoff are ignored
+  ---
+  duration_ms: 40.542542
+  type: 'test'
+  ...
+# Subtest: mobile rejection uses no Signal/key parsing and preserves recipient prekeys
+ok 129 - mobile rejection uses no Signal/key parsing and preserves recipient prekeys
+  ---
+  duration_ms: 28.763625
+  type: 'test'
+  ...
+# Subtest: aborts resist earlier stopImmediatePropagation listeners and late replies cannot consume keys
+ok 130 - aborts resist earlier stopImmediatePropagation listeners and late replies cannot consume keys
+  ---
+  duration_ms: 56.47825
+  type: 'test'
+  ...
+# Subtest: pre-crypto wrapper loss/ordinary closure/disposal suspend with truthful scope errors
+ok 131 - pre-crypto wrapper loss/ordinary closure/disposal suspend with truthful scope errors
+  ---
+  duration_ms: 162.408292
+  type: 'test'
+  ...
+# Subtest: post-authentication commit is awaited and wins late abort, connection/feed/device close and coordinator disposal
+ok 132 - post-authentication commit is awaited and wins late abort, connection/feed/device close and coordinator disposal
+  ---
+  duration_ms: 193.373
+  type: 'test'
+  ...
+# Subtest: authenticated consumed-key rejection also wins late scope cancellation and durably advances Signal exactly once
+ok 133 - authenticated consumed-key rejection also wins late scope cancellation and durably advances Signal exactly once
+  ---
+  duration_ms: 105.504042
+  type: 'test'
+  ...
+# Subtest: explicit established self-slot0 import is atomic and type1 advances conversation but preserves exact device seal
+ok 134 - explicit established self-slot0 import is atomic and type1 advances conversation but preserves exact device seal
+  ---
+  duration_ms: 42.977291
+  type: 'test'
+  ...
+# Subtest: type1 without managed state and invalid explicit import bindings fail without inventing a conversation
+ok 135 - type1 without managed state and invalid explicit import bindings fail without inventing a conversation
+  ---
+  duration_ms: 48.061792
+  type: 'test'
+  ...
+# Subtest: an explicit import into an existing idle aggregate is one import-conversation transition at revision+1
+ok 136 - an explicit import into an existing idle aggregate is one import-conversation transition at revision+1
+  ---
+  duration_ms: 21.909958
+  type: 'test'
+  ...
+# Subtest: existing-only requires a conversation and rejects a new base without consuming an available prekey
+ok 137 - existing-only requires a conversation and rejects a new base without consuming an available prekey
+  ---
+  duration_ms: 41.250958
+  type: 'test'
+  ...
+# Subtest: pinned replacement atomically replaces an imported conversation and increments its existing revision
+ok 138 - pinned replacement atomically replaces an imported conversation and increments its existing revision
+  ---
+  duration_ms: 48.104875
+  type: 'test'
+  ...
+# Subtest: a valid three-DH initial frame without a one-time key consumes a replay base but no OTK ID
+ok 139 - a valid three-DH initial frame without a one-time key consumes a replay base but no OTK ID
+  ---
+  duration_ms: 41.678042
+  type: 'test'
+  ...
+# Subtest: authenticated invalid RSA durably consumes; same-base continuation uses the managed chain without prekey fallback
+ok 140 - authenticated invalid RSA durably consumes; same-base continuation uses the managed chain without prekey fallback
+  ---
+  duration_ms: 122.009
+  type: 'test'
+  ...
+# Subtest: durable publication-unknown still permits pinned inbound acceptance without clearing publication uncertainty
+ok 141 - durable publication-unknown still permits pinned inbound acceptance without clearing publication uncertainty
+  ---
+  duration_ms: 57.645625
+  type: 'test'
+  ...
+# Subtest: an active request excludes duplicate calls and other Desktop mutations, then releases the account lease
+ok 142 - an active request excludes duplicate calls and other Desktop mutations, then releases the account lease
+  ---
+  duration_ms: 28.548791
+  type: 'test'
+  ...
+# Subtest: Curve/registration pin mismatch and frame tamper never consume recipient key state
+ok 143 - Curve/registration pin mismatch and frame tamper never consume recipient key state
+  ---
+  duration_ms: 114.726334
+  type: 'test'
+  ...
+# Subtest: pending and retained recipient generations are selected by signed-prekey ID, without implicit publication
+ok 144 - pending and retained recipient generations are selected by signed-prekey ID, without implicit publication
+  ---
+  duration_ms: 167.20575
+  type: 'test'
+  ...
+# Subtest: already-enrolled request is a new-call no-submit result; detached handle disposal does not revoke other handles
+ok 145 - already-enrolled request is a new-call no-submit result; detached handle disposal does not revoke other handles
+  ---
+  duration_ms: 40.951667
+  type: 'test'
+  ...
+# Subtest: normal full direct/group content preserves source ID/title/URLs/properties and explicit original/JXL/reference/decor only
+ok 146 - normal full direct/group content preserves source ID/title/URLs/properties and explicit original/JXL/reference/decor only
+  ---
+  duration_ms: 9.249125
+  type: 'test'
+  ...
+# Subtest: normal nullish title and falsey thumbnail defaults are source-specific while optional HD/dimensions and JCP flags retain honest presence
+ok 147 - normal nullish title and falsey thumbnail defaults are source-specific while optional HD/dimensions and JCP flags retain honest presence
+  ---
+  duration_ms: 4.896625
+  type: 'test'
+  ...
+# Subtest: current nonAI complete selected metadata keeps HD/captions/normal/WebP/properties/photoId without AI/default/fallback injection
+ok 148 - current nonAI complete selected metadata keeps HD/captions/normal/WebP/properties/photoId without AI/default/fallback injection
+  ---
+  duration_ms: 1.041791
+  type: 'test'
+  ...
+# Subtest: nonAI own pStickerType presence moves to JCP including undefined while absence adds none and known AI1 never passes kind policy
+ok 149 - nonAI own pStickerType presence moves to JCP including undefined while absence adds none and known AI1 never passes kind policy
+  ---
+  duration_ms: 2.0235
+  type: 'test'
+  ...
+# Subtest: properties are exact any-root JSON text, WebP remains full object text, and source-null/empty policies differ between helpers
+ok 150 - properties are exact any-root JSON text, WebP remains full object text, and source-null/empty policies differ between helpers
+  ---
+  duration_ms: 3.30075
+  type: 'test'
+  ...
+# Subtest: normal photo ID differs from content/photoId tokens and every dimension uses exact safe digit syntax including nullable empty values
+ok 151 - normal photo ID differs from content/photoId tokens and every dimension uses exact safe digit syntax including nullable empty values
+  ---
+  duration_ms: 4.48075
+  type: 'test'
+  ...
+# Subtest: all nonempty locators reject protected capsules while JXL text is never rewritten and nonAI requires original-or-normal, not HD only
+ok 152 - all nonempty locators reject protected capsules while JXL text is never rewritten and nonAI requires original-or-normal, not HD only
+  ---
+  duration_ms: 1.822958
+  type: 'test'
+  ...
+# Subtest: UTF8/text/JSON/scalar bounds are admission policy without normalization or projection of unknown JSON members
+ok 153 - UTF8/text/JSON/scalar bounds are admission policy without normalization or projection of unknown JSON members
+  ---
+  duration_ms: 9.107791
+  type: 'test'
+  ...
+# Subtest: own-data preflight rejects wrong kind/root fields, accessors and proxies without invoking them or dispatching
+ok 154 - own-data preflight rejects wrong kind/root fields, accessors and proxies without invoking them or dispatching
+  ---
+  duration_ms: 1.775375
+  type: 'test'
+  ...
+# Subtest: both photo helpers share one API/clientId lease, snapshot source before await and release before a later explicit variant
+ok 155 - both photo helpers share one API/clientId lease, snapshot source before await and release before a later explicit variant
+  ---
+  duration_ms: 1.80775
+  type: 'test'
+  ...
+# Subtest: only current safe outer/inner decoded refusals are known; all terminal paths release the shared variant lease
+ok 156 - only current safe outer/inner decoded refusals are known; all terminal paths release the shared variant lease
+  ---
+  duration_ms: 1.253708
+  type: 'test'
+  ...
+# Subtest: forged or previously issued public refusal errors thrown during a later body read are not current photo refusals
+ok 157 - forged or previously issued public refusal errors thrown during a later body read are not current photo refusals
+  ---
+  duration_ms: 1.478167
+  type: 'test'
+  ...
+# Subtest: ACK uses exact usable message ID with shallow raw only; malformed/custom accessor ACKs cannot confirm a photo
+ok 158 - ACK uses exact usable message ID with shallow raw only; malformed/custom accessor ACKs cannot confirm a photo
+  ---
+  duration_ms: 1.4745
+  type: 'test'
+  ...
+# Subtest: genuine signals ignore own overrides, resist stopImmediatePropagation, preserve abort disposition and clean listeners across both variants
+ok 159 - genuine signals ignore own overrides, resist stopImmediatePropagation, preserve abort disposition and clean listeners across both variants
+  ---
+  duration_ms: 1.67425
+  type: 'test'
+  ...
+# Subtest: strict201/redirects are single unknown submissions with no body read, redirect cancellation, cookie/defaultheader preservation and no asset fetch
+ok 160 - strict201/redirects are single unknown submissions with no body read, redirect cancellation, cookie/defaultheader preservation and no asset fetch
+  ---
+  duration_ms: 1.728375
+  type: 'test'
+  ...
+# Subtest: unsupported service is unsubmitted; local public errors/status/body failures stay fixed private unknowns without retry
+ok 161 - unsupported service is unsubmitted; local public errors/status/body failures stay fixed private unknowns without retry
+  ---
+  duration_ms: 0.714417
+  type: 'test'
+  ...
+# Subtest: all eight catalog predicates preserve original order/duplicates/raw wrappers without native reverse-cache processing
+ok 162 - all eight catalog predicates preserve original order/duplicates/raw wrappers without native reverse-cache processing
+  ---
+  duration_ms: 1.175875
+  type: 'test'
+  ...
+# Subtest: product add/edit gates on raw own ID truthiness rather than typed ID/version qualification
+ok 163 - product add/edit gates on raw own ID truthiness rather than typed ID/version qualification
+  ---
+  duration_ms: 0.528375
+  type: 'test'
+  ...
+# Subtest: product versions are optional own raw entries and field qualification is partial with no clock/unit/count coercion
+ok 164 - product versions are optional own raw entries and field qualification is partial with no clock/unit/count coercion
+  ---
+  duration_ms: 0.101667
+  type: 'test'
+  ...
+# Subtest: single product deletion uses root truthy product_id and independently retains optional catalog ID presence
+ok 165 - single product deletion uses root truthy product_id and independently retains optional catalog ID presence
+  ---
+  duration_ms: 0.094791
+  type: 'test'
+  ...
+# Subtest: product list deletion uses only dense product_ids values, preserves unsupported slots, and does not execute iterators/extras
+ok 166 - product list deletion uses only dense product_ids values, preserves unsupported slots, and does not execute iterators/extras
+  ---
+  duration_ms: 0.2175
+  type: 'test'
+  ...
+# Subtest: empty deletion lists remain valid after attempted-slot budget exhaustion and malformed lists do not refund slots
+ok 167 - empty deletion lists remain valid after attempted-slot budget exhaustion and malformed lists do not refund slots
+  ---
+  duration_ms: 2.257
+  type: 'test'
+  ...
+# Subtest: catalog add/edit preserve independently original aliases and large count values, with empty partial items valid and unsupported items raw-only
+ok 168 - catalog add/edit preserve independently original aliases and large count values, with empty partial items valid and unsupported items raw-only
+  ---
+  duration_ms: 0.187625
+  type: 'test'
+  ...
+# Subtest: catalog deletion is fieldless for absent/null/primitive data and captures own CID without a truthy-ID or cascade claim
+ok 169 - catalog deletion is fieldless for absent/null/primitive data and captures own CID without a truthy-ID or cascade claim
+  ---
+  duration_ms: 0.159542
+  type: 'test'
+  ...
+# Subtest: enable_feature recognizes any unused normalized container without inspecting it or deriving an enabled Boolean
+ok 170 - enable_feature recognizes any unused normalized container without inspecting it or deriving an enabled Boolean
+  ---
+  duration_ms: 0.250959
+  type: 'test'
+  ...
+# Subtest: selected descriptor faults suppress only promised projections; unknown metadata remains raw and untraversed
+ok 171 - selected descriptor faults suppress only promised projections; unknown metadata remains raw and untraversed
+  ---
+  duration_ms: 0.272958
+  type: 'test'
+  ...
+# Subtest: exact one-layer JSON normalization retains unsafe integer tokens and unsupported/future controls without trimming
+ok 172 - exact one-layer JSON normalization retains unsafe integer tokens and unsupported/future controls without trimming
+  ---
+  duration_ms: 0.160292
+  type: 'test'
+  ...
+# Subtest: common strict601603 status/reset/own-frame/text bounds and pure no-clock/no-fetch behavior stay unchanged
+ok 173 - common strict601603 status/reset/own-frame/text bounds and pure no-clock/no-fetch behavior stay unchanged
+  ---
+  duration_ms: 0.255208
+  type: 'test'
+  ...
+# Subtest: view uses exactly one catalog POST and returns the direct partial row without requested-ID correlation or item unwrap
+ok 174 - view uses exactly one catalog POST and returns the direct partial row without requested-ID correlation or item unwrap
+  ---
+  duration_ms: 9.442125
+  type: 'test'
+  ...
+# Subtest: explicit outgoing IDs preserve numeric/string type, zero/negative values, leading whitespace and UTF8 bounds without lookups
+ok 175 - explicit outgoing IDs preserve numeric/string type, zero/negative values, leading whitespace and UTF8 bounds without lookups
+  ---
+  duration_ms: 3.909
+  type: 'test'
+  ...
+# Subtest: view own-data preflight rejects class/Proxy/accessor/unknown options before dispatch without private getter invocation
+ok 176 - view own-data preflight rejects class/Proxy/accessor/unknown options before dispatch without private getter invocation
+  ---
+  duration_ms: 1.793083
+  type: 'test'
+  ...
+# Subtest: view qualifies independent optional fields and distinguishes valid empty rows from falsey/array/extra-layer decoded values
+ok 177 - view qualifies independent optional fields and distinguishes valid empty rows from falsey/array/extra-layer decoded values
+  ---
+  duration_ms: 2.896416
+  type: 'test'
+  ...
+# Subtest: single deletion uses the exact two-parameter POST and returns only frozen ACK wrapper without ID/count/state claims
+ok 178 - single deletion uses the exact two-parameter POST and returns only frozen ACK wrapper without ID/count/state claims
+  ---
+  duration_ms: 0.898084
+  type: 'test'
+  ...
+# Subtest: deletion parsed outer-success falsey data ACK is undefined, whereas encrypted inner-success returns every inner value unchanged
+ok 179 - deletion parsed outer-success falsey data ACK is undefined, whereas encrypted inner-success returns every inner value unchanged
+  ---
+  duration_ms: 1.783333
+  type: 'test'
+  ...
+# Subtest: entirely empty/unparsed HTTP bodies never become deletion ACKs or fabricated view-not-found rows
+ok 180 - entirely empty/unparsed HTTP bodies never become deletion ACKs or fabricated view-not-found rows
+  ---
+  duration_ms: 1.457708
+  type: 'test'
+  ...
+# Subtest: delete lease is per API/exact JSON wire tuple, sharing minuszero/zero but distinguishing number/string and other tuples
+ok 181 - delete lease is per API/exact JSON wire tuple, sharing minuszero/zero but distinguishing number/string and other tuples
+  ---
+  duration_ms: 3.385708
+  type: 'test'
+  ...
+# Subtest: delete snapshots both IDs before await and rejects missing/unsafe/unknown/accessor input without any fallback request
+ok 182 - delete snapshots both IDs before await and rejects missing/unsafe/unknown/accessor input without any fallback request
+  ---
+  duration_ms: 0.972417
+  type: 'test'
+  ...
+# Subtest: current decoded safe refusals stay known, while caller-created or previously issued public errors do not certify either current operation
+ok 183 - current decoded safe refusals stay known, while caller-created or previously issued public errors do not certify either current operation
+  ---
+  duration_ms: 1.685041
+  type: 'test'
+  ...
+# Subtest: POST-DECODE custom row/ACK policy keeps shallow references and permits only mandatory Promise then probes on opaque raw ACKs
+ok 184 - POST-DECODE custom row/ACK policy keeps shallow references and permits only mandatory Promise then probes on opaque raw ACKs
+  ---
+  duration_ms: 0.870708
+  type: 'test'
+  ...
+# Subtest: both RPCs use intrinsic-safe genuine signals with fixed pre/post-abort errors and resistant listener cleanup
+ok 185 - both RPCs use intrinsic-safe genuine signals with fixed pre/post-abort errors and resistant listener cleanup
+  ---
+  duration_ms: 1.536375
+  type: 'test'
+  ...
+# Subtest: strict201 and redirects never read a body or replay; redirects cancel readable bodies and catalog headers do not borrow other service cookies
+ok 186 - strict201 and redirects never read a body or replay; redirects cancel readable bodies and catalog headers do not borrow other service cookies
+  ---
+  duration_ms: 1.506167
+  type: 'test'
+  ...
+# Subtest: local callback/status faults remain fresh fixed errors and missing catalog service never triggers a fallback
+ok 187 - local callback/status faults remain fresh fixed errors and missing catalog service never triggers a fallback
+  ---
+  duration_ms: 0.78525
+  type: 'test'
+  ...
+# Subtest: reads exact profile-extra fields and retains parallel photos, opaque metadata, groups and provider extensions
+ok 188 - reads exact profile-extra fields and retains parallel photos, opaque metadata, groups and provider extensions
+  ---
+  duration_ms: 13.665709
+  type: 'test'
+  ...
+# Subtest: accepts the independently evidenced extra JSON layer without assuming photo metadata is an array
+ok 189 - accepts the independently evidenced extra JSON layer without assuming photo metadata is an array
+  ---
+  duration_ms: 4.211625
+  type: 'test'
+  ...
+# Subtest: reads own verification status without params and preserves every observed status and future integer codes
+ok 190 - reads own verification status without params and preserves every observed status and future integer codes
+  ---
+  duration_ms: 4.989416
+  type: 'test'
+  ...
+# Subtest: rejects the authenticated own profile before I/O as the installed public metadata helper does
+ok 191 - rejects the authenticated own profile before I/O as the installed public metadata helper does
+  ---
+  duration_ms: 0.405916
+  type: 'test'
+  ...
+# Subtest: rejects malformed active structures and extra wrapping with sanitized response errors
+ok 192 - rejects malformed active structures and extra wrapping with sanitized response errors
+  ---
+  duration_ms: 6.444625
+  type: 'test'
+  ...
+# Subtest: validates IDs and cancellation before I/O and reports safe provider/transport/service failures
+ok 193 - validates IDs and cancellation before I/O and reports safe provider/transport/service failures
+  ---
+  duration_ms: 0.997625
+  type: 'test'
+  ...
+# Subtest: fabricated abort does not cancel and cannot consume the later native abort
+ok 194 - fabricated abort does not cancel and cannot consume the later native abort
+  ---
+  duration_ms: 0.477333
+  type: 'test'
+  ...
+# Subtest: native abort in the fabricated-event rearm gap is observed
+ok 195 - native abort in the fabricated-event rearm gap is observed
+  ---
+  duration_ms: 0.079834
+  type: 'test'
+  ...
+# Subtest: repeated fabricated events retain exactly the native cancellation meaning
+ok 196 - repeated fabricated events retain exactly the native cancellation meaning
+  ---
+  duration_ms: 0.2465
+  type: 'test'
+  ...
+# Subtest: stop cancels queued rearming and detaches native cancellation
+ok 197 - stop cancels queued rearming and detaches native cancellation
+  ---
+  duration_ms: 0.061
+  type: 'test'
+  ...
+# Subtest: already aborted native state is mirrored synchronously without exposing caller reason
+ok 198 - already aborted native state is mirrored synchronously without exposing caller reason
+  ---
+  duration_ms: 0.154875
+  type: 'test'
+  ...
+# Subtest: native state survives hostile public signal properties and methods
+ok 199 - native state survives hostile public signal properties and methods
+  ---
+  duration_ms: 0.133083
+  type: 'test'
+  ...
+# Subtest: earlier stopImmediatePropagation does not suppress native abort
+ok 200 - earlier stopImmediatePropagation does not suppress native abort
+  ---
+  duration_ms: 0.0615
+  type: 'test'
+  ...
+# Subtest: nongenuine and proxy signals reject without reading public accessors
+ok 201 - nongenuine and proxy signals reject without reading public accessors
+  ---
+  duration_ms: 0.194291
+  type: 'test'
+  ...
+# Subtest: fake then genuine abort in one synchronous stack mirrors before any next side effect
+ok 202 - fake then genuine abort in one synchronous stack mirrors before any next side effect
+  ---
+  duration_ms: 0.464792
+  type: 'test'
+  ...
+# Subtest: group list page sends only cookies applicable to the full request URL
+ok 203 - group list page sends only cookies applicable to the full request URL
+  ---
+  duration_ms: 8.392416
+  type: 'test'
+  ...
+# Subtest: group member page sends only cookies applicable to the full request URL
+ok 204 - group member page sends only cookies applicable to the full request URL
+  ---
+  duration_ms: 1.101375
+  type: 'test'
+  ...
+# Subtest: encrypted group IDs sends only cookies applicable to the full request URL
+ok 205 - encrypted group IDs sends only cookies applicable to the full request URL
+  ---
+  duration_ms: 0.980416
+  type: 'test'
+  ...
+# Subtest: existing profile verification sends only cookies applicable to the full request URL
+ok 206 - existing profile verification sends only cookies applicable to the full request URL
+  ---
+  duration_ms: 0.686917
+  type: 'test'
+  ...
+# Subtest: the shared response boundary reconstructs caller protocol errors without private message, cause, extras or unsafe metadata
+ok 207 - the shared response boundary reconstructs caller protocol errors without private message, cause, extras or unsafe metadata
+  ---
+  duration_ms: 8.149208
+  type: 'test'
+  ...
+# Subtest: reaction HTTP receipts receive one captured safe metadata value through the shared response boundary
+ok 208 - reaction HTTP receipts receive one captured safe metadata value through the shared response boundary
+  ---
+  duration_ms: 0.971792
+  type: 'test'
+  ...
+# Subtest: throwing or invalid protocol error codes become fixed parser failures for public reads and receipt wrappers
+ok 209 - throwing or invalid protocol error codes become fixed parser failures for public reads and receipt wrappers
+  ---
+  duration_ms: 1.828708
+  type: 'test'
+  ...
+# Subtest: response ok/status accessor faults are contained while ordinary numeric HTTP status and cancellation remain available
+ok 210 - response ok/status accessor faults are contained while ordinary numeric HTTP status and cancellation remain available
+  ---
+  duration_ms: 3.269542
+  type: 'test'
+  ...
+# Subtest: unrestricted common requests retain the pinned helper while restricted requests never replace its transport
+ok 211 - unrestricted common requests retain the pinned helper while restricted requests never replace its transport
+  ---
+  duration_ms: 12.724833
+  type: 'test'
+  ...
+# Subtest: restricted requests accept valid response cookies only for the requested origin and reject redirect cookies
+ok 212 - restricted requests accept valid response cookies only for the requested origin and reject redirect cookies
+  ---
+  duration_ms: 3.175125
+  type: 'test'
+  ...
+# Subtest: implicit multipart restriction cancels a Location response before decoding and makes one upload dispatch
+ok 213 - implicit multipart restriction cancels a Location response before decoding and makes one upload dispatch
+  ---
+  duration_ms: 4.448041
+  type: 'test'
+  ...
+# Subtest: explicit null sends common query only, while an empty object remains account-encrypted JSON
+ok 214 - explicit null sends common query only, while an empty object remains account-encrypted JSON
+  ---
+  duration_ms: 13.792958
+  type: 'test'
+  ...
+# Subtest: empty-string mode encrypts zero plaintext bytes rather than JSON or a quoted empty string
+ok 215 - empty-string mode encrypts zero plaintext bytes rather than JSON or a quoted empty string
+  ---
+  duration_ms: 1.743583
+  type: 'test'
+  ...
+# Subtest: empty modes reject unsupported combinations and malformed parameters before network I/O
+ok 216 - empty modes reject unsupported combinations and malformed parameters before network I/O
+  ---
+  duration_ms: 0.930416
+  type: 'test'
+  ...
+# Subtest: an explicit integer-array payload preserves bare integer tokens without precision loss
+ok 217 - an explicit integer-array payload preserves bare integer tokens without precision loss
+  ---
+  duration_ms: 1.566958
+  type: 'test'
+  ...
+# Subtest: ordinary and copied objects retain ordinary JSON serialization
+ok 218 - ordinary and copied objects retain ordinary JSON serialization
+  ---
+  duration_ms: 1.281917
+  type: 'test'
+  ...
+# Subtest: integer-array construction rejects fragments, noncanonical tokens and unbounded input
+ok 219 - integer-array construction rejects fragments, noncanonical tokens and unbounded input
+  ---
+  duration_ms: 0.155709
+  type: 'test'
+  ...
+# Subtest: integer-array payloads reject injected fields and non-GET combinations before I/O
+ok 220 - integer-array payloads reject injected fields and non-GET combinations before I/O
+  ---
+  duration_ms: 0.416542
+  type: 'test'
+  ...
+# Subtest: request handoff is observed once after preparation and before the account transport
+ok 221 - request handoff is observed once after preparation and before the account transport
+  ---
+  duration_ms: 0.729667
+  type: 'test'
+  ...
+# Subtest: preflight, cancellation and serialization failure do not report a transport handoff
+ok 222 - preflight, cancellation and serialization failure do not report a transport handoff
+  ---
+  duration_ms: 0.5765
+  type: 'test'
+  ...
+# Subtest: handoff and transport exceptions retain fixed messages without automatic retry
+ok 223 - handoff and transport exceptions retain fixed messages without automatic retry
+  ---
+  duration_ms: 1.38275
+  type: 'test'
+  ...
+# Subtest: decodes all four transports on one real socket and preserves ordinary upstream events
+ok 224 - decodes all four transports on one real socket and preserves ordinary upstream events
+  ---
+  duration_ms: 18.201541
+  type: 'test'
+  ...
+# Subtest: filters frames, rejects invalid GCM tags and short headers, and releases its listeners on abort
+ok 225 - filters frames, rejects invalid GCM tags and short headers, and releases its listeners on abort
+  ---
+  duration_ms: 4.34875
+  type: 'test'
+  ...
+# Subtest: rejects malformed socket keys before readiness and keeps the valid key after a malformed replacement
+ok 226 - rejects malformed socket keys before readiness and keeps the valid key after a malformed replacement
+  ---
+  duration_ms: 1.600541
+  type: 'test'
+  ...
+# Subtest: rejects malformed transport status before raw delivery while preserving bounded integer codes and bare payloads
+ok 227 - rejects malformed transport status before raw delivery while preserving bounded integer codes and bare payloads
+  ---
+  duration_ms: 2.470959
+  type: 'test'
+  ...
+# Subtest: reads only validated chat queue selectors from the encrypted AUTH payload
+ok 228 - reads only validated chat queue selectors from the encrypted AUTH payload
+  ---
+  duration_ms: 1.699375
+  type: 'test'
+  ...
+# Subtest: exposes a separate frozen control inventory without merging chat, backup or private AUTH fields
+ok 229 - exposes a separate frozen control inventory without merging chat, backup or private AUTH fields
+  ---
+  duration_ms: 1.205833
+  type: 'test'
+  ...
+# Subtest: validates AUTH inventories independently and distinguishes empty from unavailable
+ok 230 - validates AUTH inventories independently and distinguishes empty from unavailable
+  ---
+  duration_ms: 10.102917
+  type: 'test'
+  ...
+# Subtest: does not invent AUTH inventories from inherited fields or failed envelopes
+ok 231 - does not invent AUTH inventories from inherited fields or failed envelopes
+  ---
+  duration_ms: 2.68975
+  type: 'test'
+  ...
+# Subtest: settles both inventory promises when closed before AUTH
+ok 232 - settles both inventory promises when closed before AUTH
+  ---
+  duration_ms: 1.167459
+  type: 'test'
+  ...
+# Subtest: E2EE control sends Web device requests after socket authentication and matches replies by command and request ID
+ok 233 - E2EE control sends Web device requests after socket authentication and matches replies by command and request ID
+  ---
+  duration_ms: 6.308042
+  type: 'test'
+  ...
+# Subtest: exchanges pairwise init and reply ciphertexts and separately acknowledges the processed queue item
+ok 234 - exchanges pairwise init and reply ciphertexts and separately acknowledges the processed queue item
+  ---
+  duration_ms: 8.530209
+  type: 'test'
+  ...
+# Subtest: distinguishes queued one-time replenishment and whole-bundle requests
+ok 235 - distinguishes queued one-time replenishment and whole-bundle requests
+  ---
+  duration_ms: 0.162208
+  type: 'test'
+  ...
+# Subtest: E2EE control reports provider failures, cancellation and bounded pending requests
+ok 236 - E2EE control reports provider failures, cancellation and bounded pending requests
+  ---
+  duration_ms: 103.141167
+  type: 'test'
+  ...
+# Subtest: negotiates exact signed original payload, uploads 3 MiB chunks and submits the desktop local-photo fallback receipt
+ok 237 - negotiates exact signed original payload, uploads 3 MiB chunks and submits the desktop local-photo fallback receipt
+  ---
+  duration_ms: 30.369583
+  type: 'test'
+  ...
+# Subtest: maps direct/group HD and original features and preserves actual provider photo IDs
+ok 238 - maps direct/group HD and original features and preserves actual provider photo IDs
+  ---
+  duration_ms: 7.176625
+  type: 'test'
+  ...
+# Subtest: correlates command, subcommand, and request ID while allowing an explicit nondefault chunk boundary
+ok 239 - correlates command, subcommand, and request ID while allowing an explicit nondefault chunk boundary
+  ---
+  duration_ms: 3.116375
+  type: 'test'
+  ...
+# Subtest: accepts terminal provider completion before all local chunks have been sent
+ok 240 - accepts terminal provider completion before all local chunks have been sent
+  ---
+  duration_ms: 5.463917
+  type: 'test'
+  ...
+# Subtest: rejects negotiation failures and malformed authorization before any photo HTTP request
+ok 241 - rejects negotiation failures and malformed authorization before any photo HTTP request
+  ---
+  duration_ms: 11.196
+  type: 'test'
+  ...
+# Subtest: handles stale/offset rejection, incomplete final chunk and uncertain transport without replay
+ok 242 - handles stale/offset rejection, incomplete final chunk and uncertain transport without replay
+  ---
+  duration_ms: 9.643416
+  type: 'test'
+  ...
+# Subtest: reports in-flight cancellation after an accepted chunk without submitting that chunk again
+ok 243 - reports in-flight cancellation after an accepted chunk without submitting that chunk again
+  ---
+  duration_ms: 2.075084
+  type: 'test'
+  ...
+# Subtest: refuses missing originals instead of staging a photo with the HD URL
+ok 244 - refuses missing originals instead of staging a photo with the HD URL
+  ---
+  duration_ms: 2.021958
+  type: 'test'
+  ...
+# Subtest: guards both upload transports by action ID and releases a timed-out negotiation for a fresh request ID
+ok 245 - guards both upload transports by action ID and releases a timed-out negotiation for a fresh request ID
+  ---
+  duration_ms: 52.056958
+  type: 'test'
+  ...
+# Subtest: rejects mismatched feeds and pre-cancellation, and settles pending negotiation on feed closure
+ok 246 - rejects mismatched feeds and pre-cancellation, and settles pending negotiation on feed closure
+  ---
+  duration_ms: 2.993792
+  type: 'test'
+  ...
+# {"boundary":"prePOST","field":"destination","changed":true,"calls":4,"httpCalls":0,"receiptIssued":false,"code":"destination-unavailable","submitted":false,"acceptedChunks":0}
+# Subtest: a trailing getContext callback cannot change destination before prePOST
+ok 247 - a trailing getContext callback cannot change destination before prePOST
+  ---
+  duration_ms: 19.388208
+  type: 'test'
+  ...
+# {"boundary":"prePOST","field":"account","changed":true,"calls":4,"httpCalls":0,"receiptIssued":false,"code":"feed-unavailable","submitted":false,"acceptedChunks":0}
+# Subtest: a trailing getContext callback cannot change account before prePOST
+ok 248 - a trailing getContext callback cannot change account before prePOST
+  ---
+  duration_ms: 3.85325
+  type: 'test'
+  ...
+# {"boundary":"receipt","field":"destination","changed":true,"calls":3,"httpCalls":1,"receiptIssued":false,"code":"destination-unavailable","submitted":true,"acceptedChunks":1}
+# Subtest: a trailing getContext callback cannot change destination before receipt
+ok 249 - a trailing getContext callback cannot change destination before receipt
+  ---
+  duration_ms: 5.534083
+  type: 'test'
+  ...
+# {"boundary":"receipt","field":"account","changed":true,"calls":3,"httpCalls":1,"receiptIssued":false,"code":"feed-unavailable","submitted":true,"acceptedChunks":1}
+# Subtest: a trailing getContext callback cannot change account before receipt
+ok 250 - a trailing getContext callback cannot change account before receipt
+  ---
+  duration_ms: 3.307917
+  type: 'test'
+  ...
+# Subtest: callback-backed account or advertised fields cannot grant the final binding
+ok 251 - callback-backed account or advertised fields cannot grant the final binding
+  ---
+  duration_ms: 5.835084
+  type: 'test'
+  ...
+# {"phase":"prePOST","changed":true,"calls":3,"httpCalls":0,"receiptIssued":false,"code":"destination-unavailable","submitted":false,"acceptedChunks":0}
+# Subtest: a trailing session callback cannot change the advertised destination before POST
+ok 252 - a trailing session callback cannot change the advertised destination before POST
+  ---
+  duration_ms: 20.632416
+  type: 'test'
+  ...
+# {"phase":"receipt","changed":true,"calls":2,"httpCalls":1,"receiptIssued":false,"code":"destination-unavailable","submitted":true,"acceptedChunks":1}
+# Subtest: a trailing session callback cannot change the advertised destination before receipt issuance
+ok 253 - a trailing session callback cannot change the advertised destination before receipt issuance
+  ---
+  duration_ms: 4.415666
+  type: 'test'
+  ...
+# Subtest: ST01 direct JPEG keeps present numeric feature zero and an exact upload-only receipt
+ok 254 - ST01 direct JPEG keeps present numeric feature zero and an exact upload-only receipt
+  ---
+  duration_ms: 23.873792
+  type: 'test'
+  ...
+# Subtest: ST02 group PNG normalizes only group prefix and emits fixed feature five without dimensions
+ok 255 - ST02 group PNG normalizes only group prefix and emits fixed feature five without dimensions
+  ---
+  duration_ms: 3.844375
+  type: 'test'
+  ...
+# Subtest: ST03 default two-chunk JPEG uses full size/global offsets and exact full-URL cookies
+ok 256 - ST03 default two-chunk JPEG uses full size/global offsets and exact full-URL cookies
+  ---
+  duration_ms: 11.592792
+  type: 'test'
+  ...
+# Subtest: ST04 PNG boundary and explicit chunk sizes are sequential and ignore raw chunk configuration
+ok 257 - ST04 PNG boundary and explicit chunk sizes are sequential and ignore raw chunk configuration
+  ---
+  duration_ms: 25.00375
+  type: 'test'
+  ...
+# Subtest: ST05 own-data admission rejects hostile fields, unsafe controls, wrong encodings and oversize
+ok 258 - ST05 own-data admission rejects hostile fields, unsafe controls, wrong encodings and oversize
+  ---
+  duration_ms: 12.011542
+  type: 'test'
+  ...
+# Subtest: ST08 all ordinary renditions reject protected capsules, malformed alternates, secure keys and JXL
+ok 259 - ST08 all ordinary renditions reject protected capsules, malformed alternates, secure keys and JXL
+  ---
+  duration_ms: 49.359708
+  type: 'test'
+  ...
+# Subtest: ST09 exact provider IDs and falsey local IDs preserve provenance and shared session uniqueness
+ok 260 - ST09 exact provider IDs and falsey local IDs preserve provenance and shared session uniqueness
+  ---
+  duration_ms: 22.189667
+  type: 'test'
+  ...
+# Subtest: ST10 numeric terminal codes acknowledge only actual early bytes; final continuation is incomplete
+ok 261 - ST10 numeric terminal codes acknowledge only actual early bytes; final continuation is incomplete
+  ---
+  duration_ms: 5.551209
+  type: 'test'
+  ...
+# Subtest: ST11 stale/refused numeric results preserve earlier ACKs and never renew, retry or fall back
+ok 262 - ST11 stale/refused numeric results preserve earlier ACKs and never renew, retry or fall back
+  ---
+  duration_ms: 4.508625
+  type: 'test'
+  ...
+# Subtest: ST12 malformed HTTP/body responses are uncertain after handoff with bounded byte-native reads
+ok 263 - ST12 malformed HTTP/body responses are uncertain after handoff with bounded byte-native reads
+  ---
+  duration_ms: 18.270959
+  type: 'test'
+  ...
+# Subtest: ST13 cookie failures distinguish pre-handoff from known ACKs and clear snapshots at the next phase
+ok 264 - ST13 cookie failures distinguish pre-handoff from known ACKs and clear snapshots at the next phase
+  ---
+  duration_ms: 4.084583
+  type: 'test'
+  ...
+# Subtest: ST14 constructor errors are neutral and untrusted callback errors cannot donate progress
+ok 265 - ST14 constructor errors are neutral and untrusted callback errors cannot donate progress
+  ---
+  duration_ms: 3.278208
+  type: 'test'
+  ...
+# Subtest: ST06 owned input and native typed-array range survive synchronous and later caller mutation
+ok 266 - ST06 owned input and native typed-array range survive synchronous and later caller mutation
+  ---
+  duration_ms: 1.027916
+  type: 'test'
+  ...
+# Subtest: ST07 org then hd fallback is coherent and thumb-only never becomes the receipt URL
+ok 267 - ST07 org then hd fallback is coherent and thumb-only never becomes the receipt URL
+  ---
+  duration_ms: 12.615042
+  type: 'test'
+  ...
+# Subtest: TH00 new thumbnail root operation exists and exposes only neutral readonly public error facts
+ok 268 - TH00 new thumbnail root operation exists and exposes only neutral readonly public error facts
+  ---
+  duration_ms: 0.823667
+  type: 'test'
+  ...
+# Subtest: ST15 missing malformed and unreadable advertised destinations fail privately before effects and release action
+ok 269 - ST15 missing malformed and unreadable advertised destinations fail privately before effects and release action
+  ---
+  duration_ms: 41.870041
+  type: 'test'
+  ...
+# Subtest: ST16 advertised normalized kind plus ID excludes only the exact private destination and never guesses own UID
+ok 270 - ST16 advertised normalized kind plus ID excludes only the exact private destination and never guesses own UID
+  ---
+  duration_ms: 6.215667
+  type: 'test'
+  ...
+# Subtest: ST17 advertisement changes are checked before each POST and receipt; account replacement remains feed-unavailable
+ok 271 - ST17 advertisement changes are checked before each POST and receipt; account replacement remains feed-unavailable
+  ---
+  duration_ms: 8.919333
+  type: 'test'
+  ...
+# Subtest: ST18 pre-abort readiness pending fake/native cancellation and stopped feed keep honest submission facts
+ok 272 - ST18 pre-abort readiness pending fake/native cancellation and stopped feed keep honest submission facts
+  ---
+  duration_ms: 37.74225
+  type: 'test'
+  ...
+# Subtest: ST19 total deadline spans negotiation an ACK and a later abort-ignoring adapter
+ok 273 - ST19 total deadline spans negotiation an ACK and a later abort-ignoring adapter
+  ---
+  duration_ms: 305.147708
+  type: 'test'
+  ...
+# Subtest: ST20 same callback fake plus real native abort wins over provider success or unreadable advertisement
+ok 274 - ST20 same callback fake plus real native abort wins over provider success or unreadable advertisement
+  ---
+  duration_ms: 11.108958
+  type: 'test'
+  ...
+# Subtest: ST21 ignoring adapters bodies and cookie hooks obey native cancellation/deadline and late work stays inert
+ok 275 - ST21 ignoring adapters bodies and cookie hooks obey native cancellation/deadline and late work stays inert
+  ---
+  duration_ms: 571.872125
+  type: 'test'
+  ...
+# Subtest: ST22 exact ingress correlation rejects unsent foreign and mutated public-frame authority
+ok 276 - ST22 exact ingress correlation rejects unsent foreign and mutated public-frame authority
+  ---
+  duration_ms: 11.479834
+  type: 'test'
+  ...
+# Subtest: ST23 matched negotiation DTOs require exact identity strict endpoint and private original egress
+ok 277 - ST23 matched negotiation DTOs require exact identity strict endpoint and private original egress
+  ---
+  duration_ms: 11.821458
+  type: 'test'
+  ...
+# Subtest: ST24 existing photo video and new thumbnail share the genuine 32-pending feed lane
+ok 278 - ST24 existing photo video and new thumbnail share the genuine 32-pending feed lane
+  ---
+  duration_ms: 4.321958
+  type: 'test'
+  ...
+# Subtest: ST25 active cross-media guard releases pre-HTTP actions and permanently retires actual handoffs
+ok 279 - ST25 active cross-media guard releases pre-HTTP actions and permanently retires actual handoffs
+  ---
+  duration_ms: 4.280167
+  type: 'test'
+  ...
+# Subtest: ST26 genuine signed MP4 and signed thumbnail explicitly forward direct and group metadata
+ok 280 - ST26 genuine signed MP4 and signed thumbnail explicitly forward direct and group metadata
+  ---
+  duration_ms: 4.019625
+  type: 'test'
+  ...
+# Subtest: ST27 genuine receipt owner rejects copied wrong-kind foreign and mismatched signed thumbnail pairs
+ok 281 - ST27 genuine receipt owner rejects copied wrong-kind foreign and mismatched signed thumbnail pairs
+  ---
+  duration_ms: 4.144958
+  type: 'test'
+  ...
+# Subtest: ST28 new signed thumbnail keeps existing final-send refusal uncertain and concurrent consumption rules
+ok 282 - ST28 new signed thumbnail keeps existing final-send refusal uncertain and concurrent consumption rules
+  ---
+  duration_ms: 3.849375
+  type: 'test'
+  ...
+# Subtest: BC01 existing signed photo crosses actual 800/feed and explicitly sends a genuine receipt
+ok 283 - BC01 existing signed photo crosses actual 800/feed and explicitly sends a genuine receipt
+  ---
+  duration_ms: 20.668416
+  type: 'test'
+  ...
+# Subtest: BC02 existing photo deadline remains per request across negotiation and two chunks
+ok 284 - BC02 existing photo deadline remains per request across negotiation and two chunks
+  ---
+  duration_ms: 403.134375
+  type: 'test'
+  ...
+# Subtest: BC03 user raw video + raw thumbnail + explicit forward
+ok 285 - BC03 user raw video + raw thumbnail + explicit forward
+  ---
+  duration_ms: 10.066542
+  type: 'test'
+  ...
+# Subtest: BC03 group raw video + raw thumbnail + explicit forward
+ok 286 - BC03 group raw video + raw thumbnail + explicit forward
+  ---
+  duration_ms: 4.636166
+  type: 'test'
+  ...
+# Subtest: malformed nonbyte chunks cannot bypass the 64 KiB response bound
+ok 287 - malformed nonbyte chunks cannot bypass the 64 KiB response bound
+  ---
+  duration_ms: 19.744
+  type: 'test'
+  ...
+# Subtest: malformed shadowed-byte-length chunks cannot bypass the 64 KiB response bound
+ok 288 - malformed shadowed-byte-length chunks cannot bypass the 64 KiB response bound
+  ---
+  duration_ms: 4.198
+  type: 'test'
+  ...
+# Subtest: a fixed shared-backed ordinary byte range is copied without changing response semantics
+ok 289 - a fixed shared-backed ordinary byte range is copied without changing response semantics
+  ---
+  duration_ms: 3.134125
+  type: 'test'
+  ...
+# Subtest: public roots exclude internal media issuance/action/preparation and private subpaths
+ok 290 - public roots exclude internal media issuance/action/preparation and private subpaths
+  ---
+  duration_ms: 0.532917
+  type: 'test'
+  ...
+# Subtest: AB01 plain: fake abort event does not consume later native abort
+ok 291 - AB01 plain: fake abort event does not consume later native abort
+  ---
+  duration_ms: 28.707792
+  type: 'test'
+  ...
+# Subtest: AB01 shadowed: fake abort event does not consume later native abort
+ok 292 - AB01 shadowed: fake abort event does not consume later native abort
+  ---
+  duration_ms: 22.614959
+  type: 'test'
+  ...
+# Subtest: AB01 stopped: fake abort event does not consume later native abort
+ok 293 - AB01 stopped: fake abort event does not consume later native abort
+  ---
+  duration_ms: 22.59125
+  type: 'test'
+  ...
+# Subtest: SV01 exact direct feature-2 negotiation and upload-only result
+ok 294 - SV01 exact direct feature-2 negotiation and upload-only result
+  ---
+  duration_ms: 20.500166
+  type: 'test'
+  ...
+# Subtest: SV02 exact group destination and feature remain video-specific
+ok 295 - SV02 exact group destination and feature remain video-specific
+  ---
+  duration_ms: 3.70725
+  type: 'test'
+  ...
+# Subtest: SV03 default 3 MiB multipart boundary uses exact bytes, total size and global offsets
+ok 296 - SV03 default 3 MiB multipart boundary uses exact bytes, total size and global offsets
+  ---
+  duration_ms: 11.462708
+  type: 'test'
+  ...
+# Subtest: SV04 explicit multipart boundaries remain sequential across exact and short chunks
+ok 297 - SV04 explicit multipart boundaries remain sequential across exact and short chunks
+  ---
+  duration_ms: 69.61075
+  type: 'test'
+  ...
+# Subtest: SV05 both native terminal statuses stop early and count an invalid terminal DTO ACK
+ok 298 - SV05 both native terminal statuses stop early and count an invalid terminal DTO ACK
+  ---
+  duration_ms: 8.59475
+  type: 'test'
+  ...
+# Subtest: SV06 continuation after the final bytes is incomplete with no extra empty POST
+ok 299 - SV06 continuation after the final bytes is incomplete with no extra empty POST
+  ---
+  duration_ms: 1.661708
+  type: 'test'
+  ...
+# Subtest: SV07 irrelevant headers, IDs, unsent and foreign feed responses have no authority
+ok 300 - SV07 irrelevant headers, IDs, unsent and foreign feed responses have no authority
+  ---
+  duration_ms: 5.339541
+  type: 'test'
+  ...
+# Subtest: SV08 matched bad file identity, duplicates, first URL and envelope fail before HTTP
+ok 301 - SV08 matched bad file identity, duplicates, first URL and envelope fail before HTTP
+  ---
+  duration_ms: 9.842834
+  type: 'test'
+  ...
+# Subtest: SV09 public frame mutation cannot grant success or corrupt the private original success
+ok 302 - SV09 public frame mutation cannot grant success or corrupt the private original success
+  ---
+  duration_ms: 2.428875
+  type: 'test'
+  ...
+# Subtest: SV10 shared photo/video 32-pending lane releases a slot without cross-settlement
+ok 303 - SV10 shared photo/video 32-pending lane releases a slot without cross-settlement
+  ---
+  duration_ms: 4.241792
+  type: 'test'
+  ...
+# Subtest: SV11 provider and local file IDs keep exact identity and provenance
+ok 304 - SV11 provider and local file IDs keep exact identity and provenance
+  ---
+  duration_ms: 19.289167
+  type: 'test'
+  ...
+# Subtest: SV12 org precedes hd but malformed present renditions never downgrade
+ok 305 - SV12 org precedes hd but malformed present renditions never downgrade
+  ---
+  duration_ms: 13.002666
+  type: 'test'
+  ...
+# Subtest: SV13 secure keys and both capsule families in either rendition reject after known ACK
+ok 306 - SV13 secure keys and both capsule families in either rendition reject after known ACK
+  ---
+  duration_ms: 23.960333
+  type: 'test'
+  ...
+# Subtest: SV14 HTTP/body uncertainty, forged errors and cookie exceptions preserve only private current facts
+ok 307 - SV14 HTTP/body uncertainty, forged errors and cookie exceptions preserve only private current facts
+  ---
+  duration_ms: 17.049
+  type: 'test'
+  ...
+# Subtest: SV15 stale/refused numeric results preserve earlier ACKs without replay or renewal
+ok 308 - SV15 stale/refused numeric results preserve earlier ACKs without replay or renewal
+  ---
+  duration_ms: 7.424375
+  type: 'test'
+  ...
+# Subtest: SV16 strict own-data admission permits class/null prototypes and rejects unsafe inputs before effects
+ok 309 - SV16 strict own-data admission permits class/null prototypes and rejects unsafe inputs before effects
+  ---
+  duration_ms: 3.21925
+  type: 'test'
+  ...
+# Subtest: SV17 pre-abort, readiness, pending cancellation, stopped feed and fake-event rearming
+ok 310 - SV17 pre-abort, readiness, pending cancellation, stopped feed and fake-event rearming
+  ---
+  duration_ms: 38.243792
+  type: 'test'
+  ...
+# Subtest: SV18 one total budget covers negotiation, accepted chunk and later stalled POST
+ok 311 - SV18 one total budget covers negotiation, accepted chunk and later stalled POST
+  ---
+  duration_ms: 353.252
+  type: 'test'
+  ...
+# Subtest: SV19 stubborn adapters/bodies/cookies and fake adapter-signal events cannot revive or hide terminal state
+ok 312 - SV19 stubborn adapters/bodies/cookies and fake adapter-signal events cannot revive or hide terminal state
+  ---
+  duration_ms: 253.089417
+  type: 'test'
+  ...
+# Subtest: SV20 owned snapshots survive byte backing-buffer and input metadata mutation after negotiation
+ok 313 - SV20 owned snapshots survive byte backing-buffer and input metadata mutation after negotiation
+  ---
+  duration_ms: 2.96225
+  type: 'test'
+  ...
+# Subtest: SV21 active cross-media guard and permanent submitted actions share their existing owner
+ok 314 - SV21 active cross-media guard and permanent submitted actions share their existing owner
+  ---
+  duration_ms: 4.844333
+  type: 'test'
+  ...
+# Subtest: SV22 genuine signed receipt plus raw thumbnail explicitly forwards direct and group metadata
+ok 315 - SV22 genuine signed receipt plus raw thumbnail explicitly forwards direct and group metadata
+  ---
+  duration_ms: 4.455959
+  type: 'test'
+  ...
+# Subtest: SV23 existing receipt/send owner rejects forged pairs and preserves refusal/unknown/concurrent rules
+ok 316 - SV23 existing receipt/send owner rejects forged pairs and preserves refusal/unknown/concurrent rules
+  ---
+  duration_ms: 6.54675
+  type: 'test'
+  ...
+# Subtest: SV24 public exports and constructor expose readonly neutral facts rather than issuance authority
+ok 317 - SV24 public exports and constructor expose readonly neutral facts rather than issuance authority
+  ---
+  duration_ms: 0.119667
+  type: 'test'
+  ...
+# {"fired":true,"nativeAborted":true,"code":"aborted","submitted":false,"httpCalls":0,"acceptedChunks":0}
+# Subtest: a genuine abort in the fake-event rearm gap prevents the next POST
+ok 318 - a genuine abort in the fake-event rearm gap prevents the next POST
+  ---
+  duration_ms: 20.184375
+  type: 'test'
+  ...
+# Subtest: an adapter returning no Response preserves uncertain handoff without a receipt or retry
+ok 319 - an adapter returning no Response preserves uncertain handoff without a receipt or retry
+  ---
+  duration_ms: 20.610458
+  type: 'test'
+  ...
+1..319
+# tests 319
+# suites 0
+# pass 319
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 20362.194125

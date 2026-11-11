@@ -1,0 +1,43 @@
+{
+  "candidateFiles": 1007,
+  "evidenceFiles": 38,
+  "unchangedBaselineFiles": 996,
+  "vendoredFiles": 132,
+  "vendoredSkills": 16,
+  "localLinksChecked": 422,
+  "archiveHashExact": true,
+  "rootVersion": "0.46.0",
+  "candidateVersion": "0.47.0",
+  "historicalChecksTerminal": true,
+  "sdkTestsRerun": false,
+  "liveOrNativeExecuted": false,
+  "date": "2026-11-12",
+  "command": "python3 scripts/check-project-handoff.py",
+  "scope": "local documentation, vendored dependencies and portable artifacts only",
+  "currentSdkImplementationChanged": false,
+  "independentReview": {
+    "report": "docs/project-wrapup-review.md",
+    "sha256": "12ae6e5951267f64252a6013d329ac4a9405569ea759fe37d5e52be4248f89e2",
+    "pass": 1,
+    "maximumAutomaticPasses": 2,
+    "cycleClosed": true,
+    "actionableFindings": 0,
+    "unresolvedDefectLeads": 0,
+    "rootReadEntireReport": true,
+    "all12ReviewedHandwrittenFilesStillExact": true
+  },
+  "goal": "developer wrap-up, not full SDK parity",
+  "gitDelivery": "unavailable: no .git or remote; no PR/merge/publication claimed",
+  "requirementAudit": {
+    "originalGoalDocumented": "docs/project-handoff.md exact quote; full parity explicitly unfinished",
+    "currentCapabilities": "docs/project-handoff.md + docs/operation-status.md + docs/operations.md",
+    "futureWork": "docs/project-roadmap.md completion criteria and ordered continuation",
+    "developerOnboarding": "AGENTS.md + docs/developer-guide.md + README navigation",
+    "selfContainedSkills": "16 unchanged upstream skills plus project-specific source-tracing skill; 132 vendored payload hashes; all422 local links resolve",
+    "portableUnfinishedWork": "1007 candidate files and exact archive plus38 evidence payloads",
+    "originalSdkPreserved": "996 baseline files unchanged; README and operation-status navigation deliberately updated"
+  },
+  "status": "complete local wrap-up",
+  "completionAudit": "All wrap-up requirements verified; original full SDK parity remains unfinished and is documented as future work.",
+  "sourceOrAccountTestsNewlyRun": false
+}

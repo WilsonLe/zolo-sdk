@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agentic Workflows Config Transfer"
+  short_description: "Configure Codex, update the suite or transfer preferences"
+  default_prompt: "Use $agentic-workflows-config-transfer to export my Agentic Workflows preferences safely; keep provider authentication in Codex connected apps."

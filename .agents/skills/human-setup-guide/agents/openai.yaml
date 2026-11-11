@@ -1,0 +1,6 @@
+interface:
+  display_name: "Human Setup Guide"
+  short_description: "Guide manual setup and cutovers"
+  default_prompt: "Use $human-setup-guide to prepare verified, secret-safe steps for the manual parts of this setup or cutover."
+policy:
+  allow_implicit_invocation: true

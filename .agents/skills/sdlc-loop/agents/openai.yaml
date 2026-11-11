@@ -1,0 +1,6 @@
+interface:
+  display_name: "Agentic Workflows SDLC Delivery Loop"
+  short_description: "Deliver one issue through verified staging"
+  default_prompt: "Use $sdlc-loop to select one foreground GitHub issue and drive it through implementation, at most two adversarial review/remediation passes with final-state review, complete verification, merge, staging deployment, and real staging verification without routine approval pauses, then provide a self-contained PR summary directly in chat."
+policy:
+  allow_implicit_invocation: false

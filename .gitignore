@@ -1,0 +1,19 @@
+/node_modules/
+/dist/
+/types/zca/
+/.zalo/
+/.env
+/.env.*
+!.env.example
+/.DS_Store
+
+# Nested development copies and local-only artifacts
+node_modules/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+.zalo/
+.cli/

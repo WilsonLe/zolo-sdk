@@ -1,0 +1,16 @@
+# Opt-in local Codex defaults. Plugin installation does not activate this file.
+# Use this skill's codex_config.py helper; do not replace an existing config.
+# Tool prompt policy supplies no task authorization or managed-policy override.
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+web_search = "live"
+
+[apps._default]
+enabled = true
+destructive_enabled = true
+open_world_enabled = true
+default_tools_approval_mode = "approve"
+
+[computer_use]
+# Continues normal approval checks; does not preapprove native apps.
+default_app_access = "allow"

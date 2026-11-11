@@ -1,0 +1,6 @@
+interface:
+  display_name: "Engineering Intake"
+  short_description: "Turn requests into ready work"
+  default_prompt: "Use $engineering-intake to verify this request, resolve the decisions that matter, and prepare a reviewable issue or implementation breakdown."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,142 @@
+TAP version 13
+# Subtest: SVS00 Saved thumbnail operation is root-only and reuses the existing neutral thumbnail error
+ok 1 - SVS00 Saved thumbnail operation is root-only and reuses the existing neutral thumbnail error
+  ---
+  duration_ms: 0.843458
+  type: 'test'
+  ...
+# Subtest: SVS01 user advertisement alone derives exact feature9 including safe numeric advertisements
+ok 2 - SVS01 user advertisement alone derives exact feature9 including safe numeric advertisements
+  ---
+  duration_ms: 24.998042
+  type: 'test'
+  ...
+# Subtest: SVS02 group advertisement derives normalized feature9 and exact caller PNG bytes
+ok 3 - SVS02 group advertisement derives normalized feature9 and exact caller PNG bytes
+  ---
+  duration_ms: 3.429083
+  type: 'test'
+  ...
+# Subtest: SVS03 two-chunk JPEG and PNG retain full size offsets sequential bytes and full URL cookies
+ok 4 - SVS03 two-chunk JPEG and PNG retain full size offsets sequential bytes and full URL cookies
+  ---
+  duration_ms: 20.259625
+  type: 'test'
+  ...
+# Subtest: SVS04 invalid pure fields and supplied destinations fail before any API callback or effect
+ok 5 - SVS04 invalid pure fields and supplied destinations fail before any API callback or effect
+  ---
+  duration_ms: 18.983208
+  type: 'test'
+  ...
+# Subtest: SVS05 valid pre-abort performs no API lookup while otherwise invalid initial account and feed stay TypeErrors
+ok 6 - SVS05 valid pre-abort performs no API lookup while otherwise invalid initial account and feed stay TypeErrors
+  ---
+  duration_ms: 5.446542
+  type: 'test'
+  ...
+# Subtest: SVS06 account callback native abort or elapsed deadline outranks its bad return or throw
+ok 7 - SVS06 account callback native abort or elapsed deadline outranks its bad return or throw
+  ---
+  duration_ms: 151.294958
+  type: 'test'
+  ...
+# Subtest: SVS07 pure intent and byte range are copied before the first account callback
+ok 8 - SVS07 pure intent and byte range are copied before the first account callback
+  ---
+  duration_ms: 2.104834
+  type: 'test'
+  ...
+# Subtest: SVS08 unavailable advertisements and callback-backed critical data cannot bind and permit explicit retry
+ok 9 - SVS08 unavailable advertisements and callback-backed critical data cannot bind and permit explicit retry
+  ---
+  duration_ms: 14.0265
+  type: 'test'
+  ...
+# Subtest: SVS14 Saved transport retains early terminal ACK incomplete stale and refused facts without replay
+ok 10 - SVS14 Saved transport retains early terminal ACK incomplete stale and refused facts without replay
+  ---
+  duration_ms: 10.18725
+  type: 'test'
+  ...
+# Subtest: SVS15 Saved projection keeps org HD exact provider local ID and protected-result rules
+ok 11 - SVS15 Saved projection keeps org HD exact provider local ID and protected-result rules
+  ---
+  duration_ms: 11.531666
+  type: 'test'
+  ...
+# Subtest: SVS09 target or session changes while awaiting readiness prevent original negotiation handoff
+ok 12 - SVS09 target or session changes while awaiting readiness prevent original negotiation handoff
+  ---
+  duration_ms: 89.724458
+  type: 'test'
+  ...
+# Subtest: SVS10 the last queued API callback cannot change binding stop the feed or abort then hand off
+ok 13 - SVS10 the last queued API callback cannot change binding stop the feed or abort then hand off
+  ---
+  duration_ms: 141.612083
+  type: 'test'
+  ...
+# Subtest: SVS11 cookie callbacks cannot change target account or native-abort into a first POST
+ok 14 - SVS11 cookie callbacks cannot change target account or native-abort into a first POST
+  ---
+  duration_ms: 8.812958
+  type: 'test'
+  ...
+# Subtest: SVS12 target changes after ACK never retarget and retain phase-specific actual ACK facts
+ok 15 - SVS12 target changes after ACK never retarget and retain phase-specific actual ACK facts
+  ---
+  duration_ms: 10.824375
+  type: 'test'
+  ...
+# Subtest: SVS13 final getOwnId and getContext callback families are fenced before POST and issuance
+ok 16 - SVS13 final getOwnId and getContext callback families are fenced before POST and issuance
+  ---
+  duration_ms: 20.8735
+  type: 'test'
+  ...
+# Subtest: SVS16 total deadline and native cancellation bound readiness ACK and ignoring late adapters or bodies
+ok 17 - SVS16 total deadline and native cancellation bound readiness ACK and ignoring late adapters or bodies
+  ---
+  duration_ms: 373.614042
+  type: 'test'
+  ...
+# Subtest: SVS17 genuine sent correlation fake abort and late negotiation responses cannot revive a cancelled Saved job
+ok 18 - SVS17 genuine sent correlation fake abort and late negotiation responses cannot revive a cancelled Saved job
+  ---
+  duration_ms: 6.480167
+  type: 'test'
+  ...
+# Subtest: SVS18 Saved9 ordinary0and5 photo16 and video2 share the actual 32-pending feed lane
+ok 19 - SVS18 Saved9 ordinary0and5 photo16 and video2 share the actual 32-pending feed lane
+  ---
+  duration_ms: 4.283959
+  type: 'test'
+  ...
+# Subtest: SVS19 Saved staging shares cross-media active guards releases preHTTP and retires actual handoffs
+ok 20 - SVS19 Saved staging shares cross-media active guards releases preHTTP and retires actual handoffs
+  ---
+  duration_ms: 4.526834
+  type: 'test'
+  ...
+# Subtest: SVS20 genuine Saved thumbnail supplies captured user or group destination for explicit MP4 upload and send
+ok 21 - SVS20 genuine Saved thumbnail supplies captured user or group destination for explicit MP4 upload and send
+  ---
+  duration_ms: 4.134292
+  type: 'test'
+  ...
+# Subtest: SVS21 existing receipt owner rejects misuse and keeps refusal uncertain concurrent and used-send states
+ok 22 - SVS21 existing receipt owner rejects misuse and keeps refusal uncertain concurrent and used-send states
+  ---
+  duration_ms: 6.184333
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1245.593375

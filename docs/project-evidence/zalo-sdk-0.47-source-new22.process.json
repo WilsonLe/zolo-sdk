@@ -1,0 +1,18 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "--test-concurrency=1",
+    "test/saved-thumbnail047/saved-core.test.mjs",
+    "test/saved-thumbnail047/saved-lifecycle.test.mjs"
+  ],
+  "cwd": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.47-isolated-candidate",
+  "ownedPid": 50016,
+  "ownedProcessGroup": 50016,
+  "deadlineSeconds": 120.0,
+  "boundExceeded": false,
+  "exitCode": 0,
+  "terminalObserved": true,
+  "seconds": 1.313,
+  "log": "zalo-sdk-0.47-source-new22.log"
+}

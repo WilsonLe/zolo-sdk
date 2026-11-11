@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "revision": "source-blind-v1",
+  "createdDate": "2026-11-08",
+  "author": "/root/thumbnail046_consumer_finish",
+  "directory": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.47-independent-consumer-author",
+  "contract": {
+    "path": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.47-plan.md",
+    "sha256": "5c24668581e908ab3d7c79f94a3841750aa4dd1a69fb3c9aa05d553c65a9aa53",
+    "readScope": "Full frozen public contract."
+  },
+  "authority": "Root alone executes SDK/Node/npm/compiler/tests/harnesses/sockets/native/provider operations. This author performed static text reads, edits, diffs, literal enumeration and hashes only, without delegation.",
+  "executionStatus": "Unexecuted author fixtures. No SDK/Node/npm/compiler/test/import/harness/socket/native/target/account/provider/network execution occurred. No test or compile result/pass claim is made.",
+  "sourceBlindScope": {
+    "productionBodiesRead": false,
+    "new047DeclarationsRead": false,
+    "nodeModulesImplementationContentRead": false,
+    "allowed": "Frozen047 contract, current unchanged046 public docs/interfaces, own046 public fixtures/tests/types and Root046 public callback regressions only.",
+    "inventory": "Top-level046 consumer artifact names and public documentation names only; no node_modules inventory/body consulted for047.",
+    "mutations": "Only this047 author output directory; no mutable product lane/main or046 artifacts changed."
+  },
+  "selectedFiles": [
+    {
+      "file": "fixture047.mjs",
+      "bytes": 13087,
+      "sha256": "316bbcdaf7cd74a6e451434bf31c89f246d1291f406f5368fe96379068553e39"
+    },
+    {
+      "file": "thumbnail-fixture.mjs",
+      "bytes": 2485,
+      "sha256": "0fe50c8741dee0eac21078bae7f4d4b9434992a48b2870ab958b38abad6abe84"
+    },
+    {
+      "file": "saved-fixture.mjs",
+      "bytes": 2525,
+      "sha256": "09d673a5f42f9509d84c8cc209ff11eacc9f92ca5040c4b1614e52441eeb019d"
+    },
+    {
+      "file": "saved-core.test.mjs",
+      "bytes": 16980,
+      "sha256": "e8f72328afe1d2892a18b07904cf1854b54eade3293b9b93245c07d2ae654ff3"
+    },
+    {
+      "file": "saved-lifecycle.test.mjs",
+      "bytes": 20286,
+      "sha256": "b8462f05c0dd3cda8aabbbf5f30cc8b0426990dd90c0fe2a674dc75b5b66c155"
+    },
+    {
+      "file": "public-types.ts",
+      "bytes": 6393,
+      "sha256": "e5f0eeb302fe96b872bcb405c3c3791274f6aaacdc097ad23dd5416d906d508a"
+    },
+    {
+      "file": "private-exports-types.ts",
+      "bytes": 2968,
+      "sha256": "6e09122749e3b081ea0aaacb0b0da73868cb7cc7fd8d35f8e5789bf168929577"
+    }
+  ],
+  "proposedCounts": {
+    "runtimeFiles": 2,
+    "featureGroups": 22,
+    "coreGroups": 11,
+    "lifecycleGroups": 11,
+    "typeFixtures": 2,
+    "publicTypeExpectErrorDirectives": 34,
+    "privateTypeExpectErrorDirectives": 17,
+    "oldPositiveControls": "Root retains unchanged046 positive controls separately; not rewritten or counted as new047.",
+    "basis": "Static top-level literal enumeration only. Loops and successful callback controls remain within enclosing groups."
+  },
+  "groups": [
+    {
+      "id": "SVS00",
+      "title": "Saved thumbnail operation is root-only and reuses the existing neutral thumbnail error",
+      "file": "saved-core.test.mjs"
+    },
+    {
+      "id": "SVS01",
+      "title": "user advertisement alone derives exact feature9 including safe numeric advertisements",
+      "file": "saved-core.test.mjs"
+    },
+    {
+      "id": "SVS02",
+      "title": "group advertisement derives normalized feature9 and exact caller PNG bytes",
+      "file": "saved-core.test.mjs"
+    },
+    {
+      "id": "SVS03",
+      "title": "two-chunk JPEG and PNG retain full size offsets sequential bytes and full URL cookies",
+      "file": "saved-core.test.mjs"
+    },
+    {
+      "id": "SVS04",
+      "title": "invalid pure fields and supplied destinations fail before any API callback or effect",
+      "file": "saved-core.test.mjs"
+    },
+    {
+      "id": "SVS05",
+      "title": "valid pre-abort performs no API lookup while otherwise invalid initial account and feed stay TypeErrors",
+      "file": "saved-core.test.mjs"
+    },
+    {
+      "id": "SVS06",
+      "title": "account callback native abort or elapsed deadline outranks its bad return or throw",
+      "file": "saved-core.test.mjs"
+    },
+    {
+      "id": "SVS07",
+      "title": "pure intent and byte range are copied before the first account callback",
+      "file": "saved-core.test.mjs"
+    },
+    {
+      "id": "SVS08",
+      "title": "unavailable advertisements and callback-backed critical data cannot bind and permit explicit retry",
+      "file": "saved-core.test.mjs"
+    },
+    {
+      "id": "SVS09",
+      "title": "target or session changes while awaiting readiness prevent original negotiation handoff",
+      "file": "saved-lifecycle.test.mjs"
+    },
+    {
+      "id": "SVS10",
+      "title": "the last queued API callback cannot change binding stop the feed or abort then hand off",
+      "file": "saved-lifecycle.test.mjs"
+    },
+    {
+      "id": "SVS11",
+      "title": "cookie callbacks cannot change target account or native-abort into a first POST",
+      "file": "saved-lifecycle.test.mjs"
+    },
+    {
+      "id": "SVS12",
+      "title": "target changes after ACK never retarget and retain phase-specific actual ACK facts",
+      "file": "saved-lifecycle.test.mjs"
+    },
+    {
+      "id": "SVS13",
+      "title": "final getOwnId and getContext callback families are fenced before POST and issuance",
+      "file": "saved-lifecycle.test.mjs"
+    },
+    {
+      "id": "SVS14",
+      "title": "Saved transport retains early terminal ACK incomplete stale and refused facts without replay",
+      "file": "saved-core.test.mjs"
+    },
+    {
+      "id": "SVS15",
+      "title": "Saved projection keeps org HD exact provider local ID and protected-result rules",
+      "file": "saved-core.test.mjs"
+    },
+    {
+      "id": "SVS16",
+      "title": "total deadline and native cancellation bound readiness ACK and ignoring late adapters or bodies",
+      "file": "saved-lifecycle.test.mjs"
+    },
+    {
+      "id": "SVS17",
+      "title": "genuine sent correlation fake abort and late negotiation responses cannot revive a cancelled Saved job",
+      "file": "saved-lifecycle.test.mjs"
+    },
+    {
+      "id": "SVS18",
+      "title": "Saved9 ordinary0and5 photo16 and video2 share the actual 32-pending feed lane",
+      "file": "saved-lifecycle.test.mjs"
+    },
+    {
+      "id": "SVS19",
+      "title": "Saved staging shares cross-media active guards releases preHTTP and retires actual handoffs",
+      "file": "saved-lifecycle.test.mjs"
+    },
+    {
+      "id": "SVS20",
+      "title": "genuine Saved thumbnail supplies captured user or group destination for explicit MP4 upload and send",
+      "file": "saved-lifecycle.test.mjs"
+    },
+    {
+      "id": "SVS21",
+      "title": "existing receipt owner rejects misuse and keeps refusal uncertain concurrent and used-send states",
+      "file": "saved-lifecycle.test.mjs"
+    }
+  ],
+  "helperDelta": {
+    "fixture047.mjs": {
+      "base": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.46-independent-consumer-author/fixture046.mjs",
+      "baseSha256": "63a43070412dfe5d669b867d6d60f08be59983db85a46ed1a3e1669eea6b3f72",
+      "change": "Only adds fixed observational api.listener.sendWs wrapper BEFORE genuine startRealtimeFrameFeed attachment and readonly originalSendAttempts getter. Counts ONLY args[0] packet literal version1/cmd800/subCmd0; Reflect.apply(original,this,args) forwards ALL arguments, original this, genuine original execution and return unchanged. API construction/feed/HTTP/receipt/send authorities remain genuine.",
+      "shapeBasis": "Root clarified unchanged046 public Listener signature: first argument one {version,cmd,subCmd,data} packet; fixed uploader second arg false. No047 implementation body was read.",
+      "reason": "After feedstop in a queued callback, zero network frames alone cannot prove zero attempted original handoffs, since the genuine sender may refuse while not ready. This pre-attach count observes the original attempt even without a frame."
+    },
+    "thumbnail-fixture.mjs": "Exact046 helper except both local fixture046.mjs specifiers become fixture047.mjs.",
+    "saved-fixture.mjs": "Additive no-destination input/call helper with explicit2000ms test budget plus public callback-window wrappers and successful-control last-callback counting; no private state or receipt fabrication.",
+    "callbackWindows": "Queued arm after initial capture while readiness withheld; count only before first original sender attempt. prePOST arm at cookie lookup, close at real fixture upload entry. Receipt arm at cookie persistence, finish when public operation settles. Original API callback result is obtained before targeted last-call mutation.",
+    "limits": "Controls require at least one observed public callback in their window. Counts are observed only by Root runtime, not inferred from source. Changed window behavior requires preserved diagnostics and oracle review."
+  },
+  "coverage": [
+    "SVS00 isolated unchanged046 missing-public-function negative, with no equivalent-operation emulation.",
+    "SVS01-03 exact derived user/group feature9, safe numeric advertisement, no supplied destination, JPEG/PNG two-chunk size/offset/bytes/cookies and absent cloud/key headers.",
+    "SVS04-07 pure validation beforeAPI callbacks, native byte range/input copy, class/null-prototype and5MiB boundary, preabort noAPI call, initial account/feed TypeErrors, callback nativeabort/deadline precedence.",
+    "SVS08-13 missing/malformed/accessor/proxy critical data; changed ID/kind/account/context during readiness/queued/egress/postcookie/ACK/issuance; final own/context callback family and native abort; zero original sender attempts after feedstop; prevented-action reuse and qualified ACK facts.",
+    "SVS14-17 terminal/continuation/stale/refused and cookie error facts, crossoperation error provenance, exact raw provider ID/local fallback, orgHD/protectedJXL rules, totalbudget/ignoring adapters and body/cookie waits, fake/native cancellation, sent correlation and late inert replies.",
+    "SVS18-19 mixed feature0/5/9/16/2 shared32 pending owner/request namespace, crossmedia active guards, preHTTP release versus permanent handoff retirement.",
+    "SVS20-21 genuine Saved thumbnail -> separate signed MP4 at captured receipt destination -> explicit existing direct/group send; ordinary private-target exclusion; copied/serialized/foreign/wrong-kind/wrong-target pairs and refusal/unknown/concurrent/used states."
+  ],
+  "typeCoverage": {
+    "positive": "No-destination minimal/full input; existing signed-thumbnail return/receipt/provenance/error compatibility; receipt-derived video destination and explicit existing send; all existing receipt facts readonly.",
+    "negative": "Supplied threadId/threadType, missing each required field, fake feed, dimensions/metadata/kind/feature/route/URL/secure/cloud knobs, constructor fact injection/new code, omitted destination key.",
+    "private": "New snapshotSignedSavedVideoThumbnail and all six existing media preparation/issuance/action helpers absent root/e2ee; root-only operation; closed media/signed implementation subpaths.",
+    "inherited": "Root compiles unchanged046 public/compatibility fixtures separately; these new fixtures do not replace them."
+  },
+  "staticCorrectionsBeforeFreeze": [
+    "Draft api.sendUploadUrlRequest instrumentation was discarded before its aborted tool call dispatched; it was never written. The final wrapper uses the correct genuine public Listener seam.",
+    "Cookie callback triggers native abort directly while leaving advertisement unreadable; the cancellation proof does not require an accessor getter to execute.",
+    "Terminal issuance failures retain0/200; nextchunk phase after-600 clears provider/status; malformed matched numeric-zero negotiation retains0 without HTTP authority.",
+    "Literal exact decimal JSON integer above JSsafe range remains a positive provider case. No already-rounded JavaScript number is used as an exact-token oracle.",
+    "Saved test helper uses explicit2000ms budget unless a case selects another bounded budget; no120second wait proposed."
+  ],
+  "sourceReferences": [
+    {
+      "path": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.47-plan.md",
+      "bytes": 12772,
+      "sha256": "5c24668581e908ab3d7c79f94a3841750aa4dd1a69fb3c9aa05d553c65a9aa53",
+      "readScope": "Full frozen public contract; exact SHA verified before and after authoring."
+    },
+    {
+      "path": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.46-independent-consumer-author/fixture046.mjs",
+      "bytes": 12509,
+      "sha256": "63a43070412dfe5d669b867d6d60f08be59983db85a46ed1a3e1669eea6b3f72",
+      "readScope": "Full allowed046 public fixture; base of observational fixture047."
+    },
+    {
+      "path": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.46-independent-consumer-author/thumbnail-fixture.mjs",
+      "bytes": 2485,
+      "sha256": "4a4632a42b0849fa63838d05c72e41e5c898b42bdd11c9f736b489fee6fe313e",
+      "readScope": "Full allowed046 public helper; only two local imports changed."
+    },
+    {
+      "path": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.46-postreview-consumer/callback-destination.test.mjs",
+      "bytes": 3522,
+      "sha256": "5d22db09c687aa4c801a3e5a1800347d79d00643f0dcbc94164f102dfb14e0fd",
+      "readScope": "Full allowed public046 final getOwnId callback regressions."
+    },
+    {
+      "path": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.46-postreview-consumer/callback-context.test.mjs",
+      "bytes": 2919,
+      "sha256": "149ac9b4f19b465e7bfdea88f681c296b0834d58a646ba1f54ebe8f4b04f97aa",
+      "readScope": "Full allowed public046 getContext and critical-data callback regressions."
+    },
+    {
+      "path": "/Users/wilsonle/projects/zalo-sdk/docs/signed-video-thumbnail-upload.md",
+      "bytes": 12737,
+      "sha256": "7c7f3a3e0a67924b4b9a277ad3546c373f0f7644b15043240f6e3e803c2cfdb1",
+      "readScope": "Full unchanged046 public documentation."
+    }
+  ],
+  "staticChecks": {
+    "SVS00ThroughSVS21UniqueContiguous": true,
+    "twoRuntimeFilesOnly": true,
+    "thumbnailHelperDeltaOnlyLocalSpecifierChange": true,
+    "genuinePreAttachOriginalSenderRetained": true,
+    "privateImportsOnlyIntendedNegativeChecks": true,
+    "noSDKExecutionOrNewProductionRead": true,
+    "syntaxCompilerRuntimeValidatedByAuthor": false,
+    "payloadHashesVerifiedAtFreeze": true
+  },
+  "rootExecutionHandoff": [
+    "Preserve all7 payloads and manifest before execution or calibration.",
+    "Isolate SVS00 against unchanged046 as missing-function negative; keep unchanged046 positive controls separate.",
+    "Run both runtime files against exact installed047 under Root authority and preserve source/log/process binding.",
+    "Compile both strict fixtures and inherited046 public/compatibility fixtures without skipLibCheck.",
+    "Root separately owns ESM/CJS/surface counts, private helper/subpath, packagepayload/bundle/offline relocation, exact guide compilation and independent product review."
+  ],
+  "uncertainties": [
+    "No runtime/compiler/installed-package/live eligibility/asset lifetime/native/provider interoperability/recipient rendering/delivery result claimed.",
+    "Callback-count windows and timing budgets require Root execution; source-blind authoring cannot establish observed counts.",
+    "Default120000ms is not waited; bounded explicit budgets are used. Inherited046 body/URL/response matrices remain separately validated rather than fully duplicated.",
+    "No private counter/sequence exhaustion, undocumented registry manufacturing, provider cache/control emission, live resource probe or automatic send/retry/fallback."
+  ],
+  "revisionRule": "Preserve all current payloads and manifest before calibration edits, record exact oracle reasons and new hashes, and never overwrite046 artifacts or conflate inherited validation with new047 results.",
+  "manifestSelfHash": "Excluded to avoid self-reference; reported separately."
+}

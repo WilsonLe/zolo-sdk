@@ -1,0 +1,901 @@
+{
+  "$defs": {
+    "applicability": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_refs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "reason": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "required",
+              "optional",
+              "not_applicable",
+              "blocked"
+            ]
+          }
+        },
+        "required": [
+          "state",
+          "reason",
+          "evidence_refs"
+        ],
+        "type": "object"
+      },
+      "minProperties": 1,
+      "type": "object"
+    },
+    "provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "created_at": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "sources": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "checked_at": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "digest": {
+                "pattern": "^sha256:[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "expires_at": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "freshness": {
+                "enum": [
+                  "revision_bound",
+                  "transient"
+                ]
+              },
+              "id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "kind": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "location": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "location",
+              "digest",
+              "freshness",
+              "checked_at"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "created_at",
+        "sources"
+      ],
+      "type": "object"
+    },
+    "canonical_plan": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_comment_count": {
+          "const": 1
+        },
+        "comment_id": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "comment_url": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "findings_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "last_reconciled_at": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "marker": {
+          "const": "<!-- standard-development-plan -->"
+        },
+        "pinned": {
+          "const": true
+        },
+        "pinned_at": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "reconciled_revision": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "state": {
+          "enum": [
+            "awaiting_approval",
+            "approved",
+            "reapproval_required",
+            "implemented"
+          ]
+        }
+      },
+      "required": [
+        "comment_id",
+        "comment_url",
+        "marker",
+        "pinned",
+        "pinned_at",
+        "canonical_comment_count",
+        "last_reconciled_at",
+        "reconciled_revision",
+        "state",
+        "findings_count"
+      ],
+      "type": "object"
+    },
+    "repository": {
+      "additionalProperties": false,
+      "properties": {
+        "default_branch": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "identity": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "revision": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "identity",
+        "default_branch",
+        "revision"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:agentic-workflows:schema:standard-development-workflow/v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "record_kind": {
+            "const": "repository_profile"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "capabilities",
+          "environment_keys"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_kind": {
+            "const": "task_run"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "profile_ref",
+          "task",
+          "scope",
+          "approvals",
+          "resources",
+          "validation",
+          "failures",
+          "sandboxes",
+          "artifacts",
+          "operations",
+          "verification",
+          "evidence"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_kind": {
+            "const": "task_run"
+          },
+          "status": {
+            "not": {
+              "enum": [
+                "planned",
+                "blocked"
+              ]
+            }
+          }
+        },
+        "required": [
+          "record_kind",
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "delivery_tracking"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_kind": {"const": "task_run"},
+          "status": {"const": "completed"}
+        },
+        "required": ["record_kind", "status"]
+      },
+      "then": {"required": ["pr_handoff"]}
+    }
+  ],
+  "description": "Shared structural contract for repository profiles and task-run records. The bundled dependency-free validator enforces cross-section semantic invariants.",
+  "properties": {
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cleanup": {
+            "type": "object",
+            "properties": {
+              "coordination": {
+                "type": "object",
+                "required": ["target", "state", "observed_at", "evidence_ref", "active_consumers", "interruption_approval_ref"],
+                "properties": {
+                  "target": {"type": "string", "minLength": 1},
+                  "state": {"enum": ["clear", "blocked", "unknown", "interruption_approved"]},
+                  "observed_at": {"type": "string", "minLength": 1},
+                  "evidence_ref": {"type": "string", "minLength": 1},
+                  "active_consumers": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+                  "interruption_approval_ref": {"type": ["string", "null"]}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "plan_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+          "source_ref": {"type": "string", "minLength": 1},
+          "cleanup_target": {"type": "string", "minLength": 1},
+          "active_consumers": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    },
+    "delivery_tracking": {
+      "type": "object",
+      "required": [
+        "issues",
+        "pull_requests",
+        "links"
+      ],
+      "properties": {
+        "issues": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": [
+              "url",
+              "readback_ref"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "pattern": "^https://[^/]+/[^/]+/[^/]+/(issues|pull)/[1-9][0-9]*$"
+              },
+              "readback_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "pull_requests": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": [
+              "url",
+              "head_revision",
+              "base_branch",
+              "state",
+              "readback_ref"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "pattern": "^https://[^/]+/[^/]+/[^/]+/(issues|pull)/[1-9][0-9]*$"
+              },
+              "head_revision": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              },
+              "base_branch": {
+                "type": "string",
+                "minLength": 1
+              },
+              "state": {
+                "enum": [
+                  "open",
+                  "draft",
+                  "merged"
+                ]
+              },
+              "readback_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "links": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": [
+              "issue_url",
+              "pr_url",
+              "readback_ref"
+            ],
+            "properties": {
+              "issue_url": {
+                "type": "string",
+                "pattern": "^https://[^/]+/[^/]+/[^/]+/(issues|pull)/[1-9][0-9]*$"
+              },
+              "pr_url": {
+                "type": "string",
+                "pattern": "^https://[^/]+/[^/]+/[^/]+/(issues|pull)/[1-9][0-9]*$"
+              },
+              "readback_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "applicability": {
+      "$ref": "#/$defs/applicability"
+    },
+    "delivery_contract": {
+      "properties": {
+        "changes": {"type": "array", "items": {"type": "object"}},
+        "requirements": {"type": "array", "items": {"type": "object"}}
+      },
+      "required": ["requirements", "changes"],
+      "type": "object"
+    },
+    "decomposition": {
+      "properties": {
+        "mode": {"enum": ["single", "parent"]},
+        "children": {"type": "array", "items": {"type": "object"}},
+        "main_merge_state": {"enum": ["not_requested", "approval_pending", "approved", "merged"]},
+        "main_approval_scope": {"enum": ["branch", "commit"], "default": "branch"},
+        "approved_branch": {"type": "string"},
+        "combined_tests_revision": {"type": "string", "description": "Full tested parent revision; must match current head before merge or auto-merge."},
+        "approved_head_revision": {"type": "string", "description": "Historical head at approval; freshness gate only for explicitly commit-limited approval."},
+        "main_auto_merge_state": {"enum": ["disabled", "enabled"]}
+      },
+      "required": ["mode", "decision_ref", "parent_issue", "parent_branch", "default_branch", "default_revision_at_branch", "parent_base_revision", "branch_creation_ref", "children", "combined_tests_state", "combined_evidence_ref", "main_merge_state", "main_approval_ref", "approved_head_revision", "approved_pr_url", "parent_head_revision", "parent_pr_url", "parent_pr_base", "parent_pr_head_revision", "parent_pr_child_issues", "parent_pr_readback_ref", "main_auto_merge_state"],
+      "type": "object"
+    },
+    "external_work": {
+      "properties": {
+        "artifact_checks": {"type": "array", "items": {"type": "object"}},
+        "provider_steps": {"type": "array", "items": {"type": "object"}},
+        "source_routes": {"type": "array", "items": {"type": "object"}}
+      },
+      "required": ["source_routes", "provider_steps", "artifact_checks"],
+      "type": "object"
+    },
+    "interaction_decisions": {
+      "properties": {"questions": {"type": "array", "items": {"type": "object"}}, "independent_work": {"type": "array", "items": {"type": "string"}}},
+      "required": ["questions", "independent_work"],
+      "type": "object"
+    },
+    "pr_handoff": {
+      "properties": {
+        "worktree_changed": {"type": "boolean"},
+        "changed_paths": {"type": "array", "items": {"type": "string"}},
+        "explicit_local_only": {"type": "boolean"},
+        "state": {"enum": ["pending", "ready", "blocked", "not_applicable"]},
+        "pr_state": {"enum": ["", "open", "draft", "merged"]},
+        "review_state": {"enum": ["", "pending", "approved", "changes_requested", "not_required"]}
+      },
+      "required": ["worktree_changed", "changed_paths", "explicit_local_only", "override_ref", "state", "branch", "base_branch", "head_revision", "pr_url", "pr_head_revision", "pr_base_branch", "pr_state", "review_state", "checks_state", "readback_ref", "blocker", "existing_pr_url", "preserved_work_ref"],
+      "type": "object"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "record_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "record_kind": {
+      "enum": [
+        "repository_profile",
+        "task_run"
+      ]
+    },
+    "repository": {
+      "$ref": "#/$defs/repository"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "status": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "task": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "planning_mode": {
+                "const": "github_issue"
+              }
+            },
+            "required": [
+              "planning_mode"
+            ]
+          },
+          "then": {
+            "required": [
+              "plan"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "plan": {
+          "$ref": "#/$defs/canonical_plan"
+        },
+        "plan_digest": {"type": ["string", "null"], "pattern": "^sha256:[0-9a-f]{64}$"},
+        "planning_mode": {
+          "enum": [
+            "legacy",
+            "github_issue"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "outcome_check": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["input_ref", "expected_result", "observed_result", "evidence_ref", "evidence_kind", "state", "limitation"],
+                "properties": {
+                  "input_ref": {"type": "string", "minLength": 1},
+                  "completion_required": {"type": "boolean"},
+                  "expected_result": {"type": "string", "minLength": 1},
+                  "observed_result": {"type": "string"},
+                  "evidence_ref": {"type": "string"},
+                  "evidence_kind": {"enum": ["actual", "controlled"]},
+                  "state": {"enum": ["passed", "failed", "unavailable"]},
+                  "limitation": {"type": "string"}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "verification_runs": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "impact_inventory": {
+      "additionalProperties": false,
+      "properties": {
+        "discovered_surface_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "discovery_evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "pattern_wide": {
+          "type": "boolean"
+        },
+        "surfaces": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "decision": {
+                "enum": [
+                  "included",
+                  "excluded"
+                ]
+              },
+              "id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "kind": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "reason": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "shared_point": {
+                "type": "string"
+              },
+              "verification_refs": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "decision",
+              "reason",
+              "shared_point",
+              "verification_refs"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "pattern_wide",
+        "discovery_evidence_refs",
+        "discovered_surface_ids",
+        "surfaces"
+      ],
+      "type": "object"
+    },
+    "diagnostics": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "affected_surface_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "correlation_id": {
+            "type": "string"
+          },
+          "first_evidence_ref": {
+            "type": "string"
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "missing_trace_reason": {
+            "type": "string"
+          },
+          "operation": {
+            "type": "string"
+          },
+          "reproduction_ref": {
+            "type": "string"
+          },
+          "root_cause_evidence_refs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "root_cause_state": {
+            "enum": [
+              "proven",
+              "unproven"
+            ]
+          },
+          "running_revision": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "symptom": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "target_environment": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "trace_policy": {
+            "additionalProperties": false,
+            "properties": {
+              "access": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "collection_basis": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "redaction": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "retention_seconds": {
+                "minimum": 1,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "redaction",
+              "retention_seconds",
+              "access",
+              "collection_basis"
+            ],
+            "type": "object"
+          },
+          "trace_state": {
+            "enum": [
+              "available",
+              "missing"
+            ]
+          },
+          "resolution_state": {
+            "enum": [
+              "open",
+              "mitigated",
+              "fixed",
+              "blocked"
+            ]
+          },
+          "remedy_verification_ref": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "symptom",
+          "target_environment",
+          "running_revision",
+          "trace_state",
+          "operation",
+          "missing_trace_reason",
+          "correlation_id",
+          "first_evidence_ref",
+          "root_cause_state",
+          "root_cause_evidence_refs",
+          "reproduction_ref",
+          "trace_policy",
+          "resolution_state",
+          "remedy_verification_ref"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "release_readback": {
+      "additionalProperties": false,
+      "properties": {
+        "active_mode": {
+          "type": "string"
+        },
+        "active_revision": {
+          "type": "string"
+        },
+        "expected_mode": {
+          "type": "string"
+        },
+        "handle_state": {
+          "enum": [
+            "not_applicable",
+            "live",
+            "stopped",
+            "unknown"
+          ]
+        },
+        "health": {
+          "enum": [
+            "not_checked",
+            "passed",
+            "failed"
+          ]
+        },
+        "intended_revision": {
+          "type": "string"
+        },
+        "live_evidence_ref": {
+          "type": "string"
+        },
+        "observed_at": {
+          "type": "string"
+        },
+        "process_handle": {
+          "type": "string"
+        },
+        "public_reachable": {
+          "type": "boolean"
+        },
+        "state": {
+          "enum": [
+            "not_requested",
+            "pr_open",
+            "merged",
+            "deployed_unverified",
+            "available",
+            "blocked"
+          ]
+        },
+        "target_surface": {
+          "type": "string"
+        },
+        "target_url": {
+          "type": "string"
+        },
+        "user_flow": {
+          "enum": [
+            "not_checked",
+            "passed",
+            "failed"
+          ]
+        },
+        "merged_revision": {
+          "type": "string"
+        },
+        "artifact_digest": {
+          "type": "string"
+        },
+        "deployment_id": {
+          "type": "string"
+        },
+        "configuration_identity": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "state",
+        "target_surface",
+        "intended_revision",
+        "active_revision",
+        "expected_mode",
+        "active_mode",
+        "target_url",
+        "observed_at",
+        "live_evidence_ref",
+        "health",
+        "user_flow",
+        "public_reachable",
+        "process_handle",
+        "handle_state",
+        "merged_revision",
+        "artifact_digest",
+        "deployment_id",
+        "configuration_identity"
+      ],
+      "type": "object"
+    },
+    "ui_conventions": {
+      "type": "object",
+      "required": [
+        "repository",
+        "changed_surfaces",
+        "rules"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "merge_readiness": {
+      "type": "object",
+      "required": [
+        "state",
+        "trigger",
+        "prerequisites"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "planned",
+            "blocked",
+            "ready",
+            "merged"
+          ]
+        },
+        "trigger": {
+          "enum": [
+            "unknown",
+            "deploys",
+            "does_not_deploy"
+          ]
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "release_invariants": {
+      "properties": {
+        "applicability": {"enum": ["required", "not_applicable"]},
+        "checks": {"type": "array", "items": {"type": "object"}}
+      },
+      "required": ["applicability", "reason", "baseline_ref", "rollback_ref", "checks"],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "record_kind",
+    "record_id",
+    "repository",
+    "provenance",
+    "applicability",
+    "status"
+  ],
+  "title": "Agentic Workflows Standard Development Workflow record v1",
+  "type": "object"
+}

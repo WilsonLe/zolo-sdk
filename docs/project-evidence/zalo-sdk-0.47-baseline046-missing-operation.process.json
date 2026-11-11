@@ -1,0 +1,18 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "--test-name-pattern",
+    "^SVS00 ",
+    "saved047/saved-core.test.mjs"
+  ],
+  "cwd": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.47-baseline046-consumer",
+  "ownedPid": 50015,
+  "ownedProcessGroup": 50015,
+  "deadlineSeconds": 30.0,
+  "boundExceeded": false,
+  "exitCode": 1,
+  "terminalObserved": true,
+  "seconds": 0.257,
+  "log": "zalo-sdk-0.47-baseline046-missing-operation.log"
+}

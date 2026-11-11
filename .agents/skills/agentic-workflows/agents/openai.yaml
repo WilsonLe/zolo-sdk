@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agentic Workflows"
+  short_description: "Route work across Agentic Workflows agentic capabilities"
+  default_prompt: "Use $agentic-workflows to onboard me, check only the relevant prerequisites, and choose the right workflow for my task."

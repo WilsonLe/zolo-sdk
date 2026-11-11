@@ -1,0 +1,188 @@
+--- a/dist/apis/listen.js
++++ b/dist/apis/listen.js
+@@ -98,6 +98,11 @@
+     start({ retryOnClose = false } = {}) {
+         if (this.ws)
+             throw new ZaloApiError("Already started");
++        const cookie = this.ctx.cookie.getCookieStringSync(this.wsURL);
++        // A synchronous custom jar can re-enter start before selection returns.
++        if (this.ws)
++            throw new ZaloApiError("Already started");
++        this.cookie = cookie;
+         const ws = new WebSocket(this.wsURL, {
+             headers: {
+                 "accept-encoding": "gzip, deflate, br, zstd",
+--- a/dist/cjs/apis/listen.cjs
++++ b/dist/cjs/apis/listen.cjs
+@@ -111,6 +111,11 @@
+     start({ retryOnClose = false } = {}) {
+         if (this.ws)
+             throw new ZaloApiError.ZaloApiError("Already started");
++        const cookie = this.ctx.cookie.getCookieStringSync(this.wsURL);
++        // A synchronous custom jar can re-enter start before selection returns.
++        if (this.ws)
++            throw new ZaloApiError.ZaloApiError("Already started");
++        this.cookie = cookie;
+         const ws = new WebSocket(this.wsURL, {
+             headers: {
+                 "accept-encoding": "gzip, deflate, br, zstd",
+--- a/dist/cjs/utils.cjs
++++ b/dist/cjs/utils.cjs
+@@ -252,16 +252,30 @@
+     var _a, _b;
+     if (!ctx.cookie)
+         ctx.cookie = new toughCookie.CookieJar();
+-    const origin = new URL(url).origin;
+-    const defaultHeaders = await getDefaultHeaders(ctx, origin);
++    const endpoint = new URL(url);
++    // Keep caller intent separate from defaults generated for each visible hop.
++    const callerOptions = Object.assign({}, options);
++    if (callerOptions.headers !== undefined)
++        callerOptions.headers = new Headers(callerOptions.headers);
++    if (!raw
++        && callerOptions.redirect !== undefined
++        && callerOptions.redirect !== "manual"
++        && callerOptions.redirect !== "error")
++        throw new TypeError("Cookie-managed requests require manual or error redirects.");
++    const defaultHeaders = await getDefaultHeaders(ctx, endpoint.href);
++    const requestOptions = Object.assign({}, callerOptions);
+     if (!raw) {
+-        if (options) {
+-            options.headers = Object.assign(defaultHeaders, options.headers || {});
+-        }
+-        else
+-            options = { headers: defaultHeaders };
+-    }
+-    const _options = Object.assign(Object.assign({}, (options !== null && options !== void 0 ? options : {})), (isBun ? {
++        // A fixed Cookie header must not be carried through hidden fetch redirects.
++        requestOptions.redirect = callerOptions.redirect === undefined ? "error" : callerOptions.redirect;
++        for (const [name, value] of new Headers(callerOptions.headers)) {
++            const key = Object.keys(defaultHeaders).find(key => key.toLowerCase() === name) || name;
++            Object.defineProperty(defaultHeaders, key, { value, enumerable: true, configurable: true, writable: true });
++        }
++        requestOptions.headers = defaultHeaders;
++    }
++    else if (callerOptions.headers !== undefined)
++        requestOptions.headers = new Headers(callerOptions.headers);
++    const _options = Object.assign(Object.assign({}, requestOptions), (isBun ? {
+         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+         // @ts-ignore
+         proxy: (_b = (_a = ctx.options.agent) === null || _a === void 0 ? void 0 : _a.proxy) === null || _b === void 0 ? void 0 : _b.href
+@@ -284,7 +298,8 @@
+             const parsed = toughCookie.Cookie.parse(cookie);
+             try {
+                 if (parsed)
+-                    await ctx.cookie.setCookie(parsed, parsed.domain != "zalo.me" ? `https://${parsed.domain}` : origin);
++                    // The receiving jar may belong to another installed tough-cookie copy.
++                    await ctx.cookie.setCookie(cookie, response.url || endpoint.href);
+             }
+             catch (error) {
+                 logger(ctx).error(error);
+@@ -293,13 +308,21 @@
+     }
+     const redirectURL = response.headers.get("location");
+     if (redirectURL) {
+-        const redirectOptions = Object.assign({}, options);
++        const redirectOptions = Object.assign({}, callerOptions);
+         redirectOptions.method = "GET";
+-        if (!raw) {
+-            redirectOptions.headers = new Headers(redirectOptions.headers);
+-            redirectOptions.headers.set("Referer", "https://id.zalo.me/");
+-        }
+-        return await request(ctx, redirectURL, redirectOptions);
++        const nextEndpoint = new URL(redirectURL);
++        if (!raw || callerOptions.headers !== undefined) {
++            redirectOptions.headers = new Headers(callerOptions.headers);
++            if (nextEndpoint.origin !== endpoint.origin) {
++                // A response Location cannot expand caller credential authority.
++                redirectOptions.headers.delete("Cookie");
++                redirectOptions.headers.delete("Authorization");
++                redirectOptions.headers.delete("Proxy-Authorization");
++            }
++            if (!raw)
++                redirectOptions.headers.set("Referer", "https://id.zalo.me/");
++        }
++        return await request(ctx, redirectURL, redirectOptions, raw);
+     }
+     return response;
+ }
+--- a/dist/utils.js
++++ b/dist/utils.js
+@@ -248,16 +248,30 @@
+     var _a, _b;
+     if (!ctx.cookie)
+         ctx.cookie = new toughCookie.CookieJar();
+-    const origin = new URL(url).origin;
+-    const defaultHeaders = await getDefaultHeaders(ctx, origin);
++    const endpoint = new URL(url);
++    // Keep caller intent separate from defaults generated for each visible hop.
++    const callerOptions = Object.assign({}, options);
++    if (callerOptions.headers !== undefined)
++        callerOptions.headers = new Headers(callerOptions.headers);
++    if (!raw
++        && callerOptions.redirect !== undefined
++        && callerOptions.redirect !== "manual"
++        && callerOptions.redirect !== "error")
++        throw new TypeError("Cookie-managed requests require manual or error redirects.");
++    const defaultHeaders = await getDefaultHeaders(ctx, endpoint.href);
++    const requestOptions = Object.assign({}, callerOptions);
+     if (!raw) {
+-        if (options) {
+-            options.headers = Object.assign(defaultHeaders, options.headers || {});
+-        }
+-        else
+-            options = { headers: defaultHeaders };
+-    }
+-    const _options = Object.assign(Object.assign({}, (options !== null && options !== void 0 ? options : {})), (isBun ? {
++        // A fixed Cookie header must not be carried through hidden fetch redirects.
++        requestOptions.redirect = callerOptions.redirect === undefined ? "error" : callerOptions.redirect;
++        for (const [name, value] of new Headers(callerOptions.headers)) {
++            const key = Object.keys(defaultHeaders).find(key => key.toLowerCase() === name) || name;
++            Object.defineProperty(defaultHeaders, key, { value, enumerable: true, configurable: true, writable: true });
++        }
++        requestOptions.headers = defaultHeaders;
++    }
++    else if (callerOptions.headers !== undefined)
++        requestOptions.headers = new Headers(callerOptions.headers);
++    const _options = Object.assign(Object.assign({}, requestOptions), (isBun ? {
+         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+         // @ts-ignore
+         proxy: (_b = (_a = ctx.options.agent) === null || _a === void 0 ? void 0 : _a.proxy) === null || _b === void 0 ? void 0 : _b.href
+@@ -280,7 +294,8 @@
+             const parsed = toughCookie.Cookie.parse(cookie);
+             try {
+                 if (parsed)
+-                    await ctx.cookie.setCookie(parsed, parsed.domain != "zalo.me" ? `https://${parsed.domain}` : origin);
++                    // The receiving jar may belong to another installed tough-cookie copy.
++                    await ctx.cookie.setCookie(cookie, response.url || endpoint.href);
+             }
+             catch (error) {
+                 logger(ctx).error(error);
+@@ -289,13 +304,21 @@
+     }
+     const redirectURL = response.headers.get("location");
+     if (redirectURL) {
+-        const redirectOptions = Object.assign({}, options);
++        const redirectOptions = Object.assign({}, callerOptions);
+         redirectOptions.method = "GET";
+-        if (!raw) {
+-            redirectOptions.headers = new Headers(redirectOptions.headers);
+-            redirectOptions.headers.set("Referer", "https://id.zalo.me/");
+-        }
+-        return await request(ctx, redirectURL, redirectOptions);
++        const nextEndpoint = new URL(redirectURL);
++        if (!raw || callerOptions.headers !== undefined) {
++            redirectOptions.headers = new Headers(callerOptions.headers);
++            if (nextEndpoint.origin !== endpoint.origin) {
++                // A response Location cannot expand caller credential authority.
++                redirectOptions.headers.delete("Cookie");
++                redirectOptions.headers.delete("Authorization");
++                redirectOptions.headers.delete("Proxy-Authorization");
++            }
++            if (!raw)
++                redirectOptions.headers.set("Referer", "https://id.zalo.me/");
++        }
++        return await request(ctx, redirectURL, redirectOptions, raw);
+     }
+     return response;
+ }

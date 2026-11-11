@@ -1,0 +1,29 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "--test-concurrency=1",
+    "baseline-controls.test.mjs",
+    "bounded-body.test.mjs",
+    "exports-guard.test.mjs",
+    "ordinary-abort-regression-v2.test.mjs",
+    "signed-video-v4.test.mjs",
+    "synchronous-abort.test.mjs",
+    "undefined-transport.test.mjs",
+    "thumbnail-core.test.mjs",
+    "thumbnail-ownership.test.mjs",
+    "callback-destination.test.mjs",
+    "callback-context.test.mjs",
+    "saved047/saved-core.test.mjs",
+    "saved047/saved-lifecycle.test.mjs"
+  ],
+  "cwd": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.47-runtime-consumer",
+  "ownedPid": 50574,
+  "ownedProcessGroup": 50574,
+  "deadlineSeconds": 120.0,
+  "boundExceeded": false,
+  "exitCode": 0,
+  "terminalObserved": true,
+  "seconds": 5.734,
+  "log": "zalo-sdk-0.47-installed-public95.log"
+}

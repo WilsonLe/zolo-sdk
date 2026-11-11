@@ -1,0 +1,18 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "--test-concurrency=1",
+    "baseline-controls.test.mjs",
+    "exports-guard.test.mjs"
+  ],
+  "cwd": "/Users/wilsonle/.codex/visualizations/2026/11/05/01a1ab67-18aa-7c51-9627-12849903926c/zalo-sdk-0.47-baseline046-consumer",
+  "ownedPid": 49613,
+  "ownedProcessGroup": 49613,
+  "deadlineSeconds": 60.0,
+  "boundExceeded": false,
+  "exitCode": 0,
+  "terminalObserved": true,
+  "seconds": 0.83,
+  "log": "zalo-sdk-0.47-baseline046-positive-controls.log"
+}

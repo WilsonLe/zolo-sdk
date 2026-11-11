@@ -1,0 +1,458 @@
+# pc-dist/lazy/default-login-main-startup-shared-worker-znotification.4bb5e1e2c2e9bab4f7b3.js
+# sha256=32090ad21922a614ad11a12bff9709d269bff273667faa9314d237712abca38e
+# desktop_routes=454 upstream_routes=166 shared_literals=161
+route	first_byte_offset	occurrences	zca_modules_with_same_literal	sdk_literal_sources	sdk_expression_candidates
+/api/aifeatures/translate/v1/auto	10494131	1			
+/api/aifeatures/translate/v1/manual	10494062	1		src/translation.ts:134	
+/api/aifeatures/translate/v1/setting	10493920	2		src/translation.ts:104,src/translation.ts:74	
+/api/aifeatures/translate/v1/suggest	10494201	1			
+/api/aifeatures/voice2text	13976898	1		src/voice-transcription.ts:172	
+/api/alias/list	2674778	1	getAliasList		
+/api/alias/list/v2	2674962	1		src/contact-sync.ts:110	
+/api/alias/remove	2674900	1	removeFriendAlias		
+/api/alias/update	2674838	1	changeFriendAlias		
+/api/archivedchat/list	2677418	1	getArchivedChatList		
+/api/archivedchat/update	2677485	1	updateArchivedChatList		
+/api/autoreply/create	2699247	1	createAutoReply		
+/api/autoreply/delete	2699315	1	deleteAutoReply		
+/api/autoreply/list	2699215	1	getAutoReplyList		
+/api/autoreply/update	2699281	1	updateAutoReply		
+/api/backuppc2mb/upload	2700076	1		src/pc-phone-backup-upload.ts:220,src/protocol-request.ts:202	
+/api/banner/v1/info	7403412	1			
+/api/board/list	2687724	1	getListBoard		
+/api/board/listReminder	2688909	1	getListReminder		
+/api/board/multi_unpin	2688502	1		src/group-board.ts:74	
+/api/board/oneone/create	2688635	1	createReminder		
+/api/board/oneone/list	2688842	1	getListReminder		
+/api/board/oneone/remove	2688773	1	removeReminder		
+/api/board/oneone/update	2688704	1	editReminder		
+/api/board/personal/delete	2698869	1		src/personal-tasks.ts:283	
+/api/board/personal/get	2698989	1		src/personal-tasks.ts:278	
+/api/board/personal/list	2698908	1		src/personal-tasks.ts:310	
+/api/board/personal/todo/create	2698781	1		src/personal-tasks.ts:254	
+/api/board/personal/todo/ding	2699025	1		src/personal-tasks.ts:348	
+/api/board/personal/todo/dingack	2699067	1		src/personal-tasks.ts:354	
+/api/board/personal/todo/status	2698945	1		src/personal-tasks.ts:289	
+/api/board/personal/todo/update	2698825	1		src/personal-tasks.ts:272	
+/api/board/personal/todo/verify	2699112	1		src/personal-tasks.ts:320	
+/api/board/pin	2688319	1			
+/api/board/pin/list	2687784	1		src/group-board.ts:49	
+/api/board/pin/update	2687848	1		src/group-board.ts:81	
+/api/board/pinv2	2688258	1		src/group-board.ts:68	
+/api/board/topic/create	2687984	1			
+/api/board/topic/createv2	2687914	1	createNote,createReminder		
+/api/board/topic/getReminder	2689137	1	getReminder		
+/api/board/topic/listResponseEvent	2689058	1	getReminderResponses		
+/api/board/topic/remove	2688190	1	removeReminder	src/group-board.ts:88	
+/api/board/topic/update	2688122	1			
+/api/board/topic/updateEventResponse	2688977	1		src/group-reminder-response.ts:10	
+/api/board/topic/updatev2	2688052	1	editNote,editReminder		
+/api/board/unpin	2688441	1			
+/api/board/unpinv2	2688378	1			
+/api/chk	12537857	1			
+/api/cm/getoldv2	2697693	1		src/desktop-history.ts:176	
+/api/cm/getpath	2697778	1		src/desktop-history.ts:209	
+/api/cm/getrecentv2	2697721	1		src/desktop-history.ts:176	
+/api/cm/mget	2697805	1			
+/api/cm/pc/dl	2697829	1			
+/api/cm/rgetv2	2697752	1		src/desktop-history.ts:174	
+/api/conv/addUnreadMark	2676400	1	addUnreadMark		
+/api/conv/autodelete/getConvers	2677175	1	getAutoDeleteChat		
+/api/conv/autodelete/updateConvers	2677251	1	updateAutoDeleteChat		
+/api/conv/blocksharing/getConvers	14216622	1		src/desktop-conversation-operations.ts:144	
+/api/conv/blocksharing/updateConvers	14216660	1		src/desktop-conversation-operations.ts:167	
+/api/conv/cm/grOfl	2677554	2			
+/api/conv/getUnreadMark	2676332	2	getUnreadMark		
+/api/conv/removeUnreadMark	2676468	1	removeUnreadMark		
+/api/convlabel/get	2689663	1	getLabels		
+/api/convlabel/manage/add	7246035	1			src/desktop-conversation-operations.ts:202
+/api/convlabel/manage/delete	7246098	1			src/desktop-conversation-operations.ts:202
+/api/convlabel/manage/reorder	7246131	1			src/desktop-conversation-operations.ts:202
+/api/convlabel/manage/update	7246065	1			src/desktop-conversation-operations.ts:202
+/api/convlabel/update	2688569	2	updateLabels		
+/api/e2ee/pc/group/contact	2678832	1			src/e2ee-prepared-delivery.ts:147
+/api/e2ee/pc/group/deleteConv	2678424	1		src/e2ee-message-operations.ts:188	
+/api/e2ee/pc/group/deleteMsg	2678384	1		src/e2ee-message-operations.ts:178	
+/api/e2ee/pc/group/file	2678797	1			src/e2ee-prepared-delivery.ts:147
+/api/e2ee/pc/group/forward	2678870	1			src/e2ee-prepared-delivery.ts:147
+/api/e2ee/pc/group/gif	2678689	1			src/e2ee-prepared-delivery.ts:147
+/api/e2ee/pc/group/link	2678654	1			src/e2ee-prepared-delivery.ts:147
+/api/e2ee/pc/group/mention	2678546	1			src/e2ee-prepared-delivery.ts:147
+/api/e2ee/pc/group/multiUndoMsg	2678503	1		src/e2ee-message-operations.ts:165	
+/api/e2ee/pc/group/photo	2678761	1			src/e2ee-prepared-delivery.ts:147
+/api/e2ee/pc/group/quote	2678618	1			src/e2ee-prepared-delivery.ts:147
+/api/e2ee/pc/group/sms	2678584	1			src/e2ee-prepared-delivery.ts:147
+/api/e2ee/pc/group/sticker	2678723	1			src/e2ee-prepared-delivery.ts:147
+/api/e2ee/pc/group/undoMsg	2678465	1		src/e2ee-message-operations.ts:154	
+/api/e2ee/pc/message/contact	2678164	1			src/e2ee-prepared-delivery.ts:129
+/api/e2ee/pc/message/delete	2677739	1		src/e2ee-message-operations.ts:178	
+/api/e2ee/pc/message/deleteconver	2677778	1		src/e2ee-message-operations.ts:188	
+/api/e2ee/pc/message/file	2678127	1			src/e2ee-prepared-delivery.ts:129
+/api/e2ee/pc/message/forward	2678204	1			src/e2ee-prepared-delivery.ts:129
+/api/e2ee/pc/message/gif	2678013	1			src/e2ee-prepared-delivery.ts:129
+/api/e2ee/pc/message/link	2677976	1			src/e2ee-prepared-delivery.ts:129
+/api/e2ee/pc/message/multi_undo	2677860	1		src/e2ee-message-operations.ts:165	
+/api/e2ee/pc/message/photo	2678089	1			src/e2ee-prepared-delivery.ts:129
+/api/e2ee/pc/message/quote	2677938	1			src/e2ee-prepared-delivery.ts:129
+/api/e2ee/pc/message/sms	2677902	1			src/e2ee-prepared-delivery.ts:129
+/api/e2ee/pc/message/sticker	2678049	1			src/e2ee-prepared-delivery.ts:129
+/api/e2ee/pc/message/undo	2677823	1		src/e2ee-message-operations.ts:154	
+/api/e2ee/pc/t/group/delivered	2678305	1		src/e2ee-receipts.ts:187	
+/api/e2ee/pc/t/group/seen	2678347	1			
+/api/e2ee/pc/t/message/delivered	2677656	1		src/e2ee-receipts.ts:187	
+/api/e2ee/pc/t/message/seen	2677700	1			
+/api/enterprise/login/emailPassword	2696101	1			
+/api/enterprise/loginEmailPassword	12412238	1			
+/api/enterprise/profiles	2692586	1			
+/api/feedback	2696373	2			
+/api/flp/sn	2699728	1			
+/api/friend/accept	2682435	1	acceptFriendRequest		
+/api/friend/block	2682982	1	blockUser		
+/api/friend/blocklistv2	2683108	1		src/desktop-reads.ts:73	
+/api/friend/closefr/update	2683393	1			
+/api/friend/context/multiget	2682235	1		src/contact-sync.ts:142	
+/api/friend/feed/block	2683599	1	blockViewFeed		
+/api/friend/group/related	2682688	1	getRelatedFriendGroup		
+/api/friend/last-read-contact-tab	2683666	1		src/contact-sync.ts:202	
+/api/friend/mget-qr	2683464	1	getQR		
+/api/friend/profile/get	2683176	1	findUser		
+/api/friend/profile/multiget	2683320	1	getMultiUsersByPhones		
+/api/friend/read-contact-tab	2683744	1		src/contact-sync.ts:209	
+/api/friend/recommends/remove	2682758	1			
+/api/friend/recommendsv2/list	2682832	1	getFriendRecommendations		
+/api/friend/recommendsv2/read-requests	2683817	1		src/contact-sync.ts:215	
+/api/friend/recommendsv2/remove	2682906	1		src/contact-sync.ts:222	
+/api/friend/reject	2682498	1	rejectFriendRequest		
+/api/friend/remove	2682372	1	removeFriend		
+/api/friend/reqstatus	2682622	1	getFriendRequestStatus		
+/api/friend/requested/list	2683528	1	getSentFriendRequest		
+/api/friend/search/by-user-name	2683244	2	findUserByUsername		
+/api/friend/sendreq	2682308	1	sendFriendRequest		
+/api/friend/unblock	2683044	1	unblockUser		
+/api/friend/undo	2682561	1	undoFriendRequest		
+/api/friendboard/create	2699410	1		src/friend-board.ts:140	
+/api/friendboard/list	2699446	1	getFriendBoardList	src/friend-board.ts:118	
+/api/friendboard/multi_unpin	2699517	1		src/friend-board.ts:165	
+/api/friendboard/reorder	2699480	1		src/friend-board.ts:154	
+/api/getCloudViewerKey	1453811	1		src/cloud-media.ts:195	
+/api/getFamilyViewerKey	1453859	1		src/cloud-media.ts:197	
+/api/gid/decrypt	2690634	2			
+/api/gid/encrypt	2690573	2			
+/api/group/admins/add	2684314	2	addGroupDeputy		
+/api/group/admins/remove	2684380	2	removeGroupDeputy		
+/api/group/analyse	2686476	2		src/desktop-history.ts:236	
+/api/group/asyncfile/msg	2680328	1			
+/api/group/asyncfile/upload	2681288	1			src/e2ee-file-upload.ts:250
+/api/group/blockedmems/add	2684521	2	addGroupBlockedMember		
+/api/group/blockedmems/list	2684449	2	getGroupBlockedMember		
+/api/group/blockedmems/remove	2684592	2	removeGroupBlockedMember		
+/api/group/change-owner	2687070	1	changeGroupOwner		
+/api/group/contact	2685679	2			
+/api/group/create	2684727	1			
+/api/group/create/v2	2684789	1	createGroup		
+/api/group/deleteconver	2686604	1	deleteChat		
+/api/group/deletemsg	2686539	1	deleteMessage		
+/api/group/delivered	2684854	1			
+/api/group/deliveredv2	2684919	1	sendDeliveredEvent		
+/api/group/disperse	2685364	1	disperseGroup		
+/api/group/forward	2679093	2	sendCard,sendVideo,sendVoice	src/ai-sticker-send.ts:386,src/file-media.ts:179,src/gif-media.ts:405,src/photo-media.ts:612	src/chat-media-upload.ts:407
+/api/group/getStatusMsg	2687002	1		src/desktop-reads.ts:105	
+/api/group/getgi	12418261	1			
+/api/group/getgi/v2	2684108	2		src/group-pages.ts:149	
+/api/group/getlg	12416656	1			
+/api/group/getlg/e2ee	2687138	2		src/group-pages.ts:169	
+/api/group/getlg/v2	12416900	1			
+/api/group/getlg/v3	2683916	2		src/group-pages.ts:130	
+/api/group/getlg/v4	2683980	2	getAllGroups		
+/api/group/getmg	2686804	1			
+/api/group/getmg-v2	2684044	1	getGroupInfo	src/pc-phone-backup-global-ids.ts:188	
+/api/group/gif	2679736	1		src/gif-media.ts:247	
+/api/group/history	2686413	1	getGroupChatHistory		
+/api/group/inv-box/inv-info	2687412	2	getGroupInviteBoxInfo		
+/api/group/inv-box/join	2687344	2	joinGroupInviteBox		
+/api/group/inv-box/list	2687204	2	getGroupInviteBoxList		
+/api/group/inv-box/mdel-inv	2687272	2	deleteGroupInviteBox		
+/api/group/invite	2685237	1			
+/api/group/invite/multi	2686865	1	inviteUserToGroups		
+/api/group/invite/v2	2685299	1	addUserToGroup		
+/api/group/kickout	2685174	1	removeUserFromGroup		
+/api/group/kickout/multi	2686933	1			
+/api/group/leave	2684666	1	leaveGroup		
+/api/group/link/detail	2685873	2	getGroupLinkDetail		
+/api/group/link/disable	2686004	2	disableGroupLink		
+/api/group/link/ginfo	2686072	2	getGroupLinkInfo		
+/api/group/link/join	2686138	2	joinGroupLink		
+/api/group/link/new	2685940	2	enableGroupLink		
+/api/group/mention	2685616	2			
+/api/group/mforward	2679221	2	forwardMessage		
+/api/group/multi_undomsg	2686735	1		src/message-operations.ts:39	
+/api/group/pending-mems/list	2686203	2	getPendingGroupMembers		
+/api/group/pending-mems/review	2686276	2	reviewPendingMemberRequest		
+/api/group/photo_original/send	2680468	1			src/photo-media.ts:334
+/api/group/photo_original/upload	2681064	1			src/e2ee-photo-upload.ts:246,src/photo-media.ts:271
+/api/group/photo_url	2679410	2		src/ai-sticker-send.ts:250	
+/api/group/quota/community	2687557	2		src/desktop-reads.ts:127	
+/api/group/quota/members-comm	2687628	2		src/desktop-reads.ts:135	
+/api/group/quote	2685555	2			
+/api/group/react_delivered	2697436	1		src/reaction-receipts.ts:171	
+/api/group/react_seen	2697474	2		src/reaction-receipts.ts:199	
+/api/group/reaction	2697542	2	addReaction		
+/api/group/seen	2684986	1			
+/api/group/seenv2	2685046	1	sendSeenEvent		
+/api/group/sendlink	2685491	2	sendLink		
+/api/group/sendmp3	2679861	1			
+/api/group/sendmsg	2685428	2			
+/api/group/sendpt	2679285	2			
+/api/group/setting/update	2684244	2	updateGroupSettings		
+/api/group/sharefile	2680133	1			
+/api/group/sharefile_full	2679996	1			
+/api/group/sticker	2685742	2	sendSticker		
+/api/group/topic/remove	2685805	1			
+/api/group/typing	2686351	1	sendTypingEvent		
+/api/group/undomsg	2686672	1	undo		
+/api/group/upavatar	2680264	1	changeGroupAvatar		
+/api/group/updateinfo	2685108	1	changeGroupName		
+/api/group/upgrade/community	2687484	2	upgradeGroupToCommunity		
+/api/group/upload/photo	2681999	1			
+/api/group/userctx/multiget	2684172	1		src/group-context.ts:30	
+/api/group/video/file/upload	2681434	1			src/chat-media-upload.ts:327
+/api/group/video/thumb/upload	2681582	1			src/chat-media-upload.ts:327
+/api/group/voice/upload	2681732	1			src/chat-media-upload.ts:327
+/api/group/zcloud-upload/photo	2682138	1			src/e2ee-photo-upload.ts:246,src/photo-media.ts:271
+/api/hiddenconvers/add-remove	2676880	1	setHiddenConversations		
+/api/hiddenconvers/get-all	2676809	1	getHiddenConversations		
+/api/hiddenconvers/reset	2677028	1	resetHiddenConversPin		
+/api/hiddenconvers/update-pin	2676954	1	updateHiddenConversPin		
+/api/lan/friends	2698479	1			
+/api/lan/leave	2698536	1			
+/api/lan/samemacs	2698563	1			
+/api/lan/status	2698451	1			
+/api/lan/submit	2698508	1			
+/api/login/actlistv2	2697101	2			
+/api/login/chkUpdate	2696277	2			
+/api/login/completeRemoveData	2697301	2			
+/api/login/fbAuth	2696504	2			
+/api/login/fblogout	2697042	2			
+/api/login/getActiveCodeByZalo	2696781	2			
+/api/login/getCaptcha	2696031	2		src/desktop-password-login.ts:376	
+/api/login/getFbAuthInfo	2696468	2			
+/api/login/getLoginInfo	2696309	2	login	src/desktop-session.ts:650	
+/api/login/getServerInfo	2696148	2	login	src/desktop-password-login.ts:311,src/desktop-recovery.ts:338,src/desktop-session.ts:631	
+/api/login/getSupportCountry	2696398	2			
+/api/login/hasNewMsg	2697229	1			
+/api/login/linkFacebook	2696867	2			
+/api/login/logOut	2696344	2		src/desktop-signout.ts:84	
+/api/login/loginByFacebook	2696533	2			
+/api/login/loginByFacebookWithSecure	2696571	2			
+/api/login/loginByPassw	12411745	1			
+/api/login/loginByPasswv2	2696064	2		src/desktop-password-login.ts:419	
+/api/login/loginByResetPwd	2696965	2		src/desktop-recovery.ts:449,src/desktop-recovery.ts:458	
+/api/login/migrateSS	12479035	1			
+/api/login/popup	2697073	2			
+/api/login/reqqr	2696003	2			
+/api/login/setting	2696438	1			
+/api/login/ssoSyncMp3	2697196	1			
+/api/media/oneone/list	2690266	2			src/media-library.ts:106
+/api/media/oneone/preview	2690300	1			src/media-library.ts:123
+/api/media/oneone/remove	2690337	1			src/media-library.ts:135
+/api/mediastore/list	2690100	2			src/media-library.ts:106
+/api/mediastore/preview	2690132	1			src/media-library.ts:123
+/api/mediastore/remove	2690167	1			src/media-library.ts:135
+/api/message/asyncfile/msg	2680397	1			
+/api/message/asyncfile/upload	2681360	1			src/e2ee-file-upload.ts:250
+/api/message/cancel_pull_mobile_msg	2680760	1			
+/api/message/contact	2675682	2			
+/api/message/delete	2675875	1	deleteMessage		
+/api/message/delete_snapshot_mobile_msg	2680840	1			
+/api/message/deleteconver	2675939	1	deleteChat		
+/api/message/delivered	2675062	1			
+/api/message/deliveredv2	2675129	1	sendDeliveredEvent		
+/api/message/effect/get	2694165	1			
+/api/message/effects	2693743	1		src/sticker-effects.ts:59	
+/api/message/fetchImportant	2675368	2		src/desktop-reads.ts:90	
+/api/message/forward	2679156	2	sendCard,sendVideo,sendVoice	src/ai-sticker-send.ts:386,src/file-media.ts:179,src/gif-media.ts:405,src/photo-media.ts:612	src/chat-media-upload.ts:407
+/api/message/getStatusMsg	2676217	1		src/desktop-reads.ts:105	
+/api/message/get_backupmsginfo	2680924	1			
+/api/message/get_crossdb	2680620	1			
+/api/message/gif	2679608	1		src/gif-media.ts:247	
+/api/message/giphy/cates	2694543	1			src/gif-media.ts:185
+/api/message/giphy/dicts	2694690	1			
+/api/message/giphy/gifs	2694579	1			src/gif-media.ts:185
+/api/message/giphy/gifsbydict	2694726	1			src/gif-media.ts:185
+/api/message/giphy/search	2694653	1			src/gif-media.ts:185
+/api/message/giphy/trending	2694614	1			src/gif-media.ts:185
+/api/message/guggy/default	2694425	1			src/gif-media.ts:223
+/api/message/guggy/search	2694463	1			src/gif-media.ts:223
+/api/message/link	2675620	2	sendLink		
+/api/message/mforward	2679542	2	forwardMessage		
+/api/message/multi_undo	2676071	1		src/message-operations.ts:39	
+/api/message/parselink	2678961	1	parseLink		
+/api/message/photo	2679347	2			
+/api/message/photo_original/send	2680543	1			src/photo-media.ts:334
+/api/message/photo_original/upload	2681141	1			src/e2ee-photo-upload.ts:246,src/photo-media.ts:271
+/api/message/photo_url	2679475	2		src/ai-sticker-send.ts:250	
+/api/message/pull_mobile_msg	2680687	1			
+/api/message/quote	2675812	2			
+/api/message/react_delivered	2697396	1		src/reaction-receipts.ts:163	
+/api/message/react_seen	2697507	2		src/reaction-receipts.ts:185	
+/api/message/reaction	2697573	2	addReaction		
+/api/message/renewlink	2679669	2		src/attachment-renewal.ts:227	
+/api/message/scanurl	2680999	1	scanURL		
+/api/message/seen	2675198	1			
+/api/message/seenv2	2675260	1	sendSeenEvent		
+/api/message/sharefile	2680066	1			
+/api/message/sharefile_full	2679924	1			
+/api/message/sms	2675559	2			
+/api/message/sticker	2675747	2	getStickers,sendSticker		
+/api/message/sticker/ai/list	2694283	1		src/ai-stickers.ts:55	
+/api/message/sticker/category/detail	2693870	1			
+/api/message/sticker/category/list	2693775	1		src/sticker-catalog.ts:266	
+/api/message/sticker/category/list/v2	2693821	1		src/sticker-catalog.ts:260	
+/api/message/sticker/category/sticker_detail	2693965	1	getStickerCategoryDetail		
+/api/message/sticker/personalized/list	2694323	1			src/sticker-discovery.ts:121
+/api/message/sticker/personalized/update	2694373	1		src/sticker-discovery.ts:185	
+/api/message/sticker/recommended	2694239	1			
+/api/message/sticker/search	2694200	1	searchSticker		
+/api/message/sticker/sticker_detail	2693918	1	getStickersDetail		
+/api/message/sticker/suggest/keywords	2694021	1			src/sticker-discovery.ts:121
+/api/message/sticker/suggest/stickers	2694070	1			src/sticker-discovery.ts:121
+/api/message/sticker/suggestion	2694500	1			src/sticker-discovery.ts:121
+/api/message/sticker/tenor/mapping	2694119	1			src/sticker-discovery.ts:121
+/api/message/typing	2675440	1	sendTypingEvent		
+/api/message/undo	2676009	1	undo		
+/api/message/upload/photo	2681962	1			
+/api/message/upthumb	2679028	1		src/gif-media.ts:496	
+/api/message/video/file/upload	2681507	1			src/chat-media-upload.ts:327
+/api/message/video/thumb/upload	2681656	1			src/chat-media-upload.ts:327
+/api/message/voice/upload	2681800	1			src/chat-media-upload.ts:327
+/api/message/voicemp3	2679795	1			
+/api/message/zcloud-upload/photo	2682094	1			src/e2ee-photo-upload.ts:246,src/photo-media.ts:271
+/api/pinconvers/list	2676539	1	getPinConversations		
+/api/pinconvers/update	2676604	1			
+/api/pinconvers/updatev2	2676671	1	setPinnedConversations		
+/api/poll/create	2689231	1	createPoll		
+/api/poll/detail	2689292	1	getPollDetail		
+/api/poll/end	2689537	1	lockPoll		
+/api/poll/option/add	2689353	1	addPollOptions		
+/api/poll/share	2689477	1	sharePoll		
+/api/poll/vote	2689418	1	votePoll		
+/api/preloadconvers/get-last-msgs	2677097	1		src/desktop-history.ts:151	
+/api/preloadconvers/get-last-seen	2676139	1		src/desktop-conversation-operations.ts:120	
+/api/prodcatalog/catalog/create	2698172	1	createCatalog		
+/api/prodcatalog/catalog/delete	2698260	1	deleteCatalog		
+/api/prodcatalog/catalog/list	2698350	1	getCatalogList		
+/api/prodcatalog/catalog/register	2698304	1	registerCatalog		
+/api/prodcatalog/catalog/update	2698216	1	updateCatalog		
+/api/prodcatalog/product/create	2697911	1	createProductCatalog		
+/api/prodcatalog/product/delete	2697999	1		src/product-catalog.ts:382	
+/api/prodcatalog/product/list	2698088	1	getProductCatalogList		
+/api/prodcatalog/product/mdelete	2698043	1	deleteProductCatalog		
+/api/prodcatalog/product/update	2697955	1	updateProductCatalog		
+/api/prodcatalog/product/view	2698130	1		src/product-catalog.ts:349	
+/api/product/upload/photo	2681220	1	uploadProductPhoto		
+/api/profile/upavatar	2680198	1	changeAccountAvatar		
+/api/quickmessage/create	2693582	1	addQuickMessage		
+/api/quickmessage/delete	2693654	1	removeQuickMessage		
+/api/quickmessage/list	2693548	1	getQuickMessageList		
+/api/quickmessage/update	2693618	1	updateQuickMessage		
+/api/react/gLastSn	2697606	1		src/reaction-receipts.ts:245	
+/api/recentsearch/list	2698655	1		src/recent-search.ts:93	
+/api/recentsearch/update	2698690	1		src/recent-search.ts:116	
+/api/register/	12480308	1			
+/api/register/getActiveCodeBySms	2696691	2			
+/api/register/getActiveCodeByVoice	2696735	2			
+/api/register/signUpWithPwd	2697003	2			
+/api/register/validateActiveCode	2696823	2		src/desktop-recovery.ts:431	
+/api/register/verifyExt	2696656	1			
+/api/register/verifyPhone	2696619	2		src/desktop-recovery.ts:424	
+/api/report/abuse-v2	2690921	1	sendReport		
+/api/setting/me	2696184	1	getSettings		
+/api/setting/rating	2697133	1			
+/api/setting/update	2696211	1	updateSettings		
+/api/social/avatar-list	2693190	1	getAvatarList		
+/api/social/del-avatars	2693258	1	deleteAvatar		
+/api/social/ekyc/push-oa	2691509	1			
+/api/social/friend/active-pcweb	2692796	1		src/profile-metadata.ts:89	
+/api/social/friend/get-bizacc	2692512	1	getBizAccount		
+/api/social/friend/getclosedfriends	2690765	2	getCloseFriends		
+/api/social/friend/getfriends	2690499	2	getAllFriends		
+/api/social/friend/getminiprofiles	2693111	1		src/contact-sync.ts:132	
+/api/social/friend/getprofiles	12421852	1			
+/api/social/friend/getprofiles/v2	2690986	1	getUserInfo		
+/api/social/friend/onlines	2691720	1	getFriendOnlines		
+/api/social/friend/phonebook	2691791	1			
+/api/social/friend/phonebook/v2	2691864	1		src/contact-sync.ts:157	
+/api/social/friend/verify	2690429	1		src/contact-sync.ts:187	
+/api/social/group/members	2690695	1	getGroupMembersInfo		
+/api/social/oa/block	2693395	1		src/official-account.ts:25	
+/api/social/oa/convertid	2692015	1		src/official-account-ids.ts:68	
+/api/social/oa/unblock	2693460	1		src/official-account.ts:25	
+/api/social/profile/avatar	2691064	1	getFullAvatar		
+/api/social/profile/avatar-url	2691135	1	getAvatarUrlProfile		
+/api/social/profile/biz-off-remind	2693032	1			
+/api/social/profile/biz-register-trial	2692949	1			
+/api/social/profile/biz-register-trial-v2	2691578	1			
+/api/social/profile/changefgtobg	2692872	1	lostFocus		
+/api/social/profile/deactive	2692292	1	updateActiveStatus		
+/api/social/profile/extra	2692084	1		src/profile-metadata.ts:50	
+/api/social/profile/getmute	2691282	1	getMute		
+/api/social/profile/getrank	2692440	1		src/profile-rank.ts:22	
+/api/social/profile/lastOnline	2692365	1	lastOnline		
+/api/social/profile/me	12421606	1			
+/api/social/profile/me-v2	2692655	2	fetchAccountInfo	src/pc-phone-backup-global-ids.ts:164	
+/api/social/profile/mode	2692154	1			
+/api/social/profile/ping	2692223	1	updateActiveStatus		
+/api/social/profile/reportabuse	2690845	1	sendReport		
+/api/social/profile/setmute	2691210	1	setMute		
+/api/social/profile/status	2691354	1	updateProfileBio		
+/api/social/profile/update	2692725	1	updateProfile		
+/api/social/profile/updatelang	2691940	1	updateLang		
+/api/social/profile/verification/status	2691425	2		src/profile-metadata.ts:73	
+/api/social/reuse-avatar	2693326	1	reuseAvatar		
+/api/subtab/seen	5676869	1			
+/api/suggestconvers/list	2676740	1			
+/api/sync_action/media	2699583	1			
+/api/syncmsg/confirm	2697164	1			
+/api/transfer-sync-v2/request-sync	2681870	1			
+/api/transfer/card	2699823	1	sendBankCard		
+/api/transfer/conf	2699953	1	getListBank		
+/api/transfer/create	2699854	1	createBankAccount		
+/api/transfer/delete	2699920	1	deleteBankAccount		
+/api/transfer/list	2699984	1	getListBankAccount		
+/api/transfer/update	2699887	1	updateBankAccount		
+/api/update/checkHasPassword	2697261	2			
+/api/update/password	2696933	2			
+/api/update/profile	2696902	2			
+/api/update/setting/2FA	2696242	1			
+/api/v1/emoji-status/friends	9938656	1		src/emoji-status.ts:126	
+/api/v1/emoji-status/resource-config	9938615	1		src/emoji-status.ts:105	
+/api/voicecall/answer	2694930	1			src/call-signaling.ts:113
+/api/voicecall/answerack	2694963	1			src/call-signaling.ts:113
+/api/voicecall/cancel	2694999	1			src/call-signaling.ts:113
+/api/voicecall/conf	2695723	1			src/call-signaling.ts:113
+/api/voicecall/endcall	2695032	1			src/call-signaling.ts:113
+/api/voicecall/group/adduser	2695329	1			src/call-signaling.ts:113
+/api/voicecall/group/answer	2695369	1			src/call-signaling.ts:113
+/api/voicecall/group/broadcast	2695681	1			src/call-signaling.ts:113
+/api/voicecall/group/cancel	2695408	1			src/call-signaling.ts:113
+/api/voicecall/group/endcall	2695447	1			src/call-signaling.ts:113
+/api/voicecall/group/finish	2695566	1			src/call-signaling.ts:113
+/api/voicecall/group/join	2695844	1			src/call-signaling.ts:113
+/api/voicecall/group/notify	2695605	1			src/call-signaling.ts:113
+/api/voicecall/group/ping	2695644	1			src/call-signaling.ts:113
+/api/voicecall/group/request	2695289	1			src/call-signaling.ts:113
+/api/voicecall/group/requestcall	2695245	1			src/call-signaling.ts:113
+/api/voicecall/group/ringring	2695487	1			src/call-signaling.ts:113
+/api/voicecall/group/sharescreen	2695881	1			src/call-signaling.ts:113
+/api/voicecall/group/state	2695528	1			src/call-signaling.ts:113
+/api/voicecall/holdreq	2695066	1			src/call-signaling.ts:113
+/api/voicecall/holdresp	2695100	1			src/call-signaling.ts:113
+/api/voicecall/logendcall	2695208	1			src/call-signaling.ts:113
+/api/voicecall/request	2694861	1			src/call-signaling.ts:113
+/api/voicecall/requestaudio2video	2695754	1			
+/api/voicecall/requestcall	2694823	1			src/call-signaling.ts:113
+/api/voicecall/requestsharescreen	2695799	1			src/call-signaling.ts:113
+/api/voicecall/ringring	2694895	1			src/call-signaling.ts:113
+/api/voicecall/unholdreq	2695135	1			src/call-signaling.ts:113
+/api/voicecall/unholdresp	2695171	1			src/call-signaling.ts:113
+/api/znoise	2691664	2			
